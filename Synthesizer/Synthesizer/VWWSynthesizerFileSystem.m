@@ -30,7 +30,6 @@
     NSError* error = nil;
     NSString* contents = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&error];
     return contents;
-
 }
 
 +(bool)writeFile:(NSString*)contents{

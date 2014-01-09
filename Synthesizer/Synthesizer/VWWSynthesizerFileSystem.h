@@ -13,21 +13,21 @@
 //        "fmax" : 300,
 //        "sensitivity" : 1,
 //        "effect" : "none",
-//        "wavetype" : "sin",
+//        "VWWWaveTypeSawtooth" : "sin",
 //        "fmin" : 20
 //    },
 //    "z" : {
 //        "fmax" : 300,
 //        "sensitivity" : 1,
 //        "effect" : "none",
-//        "wavetype" : "sin",
+//        "VWWWaveTypeSawtooth" : "sin",
 //        "fmin" : 20
 //    },
 //    "x" : {
 //        "fmax" : 300,
 //        "sensitivity" : 1,
 //        "effect" : "none",
-//        "wavetype" : "sin",
+//        "VWWWaveTypeSawtooth" : "sin",
 //        "fmin" : 20
 //    }
 //}

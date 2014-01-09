@@ -7,7 +7,7 @@
 //
 
 #import "VWWSynthesizerInput.h"
-
+#import "VWWSynthesizerDefaults.h"
 // Keys for read/writing hash sets
 static __attribute ((unused)) NSString* kKeyAccelerometer = @"accelerometer";
 static __attribute ((unused)) NSString* kKeyGyroscope = @"gyroscope";
@@ -25,7 +25,7 @@ static __attribute ((unused)) NSString* kKeyMuted = @"muted";
 
 @implementation VWWSynthesizerInput
 
--(id)initWithType:(InputType)type{
+-(id)initWithType:(VWWInputType)type{
     self = [super init];
     if(self){
         _inputType = type;
@@ -61,7 +61,7 @@ static __attribute ((unused)) NSString* kKeyMuted = @"muted";
             _z = [[VWWSynthesizerInputAxis alloc]init];
             
             // muted
-            if(_inputType == kInputTouch){
+            if(_inputType == VWWInputTypeTouch){
                 _muted = NO;
             }
             else{
@@ -79,13 +79,13 @@ static __attribute ((unused)) NSString* kKeyMuted = @"muted";
     [jsonDict setValue:self.x.jsonRepresentation forKey:kKeyX];
     [jsonDict setValue:self.y.jsonRepresentation forKey:kKeyY];
     [jsonDict setValue:self.z.jsonRepresentation forKey:kKeyZ];
-    [jsonDict setValue:[self stringForInputType] forKey:kKeyType];
+    [jsonDict setValue:[self stringForVWWInputType] forKey:kKeyType];
     [jsonDict setValue:self.muted ? @"1" : @"0" forKey:kKeyMuted];
     return jsonDict;
 }
 
 -(void)enableTouchScreenByDefault{
-    if(_inputType == kInputTouch){
+    if(_inputType == VWWInputTypeTouch){
         self.muted = NO;
     }
     else{
@@ -93,42 +93,42 @@ static __attribute ((unused)) NSString* kKeyMuted = @"muted";
     }
 }
 
--(NSString*)stringForInputType{
+-(NSString*)stringForVWWInputType{
     switch (self.inputType) {
-        case kInputAccelerometer:
+        case VWWInputTypeAccelerometer:
             return kKeyAccelerometer;
-        case kInputGyros:
+        case VWWInputTypeGyroscope:
             return kKeyGyroscope;
-        case kInputMagnetometer:
+        case VWWInputTypeMagnetometer:
             return kKeyMagnetometer;
-        case kInputTouch:
+        case VWWInputTypeTouch:
             return kKeyTouchScreen;
-        case kInputNone:
+        case VWWInputTypeNone:
         default:
             return kKeyNone;
     }
 }
 
--(InputType)inputTypeFromString:(NSString*)typeString{
+-(VWWInputType)inputTypeFromString:(NSString*)typeString{
     if([typeString isEqualToString:kKeyAccelerometer]){
-        return kInputAccelerometer;
+        return VWWInputTypeAccelerometer;
     }
     else if([typeString isEqualToString:kKeyGyroscope]){
-        return kInputGyros;
+        return VWWInputTypeGyroscope;
     }
     else if([typeString isEqualToString:kKeyMagnetometer]){
-        return kInputMagnetometer;
+        return VWWInputTypeMagnetometer;
     }
     else if([typeString isEqualToString:kKeyTouchScreen]){
-        return kInputTouch;
+        return VWWInputTypeTouch;
     }
     else /* if([typeString isEqualToString:kKeyNone]) */ {
-        return kInputNone;
+        return VWWInputTypeNone;
     }
 }
 
 -(NSString*)description{
-    return [self stringForInputType];
+    return [self stringForVWWInputType];
 }
 
 
@@ -144,7 +144,7 @@ static __attribute ((unused)) NSString* kKeyMuted = @"muted";
     else{
         _x.muted = NO;
         _y.muted = NO;
-        _z.muted = self.inputType == kInputTouch ? YES : NO; // Mute touch Z always
+        _z.muted = self.inputType == VWWInputTypeTouch ? YES : NO; // Mute touch Z always
     }
 }
 

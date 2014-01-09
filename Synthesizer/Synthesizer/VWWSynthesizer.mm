@@ -10,6 +10,7 @@
 #import "VWWSynthesizerC.h"
 
 @interface VWWSynthesizer ()
+
 @property (nonatomic, strong) VWWSynthesizerC *synthesizer;
 @end
 
@@ -73,23 +74,23 @@
     }
 }
 
--(void)setWaveType:(WaveType)waveType{
+-(void)setWaveType:(VWWWaveType)waveType{
     @synchronized(self){
         self.synthesizer.waveType = waveType;
     }
 }
--(WaveType)waveType{
+-(VWWWaveType)waveType{
     @synchronized(self){
         return self.synthesizer.waveType;
     }
 }
 
--(void)setEffectType:(EffectType)effectType{
+-(void)setEffectType:(VWWEffectType)effectType{
     @synchronized(self){
         self.synthesizer.effectType = effectType;
     }
 }
--(EffectType)effectType{
+-(VWWEffectType)effectType{
     @synchronized(self){
         return self.synthesizer.effectType;
     }

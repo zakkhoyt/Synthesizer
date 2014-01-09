@@ -52,38 +52,38 @@
     return [[VWWSynthesizerNotes sharedInstance]getClosestNote:frequency];
 }
 
-+(float)getClosestNoteForFrequency:(float)frequency inKey:(NoteKey)key{
++(float)getClosestNoteForFrequency:(float)frequency inKey:(VWWKeyType)key{
     return [[VWWSynthesizerNotes sharedInstance]getClosestNote:frequency inKey:key];
 }
 
 
 
--(float)getClosestNote:(float)frequency inKey:(NoteKey)key{
+-(float)getClosestNote:(float)frequency inKey:(VWWKeyType)key{
 //// TODO: Implement this and uncomment. for now we are just using chromatic
 //    switch(key){
-//        case kNoteKeyAMinor:
+//        case VWWKeyTypeAMinor:
 //            break;
-//        case kNoteKeyAMajor:
+//        case VWWKeyTypeAMajor:
 //            break;
-//        case kNoteKeyBMinor:
+//        case VWWKeyTypeBMinor:
 //            break;
-//        case kNoteKeyBMajor:
+//        case VWWKeyTypeBMajor:
 //            break;
-//        case kNoteKeyCMajor:
+//        case VWWKeyTypeCMajor:
 //            break;
-//        case kNoteKeyDMinor:
+//        case VWWKeyTypeDMinor:
 //            break;
-//        case kNoteKeyDMajor:
+//        case VWWKeyTypeDMajor:
 //            break;
-//        case kNoteKeyEMinor:
+//        case VWWKeyTypeEMinor:
 //            break;
-//        case kNoteKeyFMajor:
+//        case VWWKeyTypeFMajor:
 //            break;
-//        case kNoteKeyGMinor:
+//        case VWWKeyTypeGMinor:
 //            break;
-//        case kNoteKeyGMajor:
+//        case VWWKeyTypeGMajor:
 //            break;
-//        case kNoteKeyChromatic:
+//        case VWWKeyTypeChromatic:
 //        default:
 //            break;
 //            return [self getClosestNote:frequency];

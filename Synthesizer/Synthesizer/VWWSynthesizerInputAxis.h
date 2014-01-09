@@ -14,9 +14,9 @@
 @property (nonatomic) float amplitude;
 @property (nonatomic) float frequencyMax;
 @property (nonatomic) float frequencyMin;
-@property (nonatomic) WaveType waveType;
+@property (nonatomic) VWWWaveType waveType;
 @property (nonatomic) float sensitivity;
-@property (nonatomic) EffectType effectType;
+@property (nonatomic) VWWEffectType effectType;
 @property (nonatomic) float frequency;
 @property (nonatomic) bool muted;
 

@@ -13,9 +13,6 @@
 #import "VWWSynthesizer.h"
 
 
-//#import "VWWSynthesizerInput.h"
-//#import "VWWSynthesizerInputs.h"
-
 @interface SynthesizerTests : XCTestCase
 
 @end
@@ -165,7 +162,7 @@
     usleep(2 * 1000 * 1000);
 }
 
--(void)testSynthWaveType{
+-(void)testSynthVWWWaveTypeSawtooth{
     NSLog(@"Testing wave type");
     
     VWWSynthesizer *synth = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:440.0];
@@ -173,11 +170,11 @@
     
     usleep(500 * 1000);
     
-    synth.waveType = kWaveSquare;
+    synth.waveType = VWWWaveTypeSquare;
     usleep(500 * 1000);
-    synth.waveType = kWaveTriangle;
+    synth.waveType = VWWWaveTypeTriangle;
     usleep(500 * 1000);
-    synth.waveType = kWaveSawtooth;
+    synth.waveType = VWWWaveTypeSawtooth;
     usleep(500 * 1000);
     
     [synth stop];
@@ -186,7 +183,7 @@
 }
 
 
--(void)testSynthEffectType{
+-(void)testSynthVWWEffectType{
     
     NSLog(@"Testing effect type");
     
@@ -206,7 +203,7 @@
     
     
     
-    synth.effectType = kEffectAutoTune;
+    synth.effectType = VWWEffectTypeAutoTune;
     
     // Produces only 2 tones as they are mapped to the nearest note
     usleep(500 * 1000);

@@ -14,11 +14,11 @@
 @property (nonatomic, strong) VWWSynthesizerInputAxis* x;
 @property (nonatomic, strong) VWWSynthesizerInputAxis* y;
 @property (nonatomic, strong) VWWSynthesizerInputAxis* z;
-@property (nonatomic) InputType inputType;
+@property (nonatomic) VWWInputType inputType;
 @property (nonatomic) bool muted;
 
 -(id)initWithDictionary:(NSDictionary *)dictionary;
--(id)initWithType:(InputType)type;
+-(id)initWithType:(VWWInputType)type;
 -(NSDictionary*)jsonRepresentation;
 -(NSString*)description;
 @end

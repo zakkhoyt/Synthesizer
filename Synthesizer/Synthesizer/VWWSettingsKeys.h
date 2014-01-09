@@ -14,8 +14,8 @@
 typedef void (^VWWSynthesizerFrequencyBlock)(float frequencyMax, float frequencyMin);
 typedef void (^VWWSynthesizerAmplitudeBlock)(float amplitude);
 typedef void (^VWWSynthesizerSensitivityBlock)(float sensitivity);
-typedef void (^VWWSynthesizerWaveformBlock)(WaveType waveType);
-typedef void (^VWWSynthesizerEffectBlock)(EffectType effectType);
+typedef void (^VWWSynthesizerWaveformBlock)(VWWWaveType waveType);
+typedef void (^VWWSynthesizerEffectBlock)(VWWEffectType effectType);
 
 
 static NSString* kConfigFileName = @"theremin.cfg";

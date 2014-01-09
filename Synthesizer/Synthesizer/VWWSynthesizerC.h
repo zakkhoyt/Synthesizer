@@ -16,8 +16,8 @@
 @property float amplitude;
 @property bool muted;
 @property (nonatomic) float frequency;
-@property WaveType waveType;
-@property EffectType effectType;
+@property VWWWaveType waveType;
+@property VWWEffectType effectType;
 @property double sinPhase;
 @property double theta;
 

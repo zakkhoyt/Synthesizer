@@ -58,19 +58,19 @@ OSStatus RenderTone( void* inRefCon,
         }
         else{
             switch(synth.waveType){
-                case kWaveSin:{
+                case VWWWaveTypeSine:{
                     buffer[frame] = sin(theta) * synth.amplitude;
                     break;
                 }
-                case kWaveSquare:{
+                case VWWWaveTypeSquare:{
                     buffer[frame] = square(theta) * synth.amplitude;
                     break;
                 }
-                case kWaveSawtooth:{
+                case VWWWaveTypeSawtooth:{
                     buffer[frame] = sawtooth(theta) * synth.amplitude;
                     break;
                 }
-                case kWaveTriangle:{
+                case VWWWaveTypeTriangle:{
                     buffer[frame] = triangle(theta) * synth.amplitude;
                     break;
                 }
@@ -112,7 +112,7 @@ OSStatus RenderTone( void* inRefCon,
         _frequency = frequency;
         _amplitude = amplitude;
         _muted = NO;
-        _waveType = kWaveSin;
+        _waveType = VWWWaveTypeSine;
         _isRunning = NO;
         _theta = 0;
         _notes = [[VWWSynthesizerNotes alloc]init];
@@ -208,7 +208,7 @@ OSStatus RenderTone( void* inRefCon,
 }
 
 -(void)setFrequency:(float)newFrequency{
-    if(_effectType == kEffectAutoTune){
+    if(_effectType == VWWEffectTypeAutoTune){
         _frequency = [VWWSynthesizerNotes getClosestNoteForFrequency:newFrequency];
     }
     else{

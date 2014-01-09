@@ -68,10 +68,10 @@
 }
 
 -(void)createAndSaveNewInputs{
-    VWWSynthesizerInput* touchInput = [[VWWSynthesizerInput alloc]initWithType:kInputTouch];
-    VWWSynthesizerInput* accelerometerInput = [[VWWSynthesizerInput alloc]initWithType:kInputAccelerometer];
-    VWWSynthesizerInput* gyroscopeInput = [[VWWSynthesizerInput alloc]initWithType:kInputGyros];
-    VWWSynthesizerInput* magnetometerInput = [[VWWSynthesizerInput alloc]initWithType:kInputMagnetometer];
+    VWWSynthesizerInput* touchInput = [[VWWSynthesizerInput alloc]initWithType:VWWInputTypeTouch];
+    VWWSynthesizerInput* accelerometerInput = [[VWWSynthesizerInput alloc]initWithType:VWWInputTypeAccelerometer];
+    VWWSynthesizerInput* gyroscopeInput = [[VWWSynthesizerInput alloc]initWithType:VWWInputTypeGyroscope];
+    VWWSynthesizerInput* magnetometerInput = [[VWWSynthesizerInput alloc]initWithType:VWWInputTypeMagnetometer];
     
     (self.inputs)[touchInput.description] = touchInput;
     (self.inputs)[accelerometerInput.description] = accelerometerInput;

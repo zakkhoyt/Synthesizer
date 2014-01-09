@@ -9,6 +9,7 @@
 #import "VWWSynthesizerInputAxis.h"
 #import "VWWSynthesizer.h"
 #import "VWWSynthesizerTypes.h"
+#import "VWWSynthesizerDefaults.h"
 
 // Keys for read/writing hash sets
 static __attribute ((unused)) NSString* kKeyFMax = @"fmax";
@@ -46,7 +47,7 @@ static __attribute ((unused)) NSString* kKeyNone = @"none";
 
         _frequency = _frequencyMax;
         _synthesizer = [[VWWSynthesizer alloc]initWithAmplitude:_amplitude andFrequency:_frequency];
-        _synthesizer.waveType = _waveType;
+        [_synthesizer setWaveType:_waveType];
         _synthesizer.effectType = _effectType;
         _synthesizer.muted = _muted;
         [_synthesizer start];
@@ -113,63 +114,63 @@ static __attribute ((unused)) NSString* kKeyNone = @"none";
 
 -(NSString*)stringForWaveform{
     switch (self.waveType) {
-        case kWaveSin:
+        case VWWWaveTypeSine:
             return kKeySin;
-        case kWaveSquare:
+        case VWWWaveTypeSquare:
             return kKeySquare;
-        case kWaveTriangle:
+        case VWWWaveTypeTriangle:
             return kKeyTriangle;
-        case kWaveSawtooth:
+        case VWWWaveTypeSawtooth:
             return kKeySawtooth;
-        case kWaveNone:
+        case VWWWaveTypeNone:
         default:
             return kKeyNone;
     }
 }
 
--(WaveType)waveformFromString:(NSString*)waveString{
+-(VWWWaveType)waveformFromString:(NSString*)waveString{
     if([waveString isEqualToString:kKeySin]){
-        return kWaveSin;
+        return VWWWaveTypeSine;
     }
     else if([waveString isEqualToString:kKeySquare]){
-        return kWaveSquare;
+        return VWWWaveTypeSquare;
     }
     else if([waveString isEqualToString:kKeyTriangle]){
-        return kWaveTriangle;
+        return VWWWaveTypeTriangle;
     }
     else if([waveString isEqualToString:kKeySawtooth]){
-        return kWaveSawtooth;
+        return VWWWaveTypeSawtooth;
     }
     else /* if([waveString isEqualToString:kKeyNone]) */ {
-        return kWaveNone;
+        return VWWWaveTypeNone;
     }
 }
 
 -(NSString*)stringForEffect{
     switch(self.effectType){
-        case kEffectAutoTune:
+        case VWWEffectTypeAutoTune:
             return kKeyAutotune;
-        case kEffectLinearize:
+        case VWWEffectTypeLinearize:
             return kKeyLinearize;
-        case kEffectThrottle:
+        case VWWEffectTypeThrottle:
             return kKeyThrottle;
-        case kEffectNone:
+        case VWWEffectTypeNone:
         default:
             return kKeyNone;
     }
 }
--(EffectType)effectFromString:(NSString*)effectString{
+-(VWWEffectType)effectFromString:(NSString*)effectString{
     if([effectString isEqualToString:kKeyAutotune]){
-        return kEffectAutoTune;
+        return VWWEffectTypeAutoTune;
     }
     else if([effectString isEqualToString:kKeyLinearize]){
-        return kEffectLinearize;
+        return VWWEffectTypeLinearize;
     }
     else if([effectString isEqualToString:kKeyThrottle]){
-        return kEffectThrottle;
+        return VWWEffectTypeThrottle;
     }
     else /* if([effectString isEqualToString:kKeyNone]) */ {
-        return kEffectNone;
+        return VWWEffectTypeNone;
     }
 }
 
@@ -186,12 +187,12 @@ static __attribute ((unused)) NSString* kKeyNone = @"none";
     self.synthesizer.amplitude = _amplitude;
 }
 
--(void)setEffectType:(EffectType)newEffectType{
-    _effectType = newEffectType;
+-(void)setVWWEffectType:(VWWEffectType)newVWWEffectType{
+    _effectType = newVWWEffectType;
     self.synthesizer.effectType = _effectType;
 }
 
--(void)setWaveType:(WaveType)newWaveType{
+-(void)setVWWWaveType:(VWWWaveType)newWaveType{
     _waveType = newWaveType;
     self.synthesizer.waveType = _waveType;
 }

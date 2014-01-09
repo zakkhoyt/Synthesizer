@@ -19,14 +19,11 @@ float square(const float phase){
     
     if(p >= 0 && p < M_PI_4){
         r = 1.0;
-    }
-    else if(p >= M_PI_4 && p < M_PI_2){
+    } else if(p >= M_PI_4 && p < M_PI_2){
         r = 1.0;
-    }
-    else if(p >= M_PI_2 && p < M_PI_3_4){
+    } else if(p >= M_PI_2 && p < M_PI_3_4){
         r = -1.0;
-    }
-    else{ //if(p > M_PI_3_4 && p < M_PI)
+    } else{ //if(p > M_PI_3_4 && p < M_PI)
         r = -1.0;
     }
     
@@ -42,14 +39,11 @@ float triangle(const float phase){
     
     if(p >= 0 && p < M_PI_4){
         r = p / M_PI_4;
-    }
-    else if(p >= M_PI_4 && p < M_PI_2){
+    } else if(p >= M_PI_4 && p < M_PI_2){
         r = 1.0 - ((p - M_PI_4) / M_PI_4);
-    }
-    else if(p >= M_PI_2 && p < M_PI_3_4){
+    } else if(p >= M_PI_2 && p < M_PI_3_4){
         r = -(p - M_PI_2) / M_PI_4;
-    }
-    else{ //if(p > M_PI_3_4 && p < M_PI)
+    } else{ //if(p > M_PI_3_4 && p < M_PI)
         r = -1.0 - (-(p - M_PI_3_4) / M_PI_4);
     }
     return r;
@@ -63,14 +57,11 @@ float sawtooth(const float phase){
     
     if(p >= 0 && p < M_PI_4){
         r = p / M_PI_4 / 2.0 - 1.0;
-    }
-    else if(p >= M_PI_4 && p < M_PI_2){
+    } else if(p >= M_PI_4 && p < M_PI_2){
         r = (p - M_PI_4) / M_PI_4 / 2.0 - 0.5;
-    }
-    else if(p >= M_PI_2 && p < M_PI_3_4){
+    } else if(p >= M_PI_2 && p < M_PI_3_4){
         r = (p - M_PI_2) / M_PI_4 / 2.0;
-    }
-    else{ //if(p > M_PI_3_4 && p < M_PI)
+    } else{ //if(p > M_PI_3_4 && p < M_PI)
         r = (p - M_PI_3_4) / M_PI_4 / 2.0 + 0.5;
     }
     return r;

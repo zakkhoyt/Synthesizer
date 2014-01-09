@@ -10,5 +10,5 @@
 #import "VWWSynthesizerTypes.h"
 
 @interface VWWSynthesizerEffectNoteKey : NSObject
-@property (nonatomic) NoteKey key;
+@property (nonatomic)VWWKeyType key;
 @end
