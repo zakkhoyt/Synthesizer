@@ -120,7 +120,8 @@
 -(id)initWithDictionary:(NSDictionary*)dictionary;
 
 /** 
- * Export synthesizer settings as an NSDiciontary. This can be written to NSUserDefaults or serialized as JSON for easy storage
+ * Export synthesizer settings/state as an NSDiciontary. This can be written to NSUserDefaults or serialized as JSON for easy storage.
+ * Pass into initWithDictionary to resume in current state. 
  */
 -(NSDictionary*)dictionaryRepresentation;
 
