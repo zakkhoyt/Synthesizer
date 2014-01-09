@@ -10,7 +10,7 @@
 #import "VWWSynthesizerTypes.h"
 
 /**
- * This is the class you will use to create a single synthesizer and manage it's properties manually 
+ * This is the class you will use to create a single synthesizer and manage it's properties manually. See the dictionary category for easy save/restore functionality.
  */
 @interface VWWSynthesizer : NSObject
 
