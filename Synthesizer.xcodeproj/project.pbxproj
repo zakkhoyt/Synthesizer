@@ -46,6 +46,7 @@
 		C6A6D233187F5E470025105C /* VWWSynthesizerC.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D225187F5E470025105C /* VWWSynthesizerC.mm */; };
 		C6A6D234187F5E470025105C /* VWWSynthesizerEffectNoteKey.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D228187F5E470025105C /* VWWSynthesizerEffectNoteKey.m */; };
 		C6A6D235187F5E470025105C /* VWWSynthesizerNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D22B187F5E470025105C /* VWWSynthesizerNotes.m */; };
+		C6A6D238187F61C30025105C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6A6D237187F61C30025105C /* README.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +113,8 @@
 		C6A6D229187F5E470025105C /* VWWSynthesizerMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerMath.h; sourceTree = "<group>"; };
 		C6A6D22A187F5E470025105C /* VWWSynthesizerNotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerNotes.h; sourceTree = "<group>"; };
 		C6A6D22B187F5E470025105C /* VWWSynthesizerNotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerNotes.m; sourceTree = "<group>"; };
+		C6A6D236187F60360025105C /* VWWUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWUtilities.h; sourceTree = "<group>"; };
+		C6A6D237187F61C30025105C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +186,7 @@
 				C6A6D1AC187F441D0025105C /* Main_iPad.storyboard */,
 				C6A6D1AF187F441D0025105C /* VWWViewController.h */,
 				C6A6D1B0187F441D0025105C /* VWWViewController.m */,
+				C6A6D236187F60360025105C /* VWWUtilities.h */,
 				C6A6D1B2187F441D0025105C /* Images.xcassets */,
 				C6A6D19E187F441D0025105C /* Supporting Files */,
 				C6A6D20E187F59720025105C /* readme.markdown */,
@@ -226,6 +230,7 @@
 				C6A6D1E8187F447A0025105C /* VWWSynthesizerTypes.h */,
 				C6A6D202187F49B10025105C /* VWWSynthesizer.h */,
 				C6A6D203187F49B10025105C /* VWWSynthesizer.mm */,
+				C6A6D237187F61C30025105C /* README.txt */,
 			);
 			path = Synthesizer;
 			sourceTree = "<group>";
@@ -377,6 +382,7 @@
 				C6A6D1B3187F441D0025105C /* Images.xcassets in Resources */,
 				C6A6D1AB187F441D0025105C /* Main_iPhone.storyboard in Resources */,
 				C6A6D1A2187F441D0025105C /* InfoPlist.strings in Resources */,
+				C6A6D238187F61C30025105C /* README.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

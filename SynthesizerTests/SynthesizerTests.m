@@ -5,13 +5,12 @@
 //  Created by Zakk Hoyt on 1/9/14.
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
+//  These unit tests don't automatically test anything.
+//  They need a human to read and listen
 
 #import <XCTest/XCTest.h>
-
 #import "NSTimer+Blocks.h"
-
 #import "VWWSynthesizer.h"
-
 
 @interface SynthesizerTests : XCTestCase
 
@@ -221,7 +220,7 @@
     usleep(2 * 1000 * 1000);
 }
 
--(void)testSynthVWWWaveTypeSawtooth{
+-(void)testSynthIncreasingFrequency{
     NSLog(@"Testing frequency increase ");
     NSInteger f = 20;
     VWWSynthesizer *synth = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:440.0];
