@@ -1,6 +1,6 @@
 //
 //  VWWSynthesizerMath.h
-//  Theremin
+//  Synthesizer
 //
 //  Created by Zakk Hoyt on 1/4/13.
 //  Copyright (c) 2013 Zakk Hoyt. All rights reserved.

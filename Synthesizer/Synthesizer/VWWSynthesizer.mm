@@ -129,7 +129,6 @@
         NSNumber *muted = dictionary[VWWSynthesizerMutedKey];
         self.synthesizer.muted = muted.integerValue == 0 ? NO : YES;
         
-        
         NSNumber *waveType = dictionary[VWWSynthesizerWaveTypeKey];
         self.synthesizer.waveType = (VWWWaveType)waveType.integerValue;
 

@@ -1,6 +1,6 @@
 //
 //  VWWSynthesizerTypes.h
-//  Theremin
+//  Synthesizer
 //
 //  Created by Zakk Hoyt on 1/4/13.
 //  Copyright (c) 2013 Zakk Hoyt. All rights reserved.
@@ -8,8 +8,6 @@
 
 #ifndef Theremin_VWWSynthesizerTypes_h
 #define Theremin_VWWSynthesizerTypes_h
-
-
 
 typedef enum{
     VWWWaveTypeNone = 0,
@@ -27,7 +25,6 @@ typedef enum{
     VWWInputTypeMagnetometer,
 } VWWInputType;
 
-
 typedef enum{
     VWWKeyTypeChromatic = 0,
     VWWKeyTypeAMinor,
@@ -43,7 +40,6 @@ typedef enum{
     VWWKeyTypeGMinor,
     VWWKeyTypeGMajor,
 } VWWKeyType;
-
 
 typedef enum{
     VWWEffectTypeNone = 0x00,
