@@ -117,9 +117,11 @@
  * Create a new instance with a settings dictionary
  * @param dictionary an NSDictionary that was previously exported from this category
  */
-
 -(id)initWithDictionary:(NSDictionary*)dictionary;
 
+/** 
+ * Export synthesizer settings as an NSDiciontary. This can be written to NSUserDefaults or serialized as JSON for easy storage
+ */
 -(NSDictionary*)dictionaryRepresentation;
 
 @end
