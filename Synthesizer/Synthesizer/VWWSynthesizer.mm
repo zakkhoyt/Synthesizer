@@ -8,6 +8,7 @@
 
 #import "VWWSynthesizer.h"
 #import "VWWSynthesizerC.h"
+#import "VWWSynthesizerKeys.h"
 
 @interface VWWSynthesizer ()
 
@@ -39,6 +40,12 @@
 }
 - (void)stop{
     [_synthesizer stop];
+}
+
+-(bool)isRunning{
+    @synchronized(self){
+        return self.synthesizer.isRunning;
+    }
 }
 
 -(void)setAmplitude:(float)amplitude{
@@ -106,6 +113,54 @@
     @synchronized(self){
         return self.synthesizer.theta;
     }
+}
+
+@end
+
+@implementation VWWSynthesizer (Dictionary)
+-(id)initWithDictionary:(NSDictionary*)dictionary{
+    self = [super init];
+    if(self){
+        NSNumber *amplitude = dictionary[VWWSynthesizerAmplitudeKey];
+        NSNumber *frequency = dictionary[VWWSynthesizerFrequencyKey];
+        
+        self.synthesizer = [[VWWSynthesizerC alloc]initWithAmplitude:amplitude.floatValue andFrequency:frequency.floatValue];
+        
+        NSNumber *muted = dictionary[VWWSynthesizerMutedKey];
+        self.synthesizer.muted = muted.integerValue == 0 ? NO : YES;
+        
+        
+        NSNumber *waveType = dictionary[VWWSynthesizerWaveTypeKey];
+        self.synthesizer.waveType = (VWWWaveType)waveType.integerValue;
+
+        NSNumber *effectType = dictionary[VWWSynthesizerEffectTypeKey];
+        self.synthesizer.effectType = (VWWEffectType)effectType.integerValue;
+        
+        NSNumber *sinPhase = dictionary[VWWSynthesizerSinPhaseKey];
+        self.synthesizer.sinPhase = sinPhase.doubleValue;
+        
+        NSNumber *theta = dictionary[VWWSynthesizerThetaKey];
+        self.synthesizer.theta = theta.doubleValue;
+        
+        NSNumber *running = dictionary[VWWSynthesizerIsRunningKey];
+        if(running.integerValue == 1){
+            [self.synthesizer start];
+        }
+        
+    }
+    return self;
+}
+
+-(NSDictionary*)dictionaryRepresentation{
+    NSDictionary *dictionary = @{VWWSynthesizerIsRunningKey : self.synthesizer.isRunning ? @(1) : @(0),
+                                 VWWSynthesizerAmplitudeKey : @(self.synthesizer.amplitude),
+                                 VWWSynthesizerMutedKey : self.synthesizer.muted ? @(1) : @(0),
+                                 VWWSynthesizerFrequencyKey : @(self.self.frequency),
+                                 VWWSynthesizerWaveTypeKey : @(self.synthesizer.waveType),
+                                 VWWSynthesizerEffectTypeKey : @(self.synthesizer.effectType),
+                                 VWWSynthesizerSinPhaseKey : @(self.synthesizer.sinPhase),
+                                 VWWSynthesizerThetaKey : @(self.synthesizer.theta)};
+    return dictionary;
 }
 
 @end

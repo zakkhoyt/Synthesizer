@@ -115,6 +115,7 @@
 		C6A6D22B187F5E470025105C /* VWWSynthesizerNotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerNotes.m; sourceTree = "<group>"; };
 		C6A6D236187F60360025105C /* VWWUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWUtilities.h; sourceTree = "<group>"; };
 		C6A6D237187F61C30025105C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		C6A6D239187F651D0025105C /* VWWSynthesizerKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerKeys.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,6 +281,7 @@
 				C6A6D229187F5E470025105C /* VWWSynthesizerMath.h */,
 				C6A6D22A187F5E470025105C /* VWWSynthesizerNotes.h */,
 				C6A6D22B187F5E470025105C /* VWWSynthesizerNotes.m */,
+				C6A6D239187F651D0025105C /* VWWSynthesizerKeys.h */,
 			);
 			path = VWW;
 			sourceTree = "<group>";

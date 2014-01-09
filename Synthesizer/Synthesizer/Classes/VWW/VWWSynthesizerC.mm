@@ -95,9 +95,10 @@ OSStatus RenderTone( void* inRefCon,
 
 @interface VWWSynthesizerC (){
     AudioComponentInstance _toneUnit;
+    float _frequency;
 }
 
-@property bool isRunning;
+@property (readwrite) bool isRunning;
 @property (nonatomic, strong) VWWSynthesizerNotes* notes;
 @end
 
@@ -105,6 +106,7 @@ OSStatus RenderTone( void* inRefCon,
 
 
 @implementation VWWSynthesizerC
+
 
 -(id)initWithAmplitude:(float)amplitude andFrequency:(float)frequency{
     self = [super init];
@@ -208,11 +210,18 @@ OSStatus RenderTone( void* inRefCon,
 }
 
 -(void)setFrequency:(float)newFrequency{
-    if(_effectType == VWWEffectTypeAutoTune){
-        _frequency = [VWWSynthesizerNotes getClosestNoteForFrequency:newFrequency];
+    @synchronized(self){
+        if(_effectType == VWWEffectTypeAutoTune){
+            _frequency = [VWWSynthesizerNotes getClosestNoteForFrequency:newFrequency];
+        }
+        else{
+            _frequency = newFrequency;
+        }
     }
-    else{
-        _frequency = newFrequency;
+}
+-(float)frequency{
+    @synchronized(self){
+        return _frequency;
     }
 }
 

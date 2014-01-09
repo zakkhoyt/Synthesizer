@@ -9,6 +9,8 @@
 #ifndef Heartstream_HeartstreamUtilities_h
 #define Heartstream_HeartstreamUtilities_h
 
+#define VWW_DEBUG 1
+
 #define VWW_LOG(...) NSLog(@"%@", [NSString stringWithFormat:__VA_ARGS__]);
 #define VWW_LOG_INFO(...) NSLog(@"%s:%d ***** INFO: %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__]);
 #define VWW_LOG_WARNING(...) NSLog(@"%s:%d ***** WARNING: %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__]);

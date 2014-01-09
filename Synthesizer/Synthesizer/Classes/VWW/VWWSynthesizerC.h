@@ -15,11 +15,15 @@
 
 @property float amplitude;
 @property bool muted;
-@property (nonatomic) float frequency;
+
+-(void)setFrequency:(float)newFrequency;
+-(float)frequency;
+
 @property VWWWaveType waveType;
 @property VWWEffectType effectType;
 @property double sinPhase;
 @property double theta;
+@property (readonly) bool isRunning;
 
 -(id)initWithAmplitude:(float)amplitude andFrequency:(float)frequency;
 - (void)start;

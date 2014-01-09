@@ -37,6 +37,12 @@
 - (void)stop;
 
 /**
+ * Return isRunning
+ */
+-(bool)isRunning;
+
+
+/**
  * Return the amplitude
  */
 -(float)amplitude;
@@ -51,11 +57,11 @@
  * Return muted
  */
 -(bool)muted;
+
 /**
  * Set muted
  * @param muted if you don't want the tone to be audible
  */
-
 -(void)setMuted:(bool)muted;
 
 /**
@@ -96,9 +102,24 @@
  */
 -(double)sinPhase;
 
+
 /**
  * Return the theta of the waveform
  */
 -(double)theta;
+
+@end
+
+
+@interface VWWSynthesizer (Dictionary)
+
+/**
+ * Create a new instance with a settings dictionary
+ * @param dictionary an NSDictionary that was previously exported from this category
+ */
+
+-(id)initWithDictionary:(NSDictionary*)dictionary;
+
+-(NSDictionary*)dictionaryRepresentation;
 
 @end

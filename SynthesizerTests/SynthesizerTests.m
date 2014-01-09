@@ -239,4 +239,28 @@
 }
 
 
+-(void)testSynthDictionaryExportImport{
+    NSLog(@"Testing dictionary export and import");
+    VWWSynthesizer *synth1 = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:440.0];
+    synth1.waveType = VWWWaveTypeSquare;
+    synth1.effectType = VWWEffectTypeAutoTune;
+    synth1.amplitude = 0.5;
+    [synth1 start];
+    usleep(1 * 1000 * 1000);
+    [synth1 stop];
+    NSLog(@"Exporting sythesizer to dictionary");
+    NSDictionary *dictionary = [synth1 dictionaryRepresentation];
+    synth1 = nil;
+    
+    usleep(1 * 1000 * 1000);
+
+    NSLog(@"Creating new synth from dictionary");
+    VWWSynthesizer *synth2 = [[VWWSynthesizer alloc]initWithDictionary:dictionary];
+    [synth2 start];
+    usleep(1 * 1000 * 1000);
+    [synth2 stop];
+    synth2 = nil;
+    
+}
+
 @end
