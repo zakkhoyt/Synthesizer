@@ -4,7 +4,9 @@
 //
 //  Created by Zakk Hoyt on 1/9/14.
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
-//
+//  This class is just a wrapper around the C based VWWSynthesizerC.
+//  It was written so that classes that use it will not have to have the .mm extension. 
+
 
 #import <Foundation/Foundation.h>
 #import "VWWSynthesizerTypes.h"
