@@ -221,6 +221,23 @@
     usleep(2 * 1000 * 1000);
 }
 
+-(void)testSynthVWWWaveTypeSawtooth{
+    NSLog(@"Testing frequency increase ");
+    NSInteger f = 20;
+    VWWSynthesizer *synth = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:440.0];
+    [synth start];
+    
+    for(NSInteger i = 20; i < 18000; i++){
+        usleep(10 * 1000);
+        f+=20;
+        synth.frequency = f;
+    }
+    
+    [synth stop];
+    synth = nil;
+    usleep(2 * 1000 * 1000);
+
+}
 
 
 @end
