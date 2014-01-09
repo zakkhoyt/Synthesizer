@@ -1,5 +1,5 @@
 //
-//  VWWSynthesizer.h
+//  VWWSynthesizerC.h
 //  Theremin
 //
 //  Created by Zakk Hoyt on 7/29/12.
@@ -11,7 +11,7 @@
 #include "CAStreamBasicDescription.h"
 #import "VWWSynthesizerTypes.h"
 
-@interface VWWSynthesizer : NSObject
+@interface VWWSynthesizerC : NSObject
 
 @property float amplitude;
 @property bool muted;

@@ -22,6 +22,20 @@
 		C6A6D1BC187F441D0025105C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D19B187F441D0025105C /* UIKit.framework */; };
 		C6A6D1C4187F441D0025105C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6A6D1C2187F441D0025105C /* InfoPlist.strings */; };
 		C6A6D1C6187F441D0025105C /* SynthesizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1C5187F441D0025105C /* SynthesizerTests.m */; };
+		C6A6D1E9187F447A0025105C /* CADebugMacros.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1D1187F447A0025105C /* CADebugMacros.cpp */; };
+		C6A6D1EA187F447A0025105C /* CAStreamBasicDescription.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1D5187F447A0025105C /* CAStreamBasicDescription.cpp */; };
+		C6A6D1EB187F447A0025105C /* CAXException.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1D7187F447A0025105C /* CAXException.cpp */; };
+		C6A6D1ED187F447A0025105C /* VWWSynthesizerEffectNoteKey.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1DC187F447A0025105C /* VWWSynthesizerEffectNoteKey.m */; };
+		C6A6D1EE187F447A0025105C /* VWWSynthesizerInput.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1DE187F447A0025105C /* VWWSynthesizerInput.mm */; };
+		C6A6D1EF187F447A0025105C /* VWWSynthesizerInputAxis.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1E0187F447A0025105C /* VWWSynthesizerInputAxis.mm */; };
+		C6A6D1F0187F447A0025105C /* VWWSynthesizerInputs.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1E2187F447A0025105C /* VWWSynthesizerInputs.mm */; };
+		C6A6D1F1187F447A0025105C /* VWWSynthesizerNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1E5187F447A0025105C /* VWWSynthesizerNotes.m */; };
+		C6A6D1F2187F447A0025105C /* VWWSynthesizerC.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1E7187F447A0025105C /* VWWSynthesizerC.mm */; };
+		C6A6D1F5187F44990025105C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D1F3187F44990025105C /* AudioToolbox.framework */; };
+		C6A6D1F6187F44990025105C /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D1F4187F44990025105C /* CoreAudio.framework */; };
+		C6A6D1F7187F45690025105C /* VWWSynthesizerFileSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1DA187F447A0025105C /* VWWSynthesizerFileSystem.m */; };
+		C6A6D200187F48B00025105C /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1FF187F48B00025105C /* NSTimer+Blocks.m */; };
+		C6A6D204187F49B10025105C /* VWWSynthesizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D203187F49B10025105C /* VWWSynthesizer.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +69,37 @@
 		C6A6D1C1187F441D0025105C /* SynthesizerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SynthesizerTests-Info.plist"; sourceTree = "<group>"; };
 		C6A6D1C3187F441D0025105C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C6A6D1C5187F441D0025105C /* SynthesizerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SynthesizerTests.m; sourceTree = "<group>"; };
+		C6A6D1D1187F447A0025105C /* CADebugMacros.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CADebugMacros.cpp; sourceTree = "<group>"; };
+		C6A6D1D2187F447A0025105C /* CADebugMacros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugMacros.h; sourceTree = "<group>"; };
+		C6A6D1D3187F447A0025105C /* CADebugPrintf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CADebugPrintf.h; sourceTree = "<group>"; };
+		C6A6D1D4187F447A0025105C /* CAMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAMath.h; sourceTree = "<group>"; };
+		C6A6D1D5187F447A0025105C /* CAStreamBasicDescription.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAStreamBasicDescription.cpp; sourceTree = "<group>"; };
+		C6A6D1D6187F447A0025105C /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAStreamBasicDescription.h; sourceTree = "<group>"; };
+		C6A6D1D7187F447A0025105C /* CAXException.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CAXException.cpp; sourceTree = "<group>"; };
+		C6A6D1D8187F447A0025105C /* CAXException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAXException.h; sourceTree = "<group>"; };
+		C6A6D1D9187F447A0025105C /* VWWSynthesizerFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerFileSystem.h; sourceTree = "<group>"; };
+		C6A6D1DA187F447A0025105C /* VWWSynthesizerFileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerFileSystem.m; sourceTree = "<group>"; };
+		C6A6D1DB187F447A0025105C /* VWWSynthesizerEffectNoteKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerEffectNoteKey.h; sourceTree = "<group>"; };
+		C6A6D1DC187F447A0025105C /* VWWSynthesizerEffectNoteKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerEffectNoteKey.m; sourceTree = "<group>"; };
+		C6A6D1DD187F447A0025105C /* VWWSynthesizerInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerInput.h; sourceTree = "<group>"; };
+		C6A6D1DE187F447A0025105C /* VWWSynthesizerInput.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWSynthesizerInput.mm; sourceTree = "<group>"; };
+		C6A6D1DF187F447A0025105C /* VWWSynthesizerInputAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerInputAxis.h; sourceTree = "<group>"; };
+		C6A6D1E0187F447A0025105C /* VWWSynthesizerInputAxis.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWSynthesizerInputAxis.mm; sourceTree = "<group>"; };
+		C6A6D1E1187F447A0025105C /* VWWSynthesizerInputs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerInputs.h; sourceTree = "<group>"; };
+		C6A6D1E2187F447A0025105C /* VWWSynthesizerInputs.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWSynthesizerInputs.mm; sourceTree = "<group>"; };
+		C6A6D1E3187F447A0025105C /* VWWSynthesizerMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerMath.h; sourceTree = "<group>"; };
+		C6A6D1E4187F447A0025105C /* VWWSynthesizerNotes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerNotes.h; sourceTree = "<group>"; };
+		C6A6D1E5187F447A0025105C /* VWWSynthesizerNotes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerNotes.m; sourceTree = "<group>"; };
+		C6A6D1E6187F447A0025105C /* VWWSynthesizerC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerC.h; sourceTree = "<group>"; };
+		C6A6D1E7187F447A0025105C /* VWWSynthesizerC.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWSynthesizerC.mm; sourceTree = "<group>"; };
+		C6A6D1E8187F447A0025105C /* VWWSynthesizerTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerTypes.h; sourceTree = "<group>"; };
+		C6A6D1F3187F44990025105C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		C6A6D1F4187F44990025105C /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		C6A6D1F8187F459C0025105C /* VWWSettingsKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsKeys.h; sourceTree = "<group>"; };
+		C6A6D1FE187F48B00025105C /* NSTimer+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+Blocks.h"; sourceTree = "<group>"; };
+		C6A6D1FF187F48B00025105C /* NSTimer+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+Blocks.m"; sourceTree = "<group>"; };
+		C6A6D202187F49B10025105C /* VWWSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizer.h; sourceTree = "<group>"; };
+		C6A6D203187F49B10025105C /* VWWSynthesizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWSynthesizer.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6A6D1F5187F44990025105C /* AudioToolbox.framework in Frameworks */,
+				C6A6D1F6187F44990025105C /* CoreAudio.framework in Frameworks */,
 				C6A6D19A187F441D0025105C /* CoreGraphics.framework in Frameworks */,
 				C6A6D19C187F441D0025105C /* UIKit.framework in Frameworks */,
 				C6A6D198187F441D0025105C /* Foundation.framework in Frameworks */,
@@ -103,6 +150,8 @@
 		C6A6D196187F441D0025105C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C6A6D1F3187F44990025105C /* AudioToolbox.framework */,
+				C6A6D1F4187F44990025105C /* CoreAudio.framework */,
 				C6A6D197187F441D0025105C /* Foundation.framework */,
 				C6A6D199187F441D0025105C /* CoreGraphics.framework */,
 				C6A6D19B187F441D0025105C /* UIKit.framework */,
@@ -114,6 +163,8 @@
 		C6A6D19D187F441D0025105C /* Synthesizer */ = {
 			isa = PBXGroup;
 			children = (
+				C6A6D1FD187F48B00025105C /* Categories */,
+				C6A6D1CF187F447A0025105C /* Synthesizer */,
 				C6A6D1A6187F441D0025105C /* VWWAppDelegate.h */,
 				C6A6D1A7187F441D0025105C /* VWWAppDelegate.m */,
 				C6A6D1A9187F441D0025105C /* Main_iPhone.storyboard */,
@@ -153,6 +204,65 @@
 				C6A6D1C2187F441D0025105C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C6A6D1CF187F447A0025105C /* Synthesizer */ = {
+			isa = PBXGroup;
+			children = (
+				C6A6D201187F49630025105C /* Updated */,
+				C6A6D1D0187F447A0025105C /* Apple CA Helpers */,
+				C6A6D1F8187F459C0025105C /* VWWSettingsKeys.h */,
+				C6A6D1D9187F447A0025105C /* VWWSynthesizerFileSystem.h */,
+				C6A6D1DA187F447A0025105C /* VWWSynthesizerFileSystem.m */,
+				C6A6D1DB187F447A0025105C /* VWWSynthesizerEffectNoteKey.h */,
+				C6A6D1DC187F447A0025105C /* VWWSynthesizerEffectNoteKey.m */,
+				C6A6D1DD187F447A0025105C /* VWWSynthesizerInput.h */,
+				C6A6D1DE187F447A0025105C /* VWWSynthesizerInput.mm */,
+				C6A6D1DF187F447A0025105C /* VWWSynthesizerInputAxis.h */,
+				C6A6D1E0187F447A0025105C /* VWWSynthesizerInputAxis.mm */,
+				C6A6D1E1187F447A0025105C /* VWWSynthesizerInputs.h */,
+				C6A6D1E2187F447A0025105C /* VWWSynthesizerInputs.mm */,
+				C6A6D1E3187F447A0025105C /* VWWSynthesizerMath.h */,
+				C6A6D1E4187F447A0025105C /* VWWSynthesizerNotes.h */,
+				C6A6D1E5187F447A0025105C /* VWWSynthesizerNotes.m */,
+				C6A6D1E8187F447A0025105C /* VWWSynthesizerTypes.h */,
+			);
+			path = Synthesizer;
+			sourceTree = "<group>";
+		};
+		C6A6D1D0187F447A0025105C /* Apple CA Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C6A6D1D1187F447A0025105C /* CADebugMacros.cpp */,
+				C6A6D1D2187F447A0025105C /* CADebugMacros.h */,
+				C6A6D1D3187F447A0025105C /* CADebugPrintf.h */,
+				C6A6D1D4187F447A0025105C /* CAMath.h */,
+				C6A6D1D5187F447A0025105C /* CAStreamBasicDescription.cpp */,
+				C6A6D1D6187F447A0025105C /* CAStreamBasicDescription.h */,
+				C6A6D1D7187F447A0025105C /* CAXException.cpp */,
+				C6A6D1D8187F447A0025105C /* CAXException.h */,
+			);
+			path = "Apple CA Helpers";
+			sourceTree = "<group>";
+		};
+		C6A6D1FD187F48B00025105C /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				C6A6D1FE187F48B00025105C /* NSTimer+Blocks.h */,
+				C6A6D1FF187F48B00025105C /* NSTimer+Blocks.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		C6A6D201187F49630025105C /* Updated */ = {
+			isa = PBXGroup;
+			children = (
+				C6A6D202187F49B10025105C /* VWWSynthesizer.h */,
+				C6A6D203187F49B10025105C /* VWWSynthesizer.mm */,
+				C6A6D1E6187F447A0025105C /* VWWSynthesizerC.h */,
+				C6A6D1E7187F447A0025105C /* VWWSynthesizerC.mm */,
+			);
+			name = Updated;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +364,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6A6D1EB187F447A0025105C /* CAXException.cpp in Sources */,
+				C6A6D1F2187F447A0025105C /* VWWSynthesizerC.mm in Sources */,
+				C6A6D204187F49B10025105C /* VWWSynthesizer.mm in Sources */,
+				C6A6D1F7187F45690025105C /* VWWSynthesizerFileSystem.m in Sources */,
+				C6A6D1ED187F447A0025105C /* VWWSynthesizerEffectNoteKey.m in Sources */,
 				C6A6D1B1187F441D0025105C /* VWWViewController.m in Sources */,
+				C6A6D1EE187F447A0025105C /* VWWSynthesizerInput.mm in Sources */,
+				C6A6D200187F48B00025105C /* NSTimer+Blocks.m in Sources */,
+				C6A6D1EF187F447A0025105C /* VWWSynthesizerInputAxis.mm in Sources */,
 				C6A6D1A4187F441D0025105C /* main.m in Sources */,
+				C6A6D1F0187F447A0025105C /* VWWSynthesizerInputs.mm in Sources */,
+				C6A6D1E9187F447A0025105C /* CADebugMacros.cpp in Sources */,
 				C6A6D1A8187F441D0025105C /* VWWAppDelegate.m in Sources */,
+				C6A6D1EA187F447A0025105C /* CAStreamBasicDescription.cpp in Sources */,
+				C6A6D1F1187F447A0025105C /* VWWSynthesizerNotes.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

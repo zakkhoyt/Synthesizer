@@ -1,12 +1,12 @@
 //
-//  VWWSynthesizer.m
+//  VWWSynthesizerC.m
 //  Theremin
 //
 //  Created by Zakk Hoyt on 7/29/12.
 //  Copyright (c) 2012 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWSynthesizer.h"
+#import "VWWSynthesizerC.h"
 #import "VWWSynthesizerMath.h"
 #import "VWWSynthesizerNotes.h"
 
@@ -22,7 +22,7 @@ OSStatus RenderTone( void* inRefCon,
 
     
 	// Get the tone parameters out of the view controller
-	VWWSynthesizer *synth = (__bridge VWWSynthesizer *)inRefCon;
+	VWWSynthesizerC *synth = (__bridge VWWSynthesizerC *)inRefCon;
 	double theta = synth.theta;
 	double theta_increment = 2.0 * M_PI * synth.frequency / kSampleRate;
 
@@ -93,7 +93,7 @@ OSStatus RenderTone( void* inRefCon,
 
 
 
-@interface VWWSynthesizer (){
+@interface VWWSynthesizerC (){
     AudioComponentInstance _toneUnit;
 }
 
@@ -104,7 +104,7 @@ OSStatus RenderTone( void* inRefCon,
 
 
 
-@implementation VWWSynthesizer
+@implementation VWWSynthesizerC
 
 -(id)initWithAmplitude:(float)amplitude andFrequency:(float)frequency{
     self = [super init];
