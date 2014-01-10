@@ -1,5 +1,5 @@
 //
-//  VWWViewController.h
+//  VWWTouchViewController.h
 //  Synthesizer
 //
 //  Created by Zakk Hoyt on 1/9/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VWWViewController : UIViewController
+@interface VWWTouchViewController : UIViewController
 
 @end

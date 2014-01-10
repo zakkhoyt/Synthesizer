@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		C61B7544187F888200737E51 /* VWWTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61B7543187F888200737E51 /* VWWTouchView.m */; };
+		C61B7549187F88CD00737E51 /* VWWTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C61B7548187F88CD00737E51 /* VWWTouchViewController.m */; };
 		C6A6D198187F441D0025105C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D197187F441D0025105C /* Foundation.framework */; };
 		C6A6D19A187F441D0025105C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D199187F441D0025105C /* CoreGraphics.framework */; };
 		C6A6D19C187F441D0025105C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D19B187F441D0025105C /* UIKit.framework */; };
@@ -29,7 +31,6 @@
 		C6A6D1A8187F441D0025105C /* VWWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1A7187F441D0025105C /* VWWAppDelegate.m */; };
 		C6A6D1AB187F441D0025105C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6A6D1A9187F441D0025105C /* Main_iPhone.storyboard */; };
 		C6A6D1AE187F441D0025105C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6A6D1AC187F441D0025105C /* Main_iPad.storyboard */; };
-		C6A6D1B1187F441D0025105C /* VWWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1B0187F441D0025105C /* VWWViewController.m */; };
 		C6A6D1B3187F441D0025105C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6A6D1B2187F441D0025105C /* Images.xcassets */; };
 		C6A6D1BA187F441D0025105C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D1B9187F441D0025105C /* XCTest.framework */; };
 		C6A6D1BB187F441D0025105C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D197187F441D0025105C /* Foundation.framework */; };
@@ -62,6 +63,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C61B7542187F888200737E51 /* VWWTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWTouchView.h; path = View/VWWTouchView.h; sourceTree = "<group>"; };
+		C61B7543187F888200737E51 /* VWWTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWTouchView.m; path = View/VWWTouchView.m; sourceTree = "<group>"; };
+		C61B7547187F88CD00737E51 /* VWWTouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTouchViewController.h; sourceTree = "<group>"; };
+		C61B7548187F88CD00737E51 /* VWWTouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTouchViewController.m; sourceTree = "<group>"; };
 		C6A6D194187F441D0025105C /* Synthesizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synthesizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A6D197187F441D0025105C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C6A6D199187F441D0025105C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -74,8 +79,6 @@
 		C6A6D1A7187F441D0025105C /* VWWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWAppDelegate.m; sourceTree = "<group>"; };
 		C6A6D1AA187F441D0025105C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		C6A6D1AD187F441D0025105C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		C6A6D1AF187F441D0025105C /* VWWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWViewController.h; sourceTree = "<group>"; };
-		C6A6D1B0187F441D0025105C /* VWWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWViewController.m; sourceTree = "<group>"; };
 		C6A6D1B2187F441D0025105C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C6A6D1B8187F441D0025105C /* SynthesizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SynthesizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A6D1B9187F441D0025105C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -149,6 +152,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C61B7545187F888700737E51 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C61B7542187F888200737E51 /* VWWTouchView.h */,
+				C61B7543187F888200737E51 /* VWWTouchView.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		C61B7546187F88B800737E51 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C61B7547187F88CD00737E51 /* VWWTouchViewController.h */,
+				C61B7548187F88CD00737E51 /* VWWTouchViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		C6A6D18B187F441D0025105C = {
 			isa = PBXGroup;
 			children = (
@@ -184,18 +205,18 @@
 		C6A6D19D187F441D0025105C /* Synthesizer */ = {
 			isa = PBXGroup;
 			children = (
+				C61B7546187F88B800737E51 /* Controller */,
 				C6A6D1FD187F48B00025105C /* Categories */,
+				C6A6D1B2187F441D0025105C /* Images.xcassets */,
+				C6A6D1AC187F441D0025105C /* Main_iPad.storyboard */,
+				C6A6D1A9187F441D0025105C /* Main_iPhone.storyboard */,
+				C6A6D20E187F59720025105C /* readme.markdown */,
+				C6A6D19E187F441D0025105C /* Supporting Files */,
 				C6A6D1CF187F447A0025105C /* Synthesizer */,
+				C61B7545187F888700737E51 /* View */,
 				C6A6D1A6187F441D0025105C /* VWWAppDelegate.h */,
 				C6A6D1A7187F441D0025105C /* VWWAppDelegate.m */,
-				C6A6D1A9187F441D0025105C /* Main_iPhone.storyboard */,
-				C6A6D1AC187F441D0025105C /* Main_iPad.storyboard */,
-				C6A6D1AF187F441D0025105C /* VWWViewController.h */,
-				C6A6D1B0187F441D0025105C /* VWWViewController.m */,
 				C6A6D236187F60360025105C /* VWWUtilities.h */,
-				C6A6D1B2187F441D0025105C /* Images.xcassets */,
-				C6A6D19E187F441D0025105C /* Supporting Files */,
-				C6A6D20E187F59720025105C /* readme.markdown */,
 			);
 			path = Synthesizer;
 			sourceTree = "<group>";
@@ -429,11 +450,12 @@
 			files = (
 				C6A6D204187F49B10025105C /* VWWSynthesizer.mm in Sources */,
 				C6A6D233187F5E470025105C /* VWWSynthesizerC.mm in Sources */,
-				C6A6D1B1187F441D0025105C /* VWWViewController.m in Sources */,
 				C6A6D200187F48B00025105C /* NSTimer+Blocks.m in Sources */,
 				C6A6D1A4187F441D0025105C /* main.m in Sources */,
 				C6A6D22E187F5E470025105C /* CAXException.cpp in Sources */,
+				C61B7549187F88CD00737E51 /* VWWTouchViewController.m in Sources */,
 				C6A6D242187F73190025105C /* VWWNormalizedSynthesizer.mm in Sources */,
+				C61B7544187F888200737E51 /* VWWTouchView.m in Sources */,
 				C6A6D22C187F5E470025105C /* CADebugMacros.cpp in Sources */,
 				C6A6D235187F5E470025105C /* VWWSynthesizerNotes.m in Sources */,
 				C6A6D234187F5E470025105C /* VWWSynthesizerEffectNoteKey.m in Sources */,
