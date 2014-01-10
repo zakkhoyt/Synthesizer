@@ -34,13 +34,13 @@
     [synth start];
     usleep(1 * 1000 * 1000);
 
-    [synth setFrequencyNormalized:0.5];
-    usleep(1 * 1000 * 1000);
-
-    [synth setFrequencyNormalized:0.6];
-    usleep(1 * 1000 * 1000);
-
     
+    for(float i = 0.0; i < 1.0; i+=0.01){
+        [synth setFrequencyNormalized:i];
+        usleep(10 * 1000);
+    }
+    
+
     [synth stop];
     synth = nil;
 
