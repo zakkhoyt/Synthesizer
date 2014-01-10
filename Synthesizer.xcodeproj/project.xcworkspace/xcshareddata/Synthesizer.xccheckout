@@ -5,34 +5,34 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>D5AABE47-576F-461B-963C-55FA160CFFC3</string>
+	<string>AE95E8DB-AC10-4983-94D9-6E402D990375</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Synthesizer</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>5832FAB7-6DD1-49A6-AED3-0717E7C459A8</key>
-		<string>ssh://github.com/zakkhoyt/Synthesizer</string>
+		<key>06CD5791-514A-4461-ABA6-7064DBF6F5AE</key>
+		<string>ssh://github.com/zakkhoyt/Synthesizer.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Synthesizer.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>5832FAB7-6DD1-49A6-AED3-0717E7C459A8</key>
+		<key>06CD5791-514A-4461-ABA6-7064DBF6F5AE</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/zakkhoyt/Synthesizer</string>
+	<string>ssh://github.com/zakkhoyt/Synthesizer.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>5832FAB7-6DD1-49A6-AED3-0717E7C459A8</string>
+	<string>06CD5791-514A-4461-ABA6-7064DBF6F5AE</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>5832FAB7-6DD1-49A6-AED3-0717E7C459A8</string>
+			<string>06CD5791-514A-4461-ABA6-7064DBF6F5AE</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Synthesizer</string>
 		</dict>
