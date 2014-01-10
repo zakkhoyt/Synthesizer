@@ -35,7 +35,7 @@
 		C6A6D1BB187F441D0025105C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D197187F441D0025105C /* Foundation.framework */; };
 		C6A6D1BC187F441D0025105C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D19B187F441D0025105C /* UIKit.framework */; };
 		C6A6D1C4187F441D0025105C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C6A6D1C2187F441D0025105C /* InfoPlist.strings */; };
-		C6A6D1C6187F441D0025105C /* SynthesizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1C5187F441D0025105C /* SynthesizerTests.m */; };
+		C6A6D1C6187F441D0025105C /* VWWSynthesizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1C5187F441D0025105C /* VWWSynthesizerTests.m */; };
 		C6A6D1F5187F44990025105C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D1F3187F44990025105C /* AudioToolbox.framework */; };
 		C6A6D1F6187F44990025105C /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D1F4187F44990025105C /* CoreAudio.framework */; };
 		C6A6D200187F48B00025105C /* NSTimer+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D1FF187F48B00025105C /* NSTimer+Blocks.m */; };
@@ -47,6 +47,8 @@
 		C6A6D234187F5E470025105C /* VWWSynthesizerEffectNoteKey.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D228187F5E470025105C /* VWWSynthesizerEffectNoteKey.m */; };
 		C6A6D235187F5E470025105C /* VWWSynthesizerNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D22B187F5E470025105C /* VWWSynthesizerNotes.m */; };
 		C6A6D238187F61C30025105C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6A6D237187F61C30025105C /* README.txt */; };
+		C6A6D242187F73190025105C /* VWWNormalizedSynthesizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D241187F73190025105C /* VWWNormalizedSynthesizer.mm */; };
+		C6A6D244187F771B0025105C /* VWWNormalizedSynthesizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D243187F771B0025105C /* VWWNormalizedSynthesizerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +81,7 @@
 		C6A6D1B9187F441D0025105C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C6A6D1C1187F441D0025105C /* SynthesizerTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SynthesizerTests-Info.plist"; sourceTree = "<group>"; };
 		C6A6D1C3187F441D0025105C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C6A6D1C5187F441D0025105C /* SynthesizerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SynthesizerTests.m; sourceTree = "<group>"; };
+		C6A6D1C5187F441D0025105C /* VWWSynthesizerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerTests.m; sourceTree = "<group>"; };
 		C6A6D1E8187F447A0025105C /* VWWSynthesizerTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = VWWSynthesizerTypes.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		C6A6D1F3187F44990025105C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C6A6D1F4187F44990025105C /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -116,6 +118,9 @@
 		C6A6D236187F60360025105C /* VWWUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWUtilities.h; sourceTree = "<group>"; };
 		C6A6D237187F61C30025105C /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
 		C6A6D239187F651D0025105C /* VWWSynthesizerKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerKeys.h; sourceTree = "<group>"; };
+		C6A6D240187F73190025105C /* VWWNormalizedSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWNormalizedSynthesizer.h; sourceTree = "<group>"; };
+		C6A6D241187F73190025105C /* VWWNormalizedSynthesizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWNormalizedSynthesizer.mm; sourceTree = "<group>"; };
+		C6A6D243187F771B0025105C /* VWWNormalizedSynthesizerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWNormalizedSynthesizerTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,8 +214,9 @@
 		C6A6D1BF187F441D0025105C /* SynthesizerTests */ = {
 			isa = PBXGroup;
 			children = (
-				C6A6D1C5187F441D0025105C /* SynthesizerTests.m */,
 				C6A6D1C0187F441D0025105C /* Supporting Files */,
+				C6A6D1C5187F441D0025105C /* VWWSynthesizerTests.m */,
+				C6A6D243187F771B0025105C /* VWWNormalizedSynthesizerTests.m */,
 			);
 			path = SynthesizerTests;
 			sourceTree = "<group>";
@@ -227,11 +233,13 @@
 		C6A6D1CF187F447A0025105C /* Synthesizer */ = {
 			isa = PBXGroup;
 			children = (
-				C6A6D20F187F5E470025105C /* Classes */,
+				C6A6D237187F61C30025105C /* README.txt */,
 				C6A6D1E8187F447A0025105C /* VWWSynthesizerTypes.h */,
 				C6A6D202187F49B10025105C /* VWWSynthesizer.h */,
 				C6A6D203187F49B10025105C /* VWWSynthesizer.mm */,
-				C6A6D237187F61C30025105C /* README.txt */,
+				C6A6D240187F73190025105C /* VWWNormalizedSynthesizer.h */,
+				C6A6D241187F73190025105C /* VWWNormalizedSynthesizer.mm */,
+				C6A6D20F187F5E470025105C /* Classes */,
 			);
 			path = Synthesizer;
 			sourceTree = "<group>";
@@ -425,6 +433,7 @@
 				C6A6D200187F48B00025105C /* NSTimer+Blocks.m in Sources */,
 				C6A6D1A4187F441D0025105C /* main.m in Sources */,
 				C6A6D22E187F5E470025105C /* CAXException.cpp in Sources */,
+				C6A6D242187F73190025105C /* VWWNormalizedSynthesizer.mm in Sources */,
 				C6A6D22C187F5E470025105C /* CADebugMacros.cpp in Sources */,
 				C6A6D235187F5E470025105C /* VWWSynthesizerNotes.m in Sources */,
 				C6A6D234187F5E470025105C /* VWWSynthesizerEffectNoteKey.m in Sources */,
@@ -437,7 +446,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6A6D1C6187F441D0025105C /* SynthesizerTests.m in Sources */,
+				C6A6D244187F771B0025105C /* VWWNormalizedSynthesizerTests.m in Sources */,
+				C6A6D1C6187F441D0025105C /* VWWSynthesizerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +672,7 @@
 				C6A6D1CB187F441D0025105C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6A6D1CC187F441D0025105C /* Build configuration list for PBXNativeTarget "SynthesizerTests" */ = {
 			isa = XCConfigurationList;
@@ -670,6 +681,7 @@
 				C6A6D1CE187F441D0025105C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C6A6D20A187F58F50025105C /* Build configuration list for PBXAggregateTarget "Documentation" */ = {
 			isa = XCConfigurationList;
@@ -678,6 +690,7 @@
 				C6A6D20C187F58F50025105C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

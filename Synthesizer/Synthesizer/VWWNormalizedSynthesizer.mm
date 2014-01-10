@@ -1,35 +1,45 @@
 //
-//  VWWSynthesizer.m
+//  VWWNormalizedSynthesizer.m
 //  Synthesizer
 //
 //  Created by Zakk Hoyt on 1/9/14.
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWSynthesizer.h"
+#import "VWWNormalizedSynthesizer.h"
 #import "VWWSynthesizerC.h"
 #import "VWWSynthesizerKeys.h"
 
-@interface VWWSynthesizer ()
+
+@interface VWWNormalizedSynthesizer (){
+    float _frequencyNormalized;
+    float _frequency;
+}
 @property (nonatomic, strong) VWWSynthesizerC *synthesizer;
 @end
 
-@implementation VWWSynthesizer
+@implementation VWWNormalizedSynthesizer
 
-+(VWWSynthesizer*)sharedInstance{
-    static VWWSynthesizer *instance;
+
+
++(VWWNormalizedSynthesizer*)sharedInstance{
+    static VWWNormalizedSynthesizer *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:440];
+        instance = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
     });
     return instance;
 }
 
 
--(id)initWithAmplitude:(float)amplitude andFrequency:(float)frequency{
+-(id)initWithFrequencyMin:(float)frequencyMin frequencyMax:(float)frequencyMax frequencyNormalized:(float)frequencyNormalized{
     self = [super init];
     if(self){
-        _synthesizer = [[VWWSynthesizerC alloc]initWithAmplitude:amplitude andFrequency:frequency];
+        _frequencyMin = frequencyMin;
+        _frequencyMax = frequencyMax;
+        _frequencyNormalized = frequencyNormalized;
+        _frequency = [self calculateFrequencyNormalized];
+        _synthesizer = [[VWWSynthesizerC alloc]initWithAmplitude:1.0 andFrequency:_frequency];
     }
     return self;
 }
@@ -69,16 +79,24 @@
     }
 }
 
--(void)setFrequency:(float)frequency{
+-(float)calculateFrequencyNormalized{
+    return ((_frequencyMax - _frequencyMin) * _frequencyNormalized ) + _frequencyMin;
+}
+-(void)setFrequencyNormalized:(float)frequencyNormalized{
     @synchronized(self){
-        self.synthesizer.frequency = frequency;
+        _frequencyNormalized = frequencyNormalized;
+        _frequency = [self calculateFrequencyNormalized];
+        self.synthesizer.frequency = _frequency;
     }
 }
--(float)frequency{
+
+-(float)frequencyNormalized{
     @synchronized(self){
-        return self.synthesizer.frequency;
+        return _frequencyNormalized;
     }
 }
+
+
 
 -(void)setWaveType:(VWWWaveType)waveType{
     @synchronized(self){
@@ -116,21 +134,28 @@
 
 @end
 
-@implementation VWWSynthesizer (Dictionary)
+@implementation VWWNormalizedSynthesizer (Dictionary)
 -(id)initWithDictionary:(NSDictionary*)dictionary{
     self = [super init];
     if(self){
         NSNumber *amplitude = dictionary[VWWSynthesizerAmplitudeKey];
-        NSNumber *frequency = dictionary[VWWSynthesizerFrequencyKey];
+        NSNumber *frequencyMin = dictionary[VWWSynthesizerFrequencyMinKey];
+        self.frequencyMin = frequencyMin.floatValue;
+        NSNumber *frequencyMax = dictionary[VWWSynthesizerFrequencyMaxKey];
+        self.frequencyMax = frequencyMax.floatValue;
+        NSNumber *frequencyNormalized = dictionary[VWWSynthesizerFrequencyNormalizedKey];
+        self.frequencyNormalized = frequencyNormalized.floatValue;
+        float frequency = [self calculateFrequencyNormalized];
+
         
-        self.synthesizer = [[VWWSynthesizerC alloc]initWithAmplitude:amplitude.floatValue andFrequency:frequency.floatValue];
+        self.synthesizer = [[VWWSynthesizerC alloc]initWithAmplitude:amplitude.floatValue andFrequency:frequency];
         
         NSNumber *muted = dictionary[VWWSynthesizerMutedKey];
         self.synthesizer.muted = muted.integerValue == 0 ? NO : YES;
         
         NSNumber *waveType = dictionary[VWWSynthesizerWaveTypeKey];
         self.synthesizer.waveType = (VWWWaveType)waveType.integerValue;
-
+        
         NSNumber *effectType = dictionary[VWWSynthesizerEffectTypeKey];
         self.synthesizer.effectType = (VWWEffectType)effectType.integerValue;
         
@@ -153,7 +178,9 @@
     NSDictionary *dictionary = @{VWWSynthesizerIsRunningKey : self.synthesizer.isRunning ? @(1) : @(0),
                                  VWWSynthesizerAmplitudeKey : @(self.synthesizer.amplitude),
                                  VWWSynthesizerMutedKey : self.synthesizer.muted ? @(1) : @(0),
-                                 VWWSynthesizerFrequencyKey : @(self.frequency),
+                                 VWWSynthesizerFrequencyMinKey : @(self.frequencyMin),
+                                 VWWSynthesizerFrequencyMaxKey : @(self.frequencyMax),
+                                 VWWSynthesizerFrequencyNormalizedKey : @(self.frequencyNormalized),
                                  VWWSynthesizerWaveTypeKey : @(self.synthesizer.waveType),
                                  VWWSynthesizerEffectTypeKey : @(self.synthesizer.effectType),
                                  VWWSynthesizerSinPhaseKey : @(self.synthesizer.sinPhase),

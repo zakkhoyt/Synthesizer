@@ -18,4 +18,8 @@ static NSString *VWWSynthesizerEffectTypeKey = @"effect_type";
 static NSString *VWWSynthesizerSinPhaseKey = @"sin_phase";
 static NSString *VWWSynthesizerThetaKey = @"theta";
 
+
+static NSString *VWWSynthesizerFrequencyMinKey = @"frequency_min";
+static NSString *VWWSynthesizerFrequencyMaxKey = @"frequency_max";
+static NSString *VWWSynthesizerFrequencyNormalizedKey = @"frequency_normalized";
 #endif
