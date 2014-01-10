@@ -100,6 +100,18 @@
 -(void)setEffectType:(VWWEffectType)effectType;
 
 /**
+ * Return the keyType
+ */
+-(VWWKeyType)keyType;
+
+/**
+ * Set the key type
+ * @param keyType such as chromatic, C Major, etc...
+ */
+-(void)setKeyType:(VWWKeyType)keyType;
+
+
+/**
  * Return the sine phase
  */
 -(double)sinPhase;

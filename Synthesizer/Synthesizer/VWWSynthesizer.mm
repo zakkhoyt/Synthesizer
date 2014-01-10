@@ -102,6 +102,19 @@
     }
 }
 
+
+-(void)setKeyType:(VWWKeyType)keyType{
+    @synchronized(self){
+        self.synthesizer.keyType = keyType;
+    }
+}
+
+-(VWWKeyType)keyType{
+    @synchronized(self){
+        return self.synthesizer.keyType;
+    }
+}
+
 -(double)sinPhase{
     @synchronized(self){
         return self.synthesizer.sinPhase;
@@ -134,6 +147,9 @@
         NSNumber *effectType = dictionary[VWWSynthesizerEffectTypeKey];
         self.synthesizer.effectType = (VWWEffectType)effectType.integerValue;
         
+        NSNumber *keyType = dictionary[VWWSynthesizerKeyTypeKey];
+        self.synthesizer.keyType = (VWWKeyType)keyType.integerValue;
+        
         NSNumber *sinPhase = dictionary[VWWSynthesizerSinPhaseKey];
         self.synthesizer.sinPhase = sinPhase.doubleValue;
         
@@ -156,6 +172,7 @@
                                  VWWSynthesizerFrequencyKey : @(self.frequency),
                                  VWWSynthesizerWaveTypeKey : @(self.synthesizer.waveType),
                                  VWWSynthesizerEffectTypeKey : @(self.synthesizer.effectType),
+                                 VWWSynthesizerKeyTypeKey : @(self.synthesizer.keyType),
                                  VWWSynthesizerSinPhaseKey : @(self.synthesizer.sinPhase),
                                  VWWSynthesizerThetaKey : @(self.synthesizer.theta)};
     return dictionary;

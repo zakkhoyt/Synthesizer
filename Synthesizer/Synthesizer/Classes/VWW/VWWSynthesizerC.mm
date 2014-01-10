@@ -115,6 +115,7 @@ OSStatus RenderTone( void* inRefCon,
         _amplitude = amplitude;
         _muted = NO;
         _waveType = VWWWaveTypeSine;
+        _keyType = VWWKeyTypeChromatic;
         _isRunning = NO;
         _theta = 0;
         _notes = [[VWWSynthesizerNotes alloc]init];
@@ -212,7 +213,7 @@ OSStatus RenderTone( void* inRefCon,
 -(void)setFrequency:(float)newFrequency{
     @synchronized(self){
         if(_effectType == VWWEffectTypeAutoTune){
-            _frequency = [VWWSynthesizerNotes getClosestNoteForFrequency:newFrequency];
+            _frequency = [VWWSynthesizerNotes getClosestNoteForFrequency:newFrequency inKey:self.keyType];
         }
         else{
             _frequency = newFrequency;

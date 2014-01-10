@@ -10,7 +10,7 @@
 
 
 @interface VWWSynthesizerNotes ()
-@property (nonatomic, strong) NSArray* notes;
+@property (nonatomic, strong) NSArray* notesInChromatic;
 @property (nonatomic, strong) NSArray* notesInAMinor;
 @property (nonatomic, strong) NSArray* notesInAMajor;
 @property (nonatomic, strong) NSArray* notesInBMinor;
@@ -53,64 +53,60 @@
 }
 
 +(float)getClosestNoteForFrequency:(float)frequency inKey:(VWWKeyType)key{
-    return [[VWWSynthesizerNotes sharedInstance]getClosestNote:frequency inKey:key];
+    NSArray *notesForKey = [[VWWSynthesizerNotes sharedInstance] notesForKey:key];
+    return [[VWWSynthesizerNotes sharedInstance]getClosestNoteForFrequency:frequency notes:notesForKey];
 }
 
 
 
--(float)getClosestNote:(float)frequency inKey:(VWWKeyType)key{
-//// TODO: Implement this and uncomment. for now we are just using chromatic
-//    switch(key){
-//        case VWWKeyTypeAMinor:
-//            break;
-//        case VWWKeyTypeAMajor:
-//            break;
-//        case VWWKeyTypeBMinor:
-//            break;
-//        case VWWKeyTypeBMajor:
-//            break;
-//        case VWWKeyTypeCMajor:
-//            break;
-//        case VWWKeyTypeDMinor:
-//            break;
-//        case VWWKeyTypeDMajor:
-//            break;
-//        case VWWKeyTypeEMinor:
-//            break;
-//        case VWWKeyTypeFMajor:
-//            break;
-//        case VWWKeyTypeGMinor:
-//            break;
-//        case VWWKeyTypeGMajor:
-//            break;
-//        case VWWKeyTypeChromatic:
-//        default:
-//            break;
-//            return [self getClosestNote:frequency];
-//    }
-    return [self getClosestNote:frequency];
+-(NSArray*)notesForKey:(VWWKeyType)key{
+    switch(key){
+        case VWWKeyTypeAMinor:
+            return self.notesInAMinor;
+        case VWWKeyTypeAMajor:
+            return self.notesInAMajor;
+        case VWWKeyTypeBMinor:
+            return self.notesInBMinor;
+        case VWWKeyTypeBMajor:
+            return self.notesInBMajor;
+        case VWWKeyTypeCMajor:
+            return self.notesInCMajor;
+        case VWWKeyTypeDMinor:
+            return self.notesInDMinor;
+        case VWWKeyTypeDMajor:
+            return self.notesInDMajor;
+        case VWWKeyTypeEMinor:
+            return self.notesInEMinor;
+        case VWWKeyTypeFMajor:
+            return self.notesInEMajor;
+        case VWWKeyTypeGMinor:
+            return self.notesInGMinor;
+        case VWWKeyTypeGMajor:
+            return self.notesInGMajor;
+        case VWWKeyTypeChromatic:
+        default:
+            return self.notesInChromatic;
+    }
 }
-
-
-
--(float)getClosestNote:(float)frequency{
+-(float)getClosestNoteForFrequency:(float)frequency notes:(NSArray*)notes{
+    
     // Since our notes are sorted ascending, use binary search pattern
     
     int min = 0;
-    int max = self.notes.count;
+    int max = self.notesInChromatic.count;
     int mid = 0;
     
     bool foundValue = false;
     while(min < max){
         mid = (min + max) / 2;
-//        NSLog(@"min = %i , max = %i, mid = %i",min,max,mid);
-        float temp = ((NSNumber*)(self.notes)[mid]).floatValue;
-//        NSLog(@"temp = %f frequency = %f", temp, frequency);
+        //        NSLog(@"min = %i , max = %i, mid = %i",min,max,mid);
+        float temp = ((NSNumber*)(notes)[mid]).floatValue;
+        //        NSLog(@"temp = %f frequency = %f", temp, frequency);
         if (temp == frequency){
             foundValue = true;
             break;
         }
-        else if (frequency > ((NSNumber*)(self.notes)[mid]).floatValue){
+        else if (frequency > ((NSNumber*)(notes)[mid]).floatValue){
             min = mid+1;
         }
         else{
@@ -123,26 +119,83 @@
     if(mid == 0){
         // This is to catch a bug. The code below can potentially try to
         // access objectAtIndex:-1. Just return 0 if we are already at 0
-        r = ((NSNumber*)(self.notes)[mid]).floatValue;
+        r = ((NSNumber*)(notes)[mid]).floatValue;
     }
     else{
-        if(frequency < ((NSNumber*)(self.notes)[mid]).floatValue){
+        if(frequency < ((NSNumber*)(notes)[mid]).floatValue){
             // See if it's closer to mid or mid-1
-            float temp1 = abs(frequency - ((NSNumber*)(self.notes)[mid]).floatValue);
-            float temp2 = abs(frequency - ((NSNumber*)(self.notes)[mid-1]).floatValue);
+            float temp1 = abs(frequency - ((NSNumber*)(notes)[mid]).floatValue);
+            float temp2 = abs(frequency - ((NSNumber*)(notes)[mid-1]).floatValue);
             if(temp1 < temp2)
-                r = ((NSNumber*)(self.notes)[mid]).floatValue;
+                r = ((NSNumber*)(notes)[mid]).floatValue;
             else
-                r = ((NSNumber*)(self.notes)[mid-1]).floatValue;
+                r = ((NSNumber*)(notes)[mid-1]).floatValue;
         }
         else{
             // See if it's closer to mid of mid+1
-            float temp1 = abs(frequency - ((NSNumber*)(self.notes)[mid]).floatValue);
-            float temp2 = abs(frequency - ((NSNumber*)(self.notes)[mid+1]).floatValue);
+            float temp1 = abs(frequency - ((NSNumber*)(notes)[mid]).floatValue);
+            float temp2 = abs(frequency - ((NSNumber*)(notes)[mid+1]).floatValue);
             if(temp1 < temp2)
-                r = ((NSNumber*)(self.notes)[mid]).floatValue;
+                r = ((NSNumber*)(notes)[mid]).floatValue;
             else
-                r = ((NSNumber*)(self.notes)[mid+1]).floatValue;
+                r = ((NSNumber*)(notes)[mid+1]).floatValue;
+        }
+    }
+    return r;
+}
+
+
+
+-(float)getClosestNote:(float)frequency{
+    // Since our notes are sorted ascending, use binary search pattern
+    
+    int min = 0;
+    int max = self.notesInChromatic.count;
+    int mid = 0;
+    
+    bool foundValue = false;
+    while(min < max){
+        mid = (min + max) / 2;
+//        NSLog(@"min = %i , max = %i, mid = %i",min,max,mid);
+        float temp = ((NSNumber*)(self.notesInChromatic)[mid]).floatValue;
+//        NSLog(@"temp = %f frequency = %f", temp, frequency);
+        if (temp == frequency){
+            foundValue = true;
+            break;
+        }
+        else if (frequency > ((NSNumber*)(self.notesInChromatic)[mid]).floatValue){
+            min = mid+1;
+        }
+        else{
+            max = mid-1;
+        }
+    }
+    
+    // frequency likely falls between two indicies. See which one it's closer to and return that
+    float r = 0;
+    if(mid == 0){
+        // This is to catch a bug. The code below can potentially try to
+        // access objectAtIndex:-1. Just return 0 if we are already at 0
+        r = ((NSNumber*)(self.notesInChromatic)[mid]).floatValue;
+    }
+    else{
+        if(frequency < ((NSNumber*)(self.notesInChromatic)[mid]).floatValue){
+            // See if it's closer to mid or mid-1
+            float temp1 = abs(frequency - ((NSNumber*)(self.notesInChromatic)[mid]).floatValue);
+            float temp2 = abs(frequency - ((NSNumber*)(self.notesInChromatic)[mid-1]).floatValue);
+            if(temp1 < temp2)
+                r = ((NSNumber*)(self.notesInChromatic)[mid]).floatValue;
+            else
+                r = ((NSNumber*)(self.notesInChromatic)[mid-1]).floatValue;
+        }
+        else{
+            // See if it's closer to mid of mid+1
+            float temp1 = abs(frequency - ((NSNumber*)(self.notesInChromatic)[mid]).floatValue);
+            float temp2 = abs(frequency - ((NSNumber*)(self.notesInChromatic)[mid+1]).floatValue);
+            if(temp1 < temp2)
+                r = ((NSNumber*)(self.notesInChromatic)[mid]).floatValue;
+            else
+                r = ((NSNumber*)(self.notesInChromatic)[mid+1]).floatValue;
         }
     }
     return r;
@@ -150,7 +203,7 @@
 
 // I precalculated these frequendies with the formula f = 2^n/12 * 27.5 with n from 1 .. 114
 -(void)initializeAllNotes{
-    self.notes = @[@(27.50),
+    self.notesInChromatic = @[@(27.50),
                   @(29.14),
                   @(30.87),
                   @(32.70),
@@ -281,11 +334,9 @@
 //E:x0x23
 
 
-
 -(void)initializeNotesInAMinor{
     _notesInAMinor = [NSArray new];
 }
-
 -(void)initializeNotesInAMajor{
     _notesInAMajor = [NSArray new];
 }

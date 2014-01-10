@@ -21,6 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		C60D15B91880A87F00D008F6 /* VWWSynthesizerGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C60D15B81880A87F00D008F6 /* VWWSynthesizerGroup.m */; };
+		C60D15BB1880ABD400D008F6 /* VWWSynthesizerGroupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C60D15BA1880ABD400D008F6 /* VWWSynthesizerGroupTests.m */; };
 		C61B7544187F888200737E51 /* VWWTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61B7543187F888200737E51 /* VWWTouchView.m */; };
 		C61B7549187F88CD00737E51 /* VWWTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C61B7548187F88CD00737E51 /* VWWTouchViewController.m */; };
 		C6A6D198187F441D0025105C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D197187F441D0025105C /* Foundation.framework */; };
@@ -63,6 +65,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C60D15B71880A87F00D008F6 /* VWWSynthesizerGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerGroup.h; sourceTree = "<group>"; };
+		C60D15B81880A87F00D008F6 /* VWWSynthesizerGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerGroup.m; sourceTree = "<group>"; };
+		C60D15BA1880ABD400D008F6 /* VWWSynthesizerGroupTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerGroupTests.m; sourceTree = "<group>"; };
 		C61B7542187F888200737E51 /* VWWTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWTouchView.h; path = View/VWWTouchView.h; sourceTree = "<group>"; };
 		C61B7543187F888200737E51 /* VWWTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWTouchView.m; path = View/VWWTouchView.m; sourceTree = "<group>"; };
 		C61B7547187F88CD00737E51 /* VWWTouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTouchViewController.h; sourceTree = "<group>"; };
@@ -238,6 +243,7 @@
 				C6A6D1C0187F441D0025105C /* Supporting Files */,
 				C6A6D1C5187F441D0025105C /* VWWSynthesizerTests.m */,
 				C6A6D243187F771B0025105C /* VWWNormalizedSynthesizerTests.m */,
+				C60D15BA1880ABD400D008F6 /* VWWSynthesizerGroupTests.m */,
 			);
 			path = SynthesizerTests;
 			sourceTree = "<group>";
@@ -260,6 +266,8 @@
 				C6A6D203187F49B10025105C /* VWWSynthesizer.mm */,
 				C6A6D240187F73190025105C /* VWWNormalizedSynthesizer.h */,
 				C6A6D241187F73190025105C /* VWWNormalizedSynthesizer.mm */,
+				C60D15B71880A87F00D008F6 /* VWWSynthesizerGroup.h */,
+				C60D15B81880A87F00D008F6 /* VWWSynthesizerGroup.m */,
 				C6A6D20F187F5E470025105C /* Classes */,
 			);
 			path = Synthesizer;
@@ -457,6 +465,7 @@
 				C6A6D242187F73190025105C /* VWWNormalizedSynthesizer.mm in Sources */,
 				C61B7544187F888200737E51 /* VWWTouchView.m in Sources */,
 				C6A6D22C187F5E470025105C /* CADebugMacros.cpp in Sources */,
+				C60D15B91880A87F00D008F6 /* VWWSynthesizerGroup.m in Sources */,
 				C6A6D235187F5E470025105C /* VWWSynthesizerNotes.m in Sources */,
 				C6A6D234187F5E470025105C /* VWWSynthesizerEffectNoteKey.m in Sources */,
 				C6A6D1A8187F441D0025105C /* VWWAppDelegate.m in Sources */,
@@ -468,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C60D15BB1880ABD400D008F6 /* VWWSynthesizerGroupTests.m in Sources */,
 				C6A6D244187F771B0025105C /* VWWNormalizedSynthesizerTests.m in Sources */,
 				C6A6D1C6187F441D0025105C /* VWWSynthesizerTests.m in Sources */,
 			);

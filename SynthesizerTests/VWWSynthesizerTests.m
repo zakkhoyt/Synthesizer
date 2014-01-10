@@ -226,7 +226,7 @@
     VWWSynthesizer *synth = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:440.0];
     [synth start];
     
-    for(NSInteger i = 20; i < 18000; i++){
+    for(NSInteger i = 20; i < 100; i++){
         usleep(10 * 1000);
         f+=20;
         synth.frequency = f;
