@@ -13,7 +13,8 @@
   - AudioToolbox
   - CoreAudio
   
------ Example Synthesizer use
+----- Example standard synthesizer use
+----- Specify a frequency directly
 To create a simple synth channel:
 
 #import "VWWSynthesizer.h"
@@ -34,5 +35,30 @@ To create a simple synth channel:
     synth = nil;
 }
 
+
+----- Example normalized synthesizer use
+----- This operates just like the standard synthesizer except instead of specifying a frequency, you set fMin, fMax, and then a fNormalized from 0.0 - 1.0
+To create a simple synth channel:
+
+#import "VWWNormalizedSynthesizer.h"
+
+// Create synth and start
+-(void)viewDidLoad{
+    [super viewDidLoad];
+
+    VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.4];
+    [synth start];
+}
+
+// Cleanup
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+
+    [synth stop];
+    synth = nil;
+}
+
+
+----- Both types of synthesizers remainin parameters and operations are identical 
 
 
