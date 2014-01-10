@@ -46,32 +46,33 @@
 
     usleep(2 * 1000 * 1000);
 }
-//
-//
-//-(void)testMultipleSynths{
-//    NSLog(@"Testing Multiple Synthesizers");
-//    VWWSynthesizer *synth1 = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:440];
-//    [synth1 start];
-//
-//    VWWSynthesizer *synth2 = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:2000];
-//    [synth2 start];
-//
-//    usleep(1 * 1000 * 1000);
-//
-//    [synth1 stop];
-//    [synth2 stop];
-//
-//    synth1 = nil;
-//    synth2 = nil;
-//    usleep(2 * 1000 * 1000);
-//}
-//
-//
-//
+
+
+
+-(void)testMultipleSynths{
+    NSLog(@"Testing Multiple Synthesizers");
+    VWWNormalizedSynthesizer *synth1 = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
+    [synth1 start];
+
+    VWWNormalizedSynthesizer *synth2 = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:330 frequencyMax:5000 frequencyNormalized:0.3];
+    [synth2 start];
+
+    usleep(1 * 1000 * 1000);
+
+    [synth1 stop];
+    [synth2 stop];
+
+    synth1 = nil;
+    synth2 = nil;
+    usleep(2 * 1000 * 1000);
+}
+
+
+
 //-(void)testSynthFrequency{
 //    NSLog(@"Testing frequency");
 //
-//    VWWSynthesizer *synth = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:440.0];
+//    VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
 //    [synth start];
 //
 //    usleep(500 * 1000);
@@ -108,89 +109,89 @@
 //    synth = nil;
 //    usleep(2 * 1000 * 1000);
 //}
-//
-//-(void)testSynthAmplitude{
-//
-//    NSLog(@"Testing amplitude");
-//
-//    VWWSynthesizer *synth = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:440.0];
-//    [synth start];
-//
-//    usleep(500 * 1000);
-//
-//    synth.amplitude = 0.8;
-//    usleep(500 * 1000);
-//    synth.amplitude = 0.6;
-//    usleep(500 * 1000);
-//    synth.amplitude = 0.4;
-//    usleep(500 * 1000);
-//    synth.amplitude = 0.2;
-//    usleep(500 * 1000);
-//    synth.amplitude = 0.0;
-//    usleep(500 * 1000);
-//    synth.amplitude = 1.0;
-//    usleep(500 * 1000);
-//
-//    [synth stop];
-//    synth = nil;
-//    usleep(2 * 1000 * 1000);
-//}
-//
-//
-//-(void)testSynthMute{
-//
-//    NSLog(@"Testing mute");
-//
-//    VWWSynthesizer *synth = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:440.0];
-//    [synth start];
-//
-//    usleep(500 * 1000);
-//
-//    synth.muted = YES;
-//    usleep(500 * 1000);
-//    synth.muted = NO;
-//    usleep(500 * 1000);
-//    synth.muted = YES;
-//    usleep(500 * 1000);
-//    synth.muted = NO;
-//    usleep(500 * 1000);
-//    synth.muted = YES;
-//    usleep(500 * 1000);
-//    synth.muted = NO;
-//    usleep(500 * 1000);
-//
-//
-//    [synth stop];
-//    synth = nil;
-//    usleep(2 * 1000 * 1000);
-//}
-//
-//-(void)testSynthVWWWaveTypeSawtooth{
-//    NSLog(@"Testing wave type");
-//
-//    VWWSynthesizer *synth = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:440.0];
-//    [synth start];
-//
-//    usleep(500 * 1000);
-//
-//    synth.waveType = VWWWaveTypeSquare;
-//    usleep(500 * 1000);
-//    synth.waveType = VWWWaveTypeTriangle;
-//    usleep(500 * 1000);
-//    synth.waveType = VWWWaveTypeSawtooth;
-//    usleep(500 * 1000);
-//
-//    [synth stop];
-//    synth = nil;
-//    usleep(2 * 1000 * 1000);
-//}
-//
-//
+
+-(void)testSynthAmplitude{
+
+    NSLog(@"Testing amplitude");
+
+    VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
+    [synth start];
+
+    usleep(500 * 1000);
+
+    synth.amplitude = 0.8;
+    usleep(500 * 1000);
+    synth.amplitude = 0.6;
+    usleep(500 * 1000);
+    synth.amplitude = 0.4;
+    usleep(500 * 1000);
+    synth.amplitude = 0.2;
+    usleep(500 * 1000);
+    synth.amplitude = 0.0;
+    usleep(500 * 1000);
+    synth.amplitude = 1.0;
+    usleep(500 * 1000);
+
+    [synth stop];
+    synth = nil;
+    usleep(2 * 1000 * 1000);
+}
+
+
+-(void)testSynthMute{
+
+    NSLog(@"Testing mute");
+
+    VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
+    [synth start];
+
+    usleep(500 * 1000);
+
+    synth.muted = YES;
+    usleep(500 * 1000);
+    synth.muted = NO;
+    usleep(500 * 1000);
+    synth.muted = YES;
+    usleep(500 * 1000);
+    synth.muted = NO;
+    usleep(500 * 1000);
+    synth.muted = YES;
+    usleep(500 * 1000);
+    synth.muted = NO;
+    usleep(500 * 1000);
+
+
+    [synth stop];
+    synth = nil;
+    usleep(2 * 1000 * 1000);
+}
+
+-(void)testSynthVWWWaveTypeSawtooth{
+    NSLog(@"Testing wave type");
+
+    VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
+    [synth start];
+
+    usleep(500 * 1000);
+
+    synth.waveType = VWWWaveTypeSquare;
+    usleep(500 * 1000);
+    synth.waveType = VWWWaveTypeTriangle;
+    usleep(500 * 1000);
+    synth.waveType = VWWWaveTypeSawtooth;
+    usleep(500 * 1000);
+
+    [synth stop];
+    synth = nil;
+    usleep(2 * 1000 * 1000);
+}
+
+
 //-(void)testSynthVWWEffectType{
 //
 //    NSLog(@"Testing effect type");
 //
-//    VWWSynthesizer *synth = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:440.0];
+//    VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
 //    [synth start];
 //
 //    // Produces 4 tones
@@ -223,11 +224,11 @@
 //    synth = nil;
 //    usleep(2 * 1000 * 1000);
 //}
-//
+
 //-(void)testSynthIncreasingFrequency{
 //    NSLog(@"Testing frequency increase ");
 //    NSInteger f = 20;
-//    VWWSynthesizer *synth = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:440.0];
+//    VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
 //    [synth start];
 //
 //    for(NSInteger i = 20; i < 18000; i++){
@@ -241,32 +242,32 @@
 //    usleep(2 * 1000 * 1000);
 //
 //}
-//
 
-//-(void)testSynthDictionaryExportImport{
-//    NSLog(@"Testing dictionary export and import");
-//    VWWSynthesizer *synth1 = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:440.0];
-//    synth1.waveType = VWWWaveTypeSquare;
-//    synth1.effectType = VWWEffectTypeAutoTune;
-//    synth1.amplitude = 0.5;
-//    [synth1 start];
-//    usleep(1 * 1000 * 1000);
-//    [synth1 stop];
-//    NSLog(@"Exporting sythesizer to dictionary");
-//    NSDictionary *dictionaryExport = [synth1 dictionaryRepresentation];
-//    [[NSUserDefaults standardUserDefaults] setObject:dictionaryExport forKey:@"synth"];
-//    [[NSUserDefaults standardUserDefaults] synchronize];
-//    synth1 = nil;
-//
-//    usleep(1 * 1000 * 1000);
-//
-//    NSLog(@"Creating new synth from dictionary");
-//    NSDictionary *dictionaryImport = [[NSUserDefaults standardUserDefaults]objectForKey:@"synth"];
-//    VWWSynthesizer *synth2 = [[VWWSynthesizer alloc]initWithDictionary:dictionaryImport];
-//    [synth2 start];
-//    usleep(1 * 1000 * 1000);
-//    [synth2 stop];
-//    synth2 = nil;
-//
-//}
+
+-(void)testSynthDictionaryExportImport{
+    NSLog(@"Testing dictionary export and import");
+    VWWNormalizedSynthesizer *synth1 = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
+    synth1.waveType = VWWWaveTypeSquare;
+    synth1.effectType = VWWEffectTypeAutoTune;
+    synth1.amplitude = 0.5;
+    [synth1 start];
+    usleep(1 * 1000 * 1000);
+    [synth1 stop];
+    NSLog(@"Exporting sythesizer to dictionary");
+    NSDictionary *dictionaryExport = [synth1 dictionaryRepresentation];
+    [[NSUserDefaults standardUserDefaults] setObject:dictionaryExport forKey:@"synth"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    synth1 = nil;
+
+    usleep(1 * 1000 * 1000);
+
+    NSLog(@"Creating new synth from dictionary");
+    NSDictionary *dictionaryImport = [[NSUserDefaults standardUserDefaults]objectForKey:@"synth"];
+    VWWNormalizedSynthesizer *synth2 = [[VWWNormalizedSynthesizer alloc]initWithDictionary:dictionaryImport];
+    [synth2 start];
+    usleep(1 * 1000 * 1000);
+    [synth2 stop];
+    synth2 = nil;
+
+}
 @end
