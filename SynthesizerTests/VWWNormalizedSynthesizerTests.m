@@ -30,13 +30,15 @@
 -(void)testSynthInitAndRun{
 
     NSLog(@"Testing Init and Run");
-    VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
+        VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyLeftMin:30 frequencyLeftMax:2000 frequencyLeftNormalized:0.3
+                                                                                  frequencyRightMin:30 frequencyRightMax:2000 frequencyRightNormalized:0.3];
     [synth start];
     usleep(1 * 1000 * 1000);
 
     
     for(float i = 0.0; i < 1.0; i+=0.01){
-        [synth setFrequencyNormalized:i];
+        [synth setFrequencyLeftNormalized:i];
+        [synth setFrequencyRightNormalized:i];
         usleep(10 * 1000);
     }
     
@@ -51,10 +53,14 @@
 
 -(void)testMultipleSynths{
     NSLog(@"Testing Multiple Synthesizers");
-    VWWNormalizedSynthesizer *synth1 = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
+//    VWWNormalizedSynthesizer *synth1 = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
+    VWWNormalizedSynthesizer *synth1 = [[VWWNormalizedSynthesizer alloc]initWithFrequencyLeftMin:30 frequencyLeftMax:2000 frequencyLeftNormalized:0.3
+                                                                               frequencyRightMin:30 frequencyRightMax:2000 frequencyRightNormalized:0.3];
     [synth1 start];
 
-    VWWNormalizedSynthesizer *synth2 = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:330 frequencyMax:5000 frequencyNormalized:0.3];
+//    VWWNormalizedSynthesizer *synth2 = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:330 frequencyMax:5000 frequencyNormalized:0.3];
+        VWWNormalizedSynthesizer *synth2 = [[VWWNormalizedSynthesizer alloc]initWithFrequencyLeftMin:330 frequencyLeftMax:5000 frequencyLeftNormalized:0.3
+                                                                                   frequencyRightMin:330 frequencyRightMax:5000 frequencyRightNormalized:0.3];
     [synth2 start];
 
     usleep(1 * 1000 * 1000);
@@ -114,7 +120,8 @@
 
     NSLog(@"Testing amplitude");
 
-    VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
+        VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyLeftMin:30 frequencyLeftMax:2000 frequencyLeftNormalized:0.3
+                                                                                  frequencyRightMin:30 frequencyRightMax:2000 frequencyRightNormalized:0.3];
     [synth start];
 
     usleep(500 * 1000);
@@ -142,7 +149,9 @@
 
     NSLog(@"Testing mute");
 
-    VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
+    VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyLeftMin:30 frequencyLeftMax:2000 frequencyLeftNormalized:0.3
+                                                                              frequencyRightMin:30 frequencyRightMax:2000 frequencyRightNormalized:0.3];
+
     [synth start];
 
     usleep(500 * 1000);
@@ -169,7 +178,9 @@
 -(void)testSynthVWWWaveTypeSawtooth{
     NSLog(@"Testing wave type");
 
-    VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
+    VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyLeftMin:30 frequencyLeftMax:2000 frequencyLeftNormalized:0.3
+                                                                              frequencyRightMin:30 frequencyRightMax:2000 frequencyRightNormalized:0.3];
+
     [synth start];
 
     usleep(500 * 1000);
@@ -191,7 +202,9 @@
 //
 //    NSLog(@"Testing effect type");
 //
-//    VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
+//VWWNormalizedSynthesizer *synth = [[VWWNormalizedSynthesizer alloc]initWithFrequencyLeftMin:30 frequencyLeftMax:2000 frequencyLeftNormalized:0.3
+//                                                                          frequencyRightMin:30 frequencyRightMax:2000 frequencyRightNormalized:0.3];
+//
 //    [synth start];
 //
 //    // Produces 4 tones
@@ -246,7 +259,9 @@
 
 -(void)testSynthDictionaryExportImport{
     NSLog(@"Testing dictionary export and import");
-    VWWNormalizedSynthesizer *synth1 = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
+    VWWNormalizedSynthesizer *synth1 = [[VWWNormalizedSynthesizer alloc]initWithFrequencyLeftMin:30 frequencyLeftMax:2000 frequencyLeftNormalized:0.3
+                                                                              frequencyRightMin:30 frequencyRightMax:2000 frequencyRightNormalized:0.3];
+
     synth1.waveType = VWWWaveTypeSquare;
     synth1.effectType = VWWEffectTypeAutoTune;
     synth1.amplitude = 0.5;

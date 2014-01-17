@@ -25,6 +25,8 @@
 		C61B7544187F888200737E51 /* VWWTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61B7543187F888200737E51 /* VWWTouchView.m */; };
 		C61B7549187F88CD00737E51 /* VWWTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C61B7548187F88CD00737E51 /* VWWTouchViewController.m */; };
 		C6930CC31888E19E00C034ED /* VWWSynthesizerAV.m in Sources */ = {isa = PBXBuildFile; fileRef = C6930CC21888E19E00C034ED /* VWWSynthesizerAV.m */; };
+		C6930CC41888F91B00C034ED /* VWWSynthesizerGroupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C60D15BA1880ABD400D008F6 /* VWWSynthesizerGroupTests.m */; };
+		C6930CC51888F99900C034ED /* VWWNormalizedSynthesizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D243187F771B0025105C /* VWWNormalizedSynthesizerTests.m */; };
 		C6A6D198187F441D0025105C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D197187F441D0025105C /* Foundation.framework */; };
 		C6A6D19A187F441D0025105C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D199187F441D0025105C /* CoreGraphics.framework */; };
 		C6A6D19C187F441D0025105C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D19B187F441D0025105C /* UIKit.framework */; };
@@ -481,7 +483,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6930CC51888F99900C034ED /* VWWNormalizedSynthesizerTests.m in Sources */,
 				C6A6D1C6187F441D0025105C /* VWWSynthesizerTests.m in Sources */,
+				C6930CC41888F91B00C034ED /* VWWSynthesizerGroupTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
