@@ -24,7 +24,9 @@ OSStatus RenderTone( void* inRefCon,
 	// Get the tone parameters out of the view controller
 	VWWSynthesizerC *synth = (__bridge VWWSynthesizerC *)inRefCon;
 	double theta = synth.theta;
-	double theta_increment = 2.0 * M_PI * synth.frequency / kSampleRate;
+    double theta2 = synth.theta2;
+	double theta_increment_left = 2.0 * M_PI * synth.frequencyLeft / kSampleRate;
+    double theta_increment_right = 2.0 * M_PI * synth.frequencyRight / kSampleRate;
 
 //    // To see how many instances are being created
 //    static NSMutableDictionary* d = [NSMutableDictionary new];
@@ -46,32 +48,32 @@ OSStatus RenderTone( void* inRefCon,
 //    }
 
 
-	// This is a mono tone generator so we only need the first buffer
-	const int channel = 0;
-	Float32 *buffer = (Float32 *)ioData->mBuffers[channel].mData;
 
-	// Generate the samples
-	for (UInt32 frame = 0; frame < inNumberFrames; frame++)
+
+    
+    
+    Float32 *bufferLeft = (Float32 *)ioData->mBuffers[0].mData;
+    for (UInt32 frame = 0; frame < inNumberFrames; frame++)
 	{
         if(synth.muted){
-            buffer[frame] = 0;
+            bufferLeft[frame] = 0;
         }
         else{
             switch(synth.waveType){
                 case VWWWaveTypeSine:{
-                    buffer[frame] = sin(theta) * synth.amplitude;
+                    bufferLeft[frame] = sin(theta) * synth.amplitude;
                     break;
                 }
                 case VWWWaveTypeSquare:{
-                    buffer[frame] = square(theta) * synth.amplitude;
+                    bufferLeft[frame] = square(theta) * synth.amplitude;
                     break;
                 }
                 case VWWWaveTypeSawtooth:{
-                    buffer[frame] = sawtooth(theta) * synth.amplitude;
+                    bufferLeft[frame] = sawtooth(theta) * synth.amplitude;
                     break;
                 }
                 case VWWWaveTypeTriangle:{
-                    buffer[frame] = triangle(theta) * synth.amplitude;
+                    bufferLeft[frame] = triangle(theta) * synth.amplitude;
                     break;
                 }
                 default:
@@ -79,14 +81,58 @@ OSStatus RenderTone( void* inRefCon,
                     
             }
         }
-		theta += theta_increment;
+		theta += theta_increment_left;
 		if (theta > 2.0 * M_PI)
 		{
 			theta -= 2.0 * M_PI;
 		}
-	}
+
+    }
+    synth.theta = theta;
+
+    
+    Float32 *bufferRight = (Float32 *)ioData->mBuffers[1].mData;
+    for (UInt32 frame = 0; frame < inNumberFrames; frame++)
+	{
+        if(synth.muted){
+            bufferRight[frame] = 0;
+        }
+        else{
+            switch(synth.waveType){
+                case VWWWaveTypeSine:{
+                    bufferRight[frame] = sin(theta2) * synth.amplitude;
+                    break;
+                }
+                case VWWWaveTypeSquare:{
+                    bufferRight[frame] = square(theta2) * synth.amplitude;
+                    break;
+                }
+                case VWWWaveTypeSawtooth:{
+                    bufferRight[frame] = sawtooth(theta2) * synth.amplitude;
+                    break;
+                }
+                case VWWWaveTypeTriangle:{
+                    bufferRight[frame] = triangle(theta2) * synth.amplitude;
+                    break;
+                }
+                default:
+                    break;
+                    
+            }
+
+        }
+		theta2 += theta_increment_right;
+		if (theta2 > 2.0 * M_PI)
+		{
+			theta2 -= 2.0 * M_PI;
+		}
+        
+    }
+    synth.theta2 = theta2;
+
+    
+ 
 	
-	synth.theta = theta;
     
 	return noErr;
 }
@@ -95,7 +141,8 @@ OSStatus RenderTone( void* inRefCon,
 
 @interface VWWSynthesizerC (){
     AudioComponentInstance _toneUnit;
-    float _frequency;
+    float _frequencyLeft;
+    float _frequencyRight;
 }
 
 @property (readwrite) bool isRunning;
@@ -108,10 +155,11 @@ OSStatus RenderTone( void* inRefCon,
 @implementation VWWSynthesizerC
 
 
--(id)initWithAmplitude:(float)amplitude andFrequency:(float)frequency{
+-(id)initWithAmplitude:(float)amplitude frequencyLeft:(float)frequencyLeft frequencyRight:(float)frequencyRight{
     self = [super init];
     if(self){
-        _frequency = frequency;
+        _frequencyLeft = frequencyLeft;
+        _frequencyRight = frequencyRight;
         _amplitude = amplitude;
         _muted = NO;
         _waveType = VWWWaveTypeSine;
@@ -188,18 +236,24 @@ OSStatus RenderTone( void* inRefCon,
                                sizeof(input));
 	NSAssert1(err == noErr, @"Error setting callback: %d", err);
 	
+    
+    AudioChannelLayout channelLayout;
+    channelLayout.mChannelLayoutTag = kAudioChannelLayoutTag_Stereo;
+    channelLayout.mChannelBitmap = kAudioChannelBit_Left;
+    
+
 	// Set the format to 32 bit, single channel, floating point, linear PCM
 	const int four_bytes_per_float = 4;
 	const int eight_bits_per_byte = 8;
+    const int num_channels = 2;
 	AudioStreamBasicDescription streamFormat;
 	streamFormat.mSampleRate = kSampleRate;
 	streamFormat.mFormatID = kAudioFormatLinearPCM;
-	streamFormat.mFormatFlags =
-    kAudioFormatFlagsNativeFloatPacked | kAudioFormatFlagIsNonInterleaved;
+	streamFormat.mFormatFlags = kAudioFormatFlagsNativeFloatPacked | kAudioFormatFlagIsNonInterleaved;
 	streamFormat.mBytesPerPacket = four_bytes_per_float;
 	streamFormat.mFramesPerPacket = 1;
 	streamFormat.mBytesPerFrame = four_bytes_per_float;
-	streamFormat.mChannelsPerFrame = 1;
+	streamFormat.mChannelsPerFrame = num_channels;
 	streamFormat.mBitsPerChannel = four_bytes_per_float * eight_bits_per_byte;
 	err = AudioUnitSetProperty (_toneUnit,
                                 kAudioUnitProperty_StreamFormat,
@@ -207,24 +261,42 @@ OSStatus RenderTone( void* inRefCon,
                                 0,
                                 &streamFormat,
                                 sizeof(AudioStreamBasicDescription));
-	NSAssert1(err == noErr, @"Error setting stream format: %dd", err);
+    NSAssert1(err == noErr, @"Error setting stream format: %dd", err);
 }
 
--(void)setFrequency:(float)newFrequency{
+-(void)setFrequencyLeft:(float)newFrequencyLeft{
     @synchronized(self){
         if(_effectType == VWWEffectTypeAutoTune){
-            _frequency = [VWWSynthesizerNotes getClosestNoteForFrequency:newFrequency inKey:self.keyType];
+            _frequencyLeft = [VWWSynthesizerNotes getClosestNoteForFrequency:newFrequencyLeft inKey:self.keyType];
         }
         else{
-            _frequency = newFrequency;
+            _frequencyLeft = newFrequencyLeft;
         }
     }
 }
--(float)frequency{
+-(float)frequencyLeft{
     @synchronized(self){
-        return _frequency;
+        return _frequencyLeft;
     }
 }
+
+-(void)setFrequencyRight:(float)newFrequencyRight{
+    @synchronized(self){
+        if(_effectType == VWWEffectTypeAutoTune){
+            _frequencyRight = [VWWSynthesizerNotes getClosestNoteForFrequency:newFrequencyRight inKey:self.keyType];
+        }
+        else{
+            _frequencyRight = newFrequencyRight;
+        }
+    }
+}
+-(float)frequencyRight{
+    @synchronized(self){
+        return _frequencyRight;
+    }
+}
+
+
 
 @end
 

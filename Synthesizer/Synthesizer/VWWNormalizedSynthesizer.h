@@ -23,7 +23,8 @@
  * @param frequencyMax float from 30 - 20000
  * @param frequencyNormalized value from 0.0 - 1.0
  */
--(id)initWithFrequencyMin:(float)frequencyMin frequencyMax:(float)frequencyMax frequencyNormalized:(float)frequencyNormalized;
+-(id)initWithFrequencyLeftMin:(float)frequencyLeftMin frequencyLeftMax:(float)frequencyLeftMax frequencyLeftNormalized:(float)frequencyLeftNormalized
+            frequencyRightMin:(float)frequencyRightMin frequencyRightMax:(float)frequencyRightMax frequencyRightNormalized:(float)frequencyRightNormalized;
 
 /**
  * Starts the synthesizer
@@ -73,9 +74,14 @@
 // */
 //-(void)setFrequency:(float)frequency;
 
-@property float frequencyMin;
-@property float frequencyMax;
-@property float frequencyNormalized;
+@property float frequencyLeftMin;
+@property float frequencyLeftMax;
+@property float frequencyLeftNormalized;
+
+@property float frequencyRightMin;
+@property float frequencyRightMax;
+@property float frequencyRightNormalized;
+
 
 
 /**

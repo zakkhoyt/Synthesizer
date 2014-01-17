@@ -22,9 +22,9 @@
 
 /* Begin PBXBuildFile section */
 		C60D15B91880A87F00D008F6 /* VWWSynthesizerGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C60D15B81880A87F00D008F6 /* VWWSynthesizerGroup.m */; };
-		C60D15BB1880ABD400D008F6 /* VWWSynthesizerGroupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C60D15BA1880ABD400D008F6 /* VWWSynthesizerGroupTests.m */; };
 		C61B7544187F888200737E51 /* VWWTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61B7543187F888200737E51 /* VWWTouchView.m */; };
 		C61B7549187F88CD00737E51 /* VWWTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C61B7548187F88CD00737E51 /* VWWTouchViewController.m */; };
+		C6930CC31888E19E00C034ED /* VWWSynthesizerAV.m in Sources */ = {isa = PBXBuildFile; fileRef = C6930CC21888E19E00C034ED /* VWWSynthesizerAV.m */; };
 		C6A6D198187F441D0025105C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D197187F441D0025105C /* Foundation.framework */; };
 		C6A6D19A187F441D0025105C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D199187F441D0025105C /* CoreGraphics.framework */; };
 		C6A6D19C187F441D0025105C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D19B187F441D0025105C /* UIKit.framework */; };
@@ -51,7 +51,6 @@
 		C6A6D235187F5E470025105C /* VWWSynthesizerNotes.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D22B187F5E470025105C /* VWWSynthesizerNotes.m */; };
 		C6A6D238187F61C30025105C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6A6D237187F61C30025105C /* README.txt */; };
 		C6A6D242187F73190025105C /* VWWNormalizedSynthesizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D241187F73190025105C /* VWWNormalizedSynthesizer.mm */; };
-		C6A6D244187F771B0025105C /* VWWNormalizedSynthesizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D243187F771B0025105C /* VWWNormalizedSynthesizerTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +71,8 @@
 		C61B7543187F888200737E51 /* VWWTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWTouchView.m; path = View/VWWTouchView.m; sourceTree = "<group>"; };
 		C61B7547187F88CD00737E51 /* VWWTouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTouchViewController.h; sourceTree = "<group>"; };
 		C61B7548187F88CD00737E51 /* VWWTouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTouchViewController.m; sourceTree = "<group>"; };
+		C6930CC11888E19E00C034ED /* VWWSynthesizerAV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerAV.h; sourceTree = "<group>"; };
+		C6930CC21888E19E00C034ED /* VWWSynthesizerAV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerAV.m; sourceTree = "<group>"; };
 		C6A6D194187F441D0025105C /* Synthesizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synthesizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A6D197187F441D0025105C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C6A6D199187F441D0025105C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -319,6 +320,8 @@
 				C6A6D22A187F5E470025105C /* VWWSynthesizerNotes.h */,
 				C6A6D22B187F5E470025105C /* VWWSynthesizerNotes.m */,
 				C6A6D239187F651D0025105C /* VWWSynthesizerKeys.h */,
+				C6930CC11888E19E00C034ED /* VWWSynthesizerAV.h */,
+				C6930CC21888E19E00C034ED /* VWWSynthesizerAV.m */,
 			);
 			path = VWW;
 			sourceTree = "<group>";
@@ -458,6 +461,7 @@
 			files = (
 				C6A6D204187F49B10025105C /* VWWSynthesizer.mm in Sources */,
 				C6A6D233187F5E470025105C /* VWWSynthesizerC.mm in Sources */,
+				C6930CC31888E19E00C034ED /* VWWSynthesizerAV.m in Sources */,
 				C6A6D200187F48B00025105C /* NSTimer+Blocks.m in Sources */,
 				C6A6D1A4187F441D0025105C /* main.m in Sources */,
 				C6A6D22E187F5E470025105C /* CAXException.cpp in Sources */,
@@ -477,8 +481,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C60D15BB1880ABD400D008F6 /* VWWSynthesizerGroupTests.m in Sources */,
-				C6A6D244187F771B0025105C /* VWWNormalizedSynthesizerTests.m in Sources */,
 				C6A6D1C6187F441D0025105C /* VWWSynthesizerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,17 +16,21 @@
 @property float amplitude;
 @property bool muted;
 
--(void)setFrequency:(float)newFrequency;
--(float)frequency;
+
+-(float)frequencyLeft;
+-(void)setFrequencyLeft:(float)newFrequencyLeft;
+-(float)frequencyRight;
+-(void)setFrequencyRight:(float)newFrequencyRight;
 
 @property VWWWaveType waveType;
 @property VWWEffectType effectType;
 @property double sinPhase;
 @property double theta;
+@property double theta2;
 @property (readonly) bool isRunning;
 @property VWWKeyType keyType;
 
--(id)initWithAmplitude:(float)amplitude andFrequency:(float)frequency;
+-(id)initWithAmplitude:(float)amplitude frequencyLeft:(float)frequencyLeft frequencyRight:(float)frequencyRight;
 - (void)start;
 - (void)stop;
 @end

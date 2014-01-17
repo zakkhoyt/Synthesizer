@@ -14,9 +14,14 @@
 @property (nonatomic, strong) VWWNormalizedSynthesizer *ySynthesizer;
 @property (nonatomic, strong) VWWNormalizedSynthesizer *zSynthesizer;
 
--(id)initWithXFrequencyMin:(float)xFrequencyMin xFrequencyMax:(float)xFrequencyMax xFrequencyNormalized:(float)xFrequencyNormalized
-             yFrequencyMin:(float)yFrequencyMin yFrequencyMax:(float)yFrequencyMax yFrequencyNormalized:(float)yFrequencyNormalized
-             zFrequencyMin:(float)zFrequencyMin zFrequencyMax:(float)zFrequencyMax zFrequencyNormalized:(float)zFrequencyNormalized;
+
+-(id)initWithXFrequencyLeftMin:(float)xFrequencyLeftMin xFrequencyLeftMax:(float)xFrequencyLeftMax xFrequencyLeftNormalized:(float)xFrequencyLeftNormalized
+            xFrequencyRightMin:(float)xFrequencyRightMin xFrequencyRightMax:(float)xFrequencyRightMax xFrequencyRightNormalized:(float)xFrequencyRightNormalized
+             yFrequencyLeftMin:(float)yFrequencyLeftMin yFrequencyLeftMax:(float)yFrequencyLeftMax yFrequencyLeftNormalized:(float)yFrequencyLeftNormalized
+            yFrequencyRightMin:(float)yFrequencyRightMin yFrequencyRightMax:(float)yFrequencyRightMax yFrequencyRightNormalized:(float)yFrequencyRightNormalized
+             zFrequencyLeftMin:(float)zFrequencyLeftMin zFrequencyLeftMax:(float)zFrequencyLeftMax zFrequencyLeftNormalized:(float)zFrequencyLeftNormalized
+            zFrequencyRightMin:(float)zFrequencyRightMin zFrequencyRightMax:(float)zFrequencyRightMax zFrequencyRightNormalized:(float)zFrequencyRightNormalized;
+
 
 /**
  * Starts all synthesizers in group
@@ -43,6 +48,18 @@
  * @param muted if you don't want the tone to be audible
  */
 -(void)setMuted:(bool)muted;
+
+
+/**
+ * Return
+ */
+-(float)sensitivity;
+
+/**
+ * Set
+ * @param
+ */
+-(void)setSensitivity:(float)sensitivity;
 
 @end
 

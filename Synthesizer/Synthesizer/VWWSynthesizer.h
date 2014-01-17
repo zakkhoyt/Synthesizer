@@ -26,7 +26,7 @@
  * @param amplitude between 0.0 - 1.0
  * @param frequency in Hz between 30 - 20000
  */
--(id)initWithAmplitude:(float)amplitude andFrequency:(float)frequency;
+-(id)initWithAmplitude:(float)amplitude frequencyLeft:(float)frequencyLeft frequencyRight:(float)frequencyRight;
 
 /**
  * Starts the synthesizer
@@ -67,15 +67,26 @@
 -(void)setMuted:(bool)muted;
 
 /**
- * Return the frequency
+ * Return the frequency for left channle
  */
--(float)frequency;
+-(float)frequencyLeft;
 
 /**
  * Set the frequency in Hz
  * @param frequency typcially audible between 30 and 20000
  */
--(void)setFrequency:(float)frequency;
+-(void)setFrequencyLeft:(float)frequencyLeft;
+
+/**
+ * Return the frequency for right channel
+ */
+-(float)frequencyRight;
+
+/**
+ * Set the frequency in Hz
+ * @param frequency typcially audible between 30 and 20000
+ */
+-(void)setFrequencyRight:(float)frequencyRight;
 
 /**
  * Return the waveType

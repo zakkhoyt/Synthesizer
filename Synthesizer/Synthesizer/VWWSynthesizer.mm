@@ -20,16 +20,16 @@
     static VWWSynthesizer *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[VWWSynthesizer alloc]initWithAmplitude:1.0 andFrequency:440];
+        instance = [[VWWSynthesizer alloc]initWithAmplitude:1.0 frequencyLeft:440 frequencyRight:440];
     });
     return instance;
 }
 
 
--(id)initWithAmplitude:(float)amplitude andFrequency:(float)frequency{
+-(id)initWithAmplitude:(float)amplitude frequencyLeft:(float)frequencyLeft frequencyRight:(float)frequencyRight{
     self = [super init];
     if(self){
-        _synthesizer = [[VWWSynthesizerC alloc]initWithAmplitude:amplitude andFrequency:frequency];
+        _synthesizer = [[VWWSynthesizerC alloc]initWithAmplitude:amplitude frequencyLeft:frequencyLeft frequencyRight:frequencyRight];
     }
     return self;
 }
@@ -69,14 +69,26 @@
     }
 }
 
--(void)setFrequency:(float)frequency{
+-(void)setFrequencyLeft:(float)frequencyLeft{
     @synchronized(self){
-        self.synthesizer.frequency = frequency;
+        self.synthesizer.frequencyLeft = frequencyLeft;
     }
 }
--(float)frequency{
+-(float)frequencyLeft{
     @synchronized(self){
-        return self.synthesizer.frequency;
+        return self.synthesizer.frequencyLeft;
+    }
+}
+
+
+-(void)setFrequencyRight:(float)frequencyRight{
+    @synchronized(self){
+        self.synthesizer.frequencyRight = frequencyRight;
+    }
+}
+-(float)frequencyRight{
+    @synchronized(self){
+        return self.synthesizer.frequencyRight;
     }
 }
 
@@ -134,9 +146,10 @@
     self = [super init];
     if(self){
         NSNumber *amplitude = dictionary[VWWSynthesizerAmplitudeKey];
-        NSNumber *frequency = dictionary[VWWSynthesizerFrequencyKey];
+        NSNumber *frequencyLeft = dictionary[VWWSynthesizerFrequencyLeftKey];
+        NSNumber *frequencyRight = dictionary[VWWSynthesizerFrequencyRightKey];
         
-        self.synthesizer = [[VWWSynthesizerC alloc]initWithAmplitude:amplitude.floatValue andFrequency:frequency.floatValue];
+        self.synthesizer = [[VWWSynthesizerC alloc]initWithAmplitude:amplitude.floatValue frequencyLeft:frequencyLeft.floatValue frequencyRight:frequencyRight.floatValue];
         
         NSNumber *muted = dictionary[VWWSynthesizerMutedKey];
         self.synthesizer.muted = muted.integerValue == 0 ? NO : YES;
@@ -169,7 +182,7 @@
     NSDictionary *dictionary = @{VWWSynthesizerIsRunningKey : self.synthesizer.isRunning ? @(1) : @(0),
                                  VWWSynthesizerAmplitudeKey : @(self.synthesizer.amplitude),
                                  VWWSynthesizerMutedKey : self.synthesizer.muted ? @(1) : @(0),
-                                 VWWSynthesizerFrequencyKey : @(self.frequency),
+                                 VWWSynthesizerFrequencyLeftKey : @(self.frequencyLeft),
                                  VWWSynthesizerWaveTypeKey : @(self.synthesizer.waveType),
                                  VWWSynthesizerEffectTypeKey : @(self.synthesizer.effectType),
                                  VWWSynthesizerKeyTypeKey : @(self.synthesizer.keyType),

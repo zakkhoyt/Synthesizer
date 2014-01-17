@@ -30,8 +30,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.touchSynthX = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:500 frequencyNormalized:0.5];
-    self.touchSynthY = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:500 frequencyNormalized:0.5];
+    self.touchSynthX = [[VWWNormalizedSynthesizer alloc]initWithFrequencyLeftMin:30 frequencyLeftMax:500 frequencyLeftNormalized:1.0
+                                                               frequencyRightMin:30 frequencyRightMax:500 frequencyRightNormalized:1.0];
+    self.touchSynthY = [[VWWNormalizedSynthesizer alloc]initWithFrequencyLeftMin:30 frequencyLeftMax:500 frequencyLeftNormalized:1.0
+                                                               frequencyRightMin:30 frequencyRightMax:500 frequencyRightNormalized:1.0];
+
     self.touchSynthX.muted = YES;
     self.touchSynthY.muted = YES;
     [self.touchSynthX start];
@@ -50,8 +53,10 @@
     for(NSDictionary *dictionary in array){
         NSNumber *x = dictionary[VWWTouchViewXKey];
         NSNumber *y = dictionary[VWWTouchViewYKey];
-        self.touchSynthX.frequencyNormalized = x.floatValue;
-        self.touchSynthY.frequencyNormalized = y.floatValue;
+        self.touchSynthX.frequencyLeftNormalized = x.floatValue;
+        self.touchSynthX.frequencyRightNormalized = y.floatValue;
+        self.touchSynthY.frequencyLeftNormalized = x.floatValue;
+        self.touchSynthY.frequencyRightNormalized = y.floatValue;
     }
 
 }
