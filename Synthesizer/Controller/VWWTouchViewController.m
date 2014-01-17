@@ -10,6 +10,8 @@
 #import "VWWTouchView.h"
 #import "VWWNormalizedSynthesizer.h"
 
+static NSString *VWWSegueTouchToGroups = @"VWWSegueTouchToGroups";
+
 @interface VWWTouchViewController () <VWWTouchViewDelegate>
 @property (weak, nonatomic) IBOutlet VWWTouchView *touchView;
 @property (nonatomic, strong) VWWNormalizedSynthesizer *touchSynthX;
@@ -30,6 +32,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     self.touchSynthX = [[VWWNormalizedSynthesizer alloc]initWithFrequencyLeftMin:30 frequencyLeftMax:500 frequencyLeftNormalized:1.0
                                                                frequencyRightMin:30 frequencyRightMax:500 frequencyRightNormalized:1.0];
     self.touchSynthY = [[VWWNormalizedSynthesizer alloc]initWithFrequencyLeftMin:30 frequencyLeftMax:500 frequencyLeftNormalized:1.0
@@ -40,6 +43,11 @@
     [self.touchSynthX start];
     [self.touchSynthY start];
     self.touchView.delegate = self;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,6 +68,15 @@
     }
 
 }
+
+
+#pragma mark IBActions
+- (IBAction)settingsButtonTouchUpInside:(id)sender {
+    [self performSegueWithIdentifier:VWWSegueTouchToGroups sender:self];
+}
+
+
+
 
 #pragma mark VWWTouchViewDelegate
 -(void)touchViewDelegate:(VWWTouchView*)sender touchesBeganWithArray:(NSArray*)array{
