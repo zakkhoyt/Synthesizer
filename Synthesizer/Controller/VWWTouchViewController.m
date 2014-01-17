@@ -54,8 +54,8 @@
         NSNumber *x = dictionary[VWWTouchViewXKey];
         NSNumber *y = dictionary[VWWTouchViewYKey];
         self.touchSynthX.frequencyLeftNormalized = x.floatValue;
-        self.touchSynthX.frequencyRightNormalized = y.floatValue;
-        self.touchSynthY.frequencyLeftNormalized = x.floatValue;
+        self.touchSynthX.frequencyRightNormalized = x.floatValue;
+        self.touchSynthY.frequencyLeftNormalized = y.floatValue;
         self.touchSynthY.frequencyRightNormalized = y.floatValue;
     }
 
