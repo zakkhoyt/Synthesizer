@@ -114,7 +114,7 @@
         CGPoint point = [touch locationInView:self];
         float x = point.x / self.bounds.size.width;
         float y = 1.0 - (point.y / self.bounds.size.height);
-        NSLog(@"touch at normalized point %.2f,%.2f", x, y);
+        VWW_LOG_INFO(@"touch at normalized point %.2f,%.2f", x, y);
         NSDictionary *dictionary = @{VWWTouchViewXKey : @(x),
                                      VWWTouchViewYKey : @(y)};
         [xyArray addObject:dictionary];

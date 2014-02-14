@@ -13,4 +13,6 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+    #import "VWWUtilities.h"
+    #import "AsyncSocket.h"
 #endif

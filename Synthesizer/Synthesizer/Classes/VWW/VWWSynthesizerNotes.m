@@ -93,15 +93,15 @@
     // Since our notes are sorted ascending, use binary search pattern
     
     int min = 0;
-    int max = self.notesInChromatic.count;
+    int max = (int)self.notesInChromatic.count;
     int mid = 0;
     
     bool foundValue = false;
     while(min < max){
         mid = (min + max) / 2;
-        //        NSLog(@"min = %i , max = %i, mid = %i",min,max,mid);
+        //        VWW_LOG_INFO(@"min = %i , max = %i, mid = %i",min,max,mid);
         float temp = ((NSNumber*)(notes)[mid]).floatValue;
-        //        NSLog(@"temp = %f frequency = %f", temp, frequency);
+        //        VWW_LOG_INFO(@"temp = %f frequency = %f", temp, frequency);
         if (temp == frequency){
             foundValue = true;
             break;
@@ -150,15 +150,15 @@
     // Since our notes are sorted ascending, use binary search pattern
     
     int min = 0;
-    int max = self.notesInChromatic.count;
+    int max = (int)self.notesInChromatic.count;
     int mid = 0;
     
     bool foundValue = false;
     while(min < max){
         mid = (min + max) / 2;
-//        NSLog(@"min = %i , max = %i, mid = %i",min,max,mid);
+//        VWW_LOG_INFO(@"min = %i , max = %i, mid = %i",min,max,mid);
         float temp = ((NSNumber*)(self.notesInChromatic)[mid]).floatValue;
-//        NSLog(@"temp = %f frequency = %f", temp, frequency);
+//        VWW_LOG_INFO(@"temp = %f frequency = %f", temp, frequency);
         if (temp == frequency){
             foundValue = true;
             break;

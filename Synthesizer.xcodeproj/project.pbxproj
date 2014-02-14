@@ -52,6 +52,14 @@
 		C6A6D238187F61C30025105C /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = C6A6D237187F61C30025105C /* README.txt */; };
 		C6A6D242187F73190025105C /* VWWNormalizedSynthesizer.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D241187F73190025105C /* VWWNormalizedSynthesizer.mm */; };
 		C6A6D244187F771B0025105C /* VWWNormalizedSynthesizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C6A6D243187F771B0025105C /* VWWNormalizedSynthesizerTests.m */; };
+		C6D5C9D218AED3EA00DDCAD0 /* VWWSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9D118AED3EA00DDCAD0 /* VWWSettingsTableViewController.m */; };
+		C6D5C9D718AED74C00DDCAD0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D5C9D618AED74C00DDCAD0 /* CFNetwork.framework */; };
+		C6D5C9D918AED75100DDCAD0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6D5C9D818AED75100DDCAD0 /* Security.framework */; };
+		C6D5C9E318AED84D00DDCAD0 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9E018AED84D00DDCAD0 /* AsyncSocket.m */; };
+		C6D5C9E418AED84D00DDCAD0 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9E218AED84D00DDCAD0 /* AsyncUdpSocket.m */; };
+		C6D5C9E718AED8D500DDCAD0 /* VWWDevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9E618AED8D500DDCAD0 /* VWWDevicesViewController.m */; };
+		C6D5C9EA18AEDABB00DDCAD0 /* VWWDevicesHostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9E918AEDABB00DDCAD0 /* VWWDevicesHostViewController.m */; };
+		C6D5C9ED18AEDAC700DDCAD0 /* VWWDevicesJoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9EC18AEDAC700DDCAD0 /* VWWDevicesJoinViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +137,20 @@
 		C6A6D240187F73190025105C /* VWWNormalizedSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWNormalizedSynthesizer.h; sourceTree = "<group>"; };
 		C6A6D241187F73190025105C /* VWWNormalizedSynthesizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWNormalizedSynthesizer.mm; sourceTree = "<group>"; };
 		C6A6D243187F771B0025105C /* VWWNormalizedSynthesizerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWNormalizedSynthesizerTests.m; sourceTree = "<group>"; };
+		C6D5C9D018AED3EA00DDCAD0 /* VWWSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSettingsTableViewController.h; sourceTree = "<group>"; };
+		C6D5C9D118AED3EA00DDCAD0 /* VWWSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSettingsTableViewController.m; sourceTree = "<group>"; };
+		C6D5C9D618AED74C00DDCAD0 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C6D5C9D818AED75100DDCAD0 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C6D5C9DF18AED84D00DDCAD0 /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		C6D5C9E018AED84D00DDCAD0 /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		C6D5C9E118AED84D00DDCAD0 /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		C6D5C9E218AED84D00DDCAD0 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
+		C6D5C9E518AED8D500DDCAD0 /* VWWDevicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesViewController.h; sourceTree = "<group>"; };
+		C6D5C9E618AED8D500DDCAD0 /* VWWDevicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesViewController.m; sourceTree = "<group>"; };
+		C6D5C9E818AEDABB00DDCAD0 /* VWWDevicesHostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesHostViewController.h; sourceTree = "<group>"; };
+		C6D5C9E918AEDABB00DDCAD0 /* VWWDevicesHostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesHostViewController.m; sourceTree = "<group>"; };
+		C6D5C9EB18AEDAC700DDCAD0 /* VWWDevicesJoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesJoinViewController.h; sourceTree = "<group>"; };
+		C6D5C9EC18AEDAC700DDCAD0 /* VWWDevicesJoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesJoinViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +158,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6D5C9D918AED75100DDCAD0 /* Security.framework in Frameworks */,
+				C6D5C9D718AED74C00DDCAD0 /* CFNetwork.framework in Frameworks */,
 				C6A6D1F5187F44990025105C /* AudioToolbox.framework in Frameworks */,
 				C6A6D1F6187F44990025105C /* CoreAudio.framework in Frameworks */,
 				C6A6D19A187F441D0025105C /* CoreGraphics.framework in Frameworks */,
@@ -171,6 +195,14 @@
 			children = (
 				C61B7547187F88CD00737E51 /* VWWTouchViewController.h */,
 				C61B7548187F88CD00737E51 /* VWWTouchViewController.m */,
+				C6D5C9D018AED3EA00DDCAD0 /* VWWSettingsTableViewController.h */,
+				C6D5C9D118AED3EA00DDCAD0 /* VWWSettingsTableViewController.m */,
+				C6D5C9E518AED8D500DDCAD0 /* VWWDevicesViewController.h */,
+				C6D5C9E618AED8D500DDCAD0 /* VWWDevicesViewController.m */,
+				C6D5C9E818AEDABB00DDCAD0 /* VWWDevicesHostViewController.h */,
+				C6D5C9E918AEDABB00DDCAD0 /* VWWDevicesHostViewController.m */,
+				C6D5C9EB18AEDAC700DDCAD0 /* VWWDevicesJoinViewController.h */,
+				C6D5C9EC18AEDAC700DDCAD0 /* VWWDevicesJoinViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -197,6 +229,8 @@
 		C6A6D196187F441D0025105C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C6D5C9D818AED75100DDCAD0 /* Security.framework */,
+				C6D5C9D618AED74C00DDCAD0 /* CFNetwork.framework */,
 				C6A6D1F3187F44990025105C /* AudioToolbox.framework */,
 				C6A6D1F4187F44990025105C /* CoreAudio.framework */,
 				C6A6D197187F441D0025105C /* Foundation.framework */,
@@ -210,18 +244,16 @@
 		C6A6D19D187F441D0025105C /* Synthesizer */ = {
 			isa = PBXGroup;
 			children = (
-				C61B7546187F88B800737E51 /* Controller */,
 				C6A6D1FD187F48B00025105C /* Categories */,
+				C61B7546187F88B800737E51 /* Controller */,
+				C6D5C9D518AED4E900DDCAD0 /* Documents */,
 				C6A6D1B2187F441D0025105C /* Images.xcassets */,
-				C6A6D1AC187F441D0025105C /* Main_iPad.storyboard */,
-				C6A6D1A9187F441D0025105C /* Main_iPhone.storyboard */,
-				C6A6D20E187F59720025105C /* readme.markdown */,
+				C6D5C9D318AED44B00DDCAD0 /* Include */,
 				C6A6D19E187F441D0025105C /* Supporting Files */,
 				C6A6D1CF187F447A0025105C /* Synthesizer */,
+				C6D5C9DD18AED84D00DDCAD0 /* ThirdParty */,
+				C6D5C9D418AED4D700DDCAD0 /* UserInterface */,
 				C61B7545187F888700737E51 /* View */,
-				C6A6D1A6187F441D0025105C /* VWWAppDelegate.h */,
-				C6A6D1A7187F441D0025105C /* VWWAppDelegate.m */,
-				C6A6D236187F60360025105C /* VWWUtilities.h */,
 			);
 			path = Synthesizer;
 			sourceTree = "<group>";
@@ -229,6 +261,8 @@
 		C6A6D19E187F441D0025105C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C6A6D1A6187F441D0025105C /* VWWAppDelegate.h */,
+				C6A6D1A7187F441D0025105C /* VWWAppDelegate.m */,
 				C6A6D19F187F441D0025105C /* Synthesizer-Info.plist */,
 				C6A6D1A0187F441D0025105C /* InfoPlist.strings */,
 				C6A6D1A3187F441D0025105C /* main.m */,
@@ -337,6 +371,50 @@
 				C6A6D223187F5E470025105C /* VWWSynthesizerInputs.mm */,
 			);
 			path = ToBeRefactored;
+			sourceTree = "<group>";
+		};
+		C6D5C9D318AED44B00DDCAD0 /* Include */ = {
+			isa = PBXGroup;
+			children = (
+				C6A6D236187F60360025105C /* VWWUtilities.h */,
+			);
+			name = Include;
+			sourceTree = "<group>";
+		};
+		C6D5C9D418AED4D700DDCAD0 /* UserInterface */ = {
+			isa = PBXGroup;
+			children = (
+				C6A6D1AC187F441D0025105C /* Main_iPad.storyboard */,
+				C6A6D1A9187F441D0025105C /* Main_iPhone.storyboard */,
+			);
+			name = UserInterface;
+			sourceTree = "<group>";
+		};
+		C6D5C9D518AED4E900DDCAD0 /* Documents */ = {
+			isa = PBXGroup;
+			children = (
+				C6A6D20E187F59720025105C /* readme.markdown */,
+			);
+			name = Documents;
+			sourceTree = "<group>";
+		};
+		C6D5C9DD18AED84D00DDCAD0 /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				C6D5C9DE18AED84D00DDCAD0 /* CocoaAsyncSocket */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		C6D5C9DE18AED84D00DDCAD0 /* CocoaAsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				C6D5C9DF18AED84D00DDCAD0 /* AsyncSocket.h */,
+				C6D5C9E018AED84D00DDCAD0 /* AsyncSocket.m */,
+				C6D5C9E118AED84D00DDCAD0 /* AsyncUdpSocket.h */,
+				C6D5C9E218AED84D00DDCAD0 /* AsyncUdpSocket.m */,
+			);
+			path = CocoaAsyncSocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,15 +537,21 @@
 				C6A6D204187F49B10025105C /* VWWSynthesizer.mm in Sources */,
 				C6A6D233187F5E470025105C /* VWWSynthesizerC.mm in Sources */,
 				C6A6D200187F48B00025105C /* NSTimer+Blocks.m in Sources */,
+				C6D5C9E418AED84D00DDCAD0 /* AsyncUdpSocket.m in Sources */,
 				C6A6D1A4187F441D0025105C /* main.m in Sources */,
 				C6A6D22E187F5E470025105C /* CAXException.cpp in Sources */,
 				C61B7549187F88CD00737E51 /* VWWTouchViewController.m in Sources */,
 				C6A6D242187F73190025105C /* VWWNormalizedSynthesizer.mm in Sources */,
 				C61B7544187F888200737E51 /* VWWTouchView.m in Sources */,
 				C6A6D22C187F5E470025105C /* CADebugMacros.cpp in Sources */,
+				C6D5C9EA18AEDABB00DDCAD0 /* VWWDevicesHostViewController.m in Sources */,
 				C60D15B91880A87F00D008F6 /* VWWSynthesizerGroup.m in Sources */,
 				C6A6D235187F5E470025105C /* VWWSynthesizerNotes.m in Sources */,
 				C6A6D234187F5E470025105C /* VWWSynthesizerEffectNoteKey.m in Sources */,
+				C6D5C9E318AED84D00DDCAD0 /* AsyncSocket.m in Sources */,
+				C6D5C9ED18AEDAC700DDCAD0 /* VWWDevicesJoinViewController.m in Sources */,
+				C6D5C9D218AED3EA00DDCAD0 /* VWWSettingsTableViewController.m in Sources */,
+				C6D5C9E718AED8D500DDCAD0 /* VWWDevicesViewController.m in Sources */,
 				C6A6D1A8187F441D0025105C /* VWWAppDelegate.m in Sources */,
 				C6A6D22D187F5E470025105C /* CAStreamBasicDescription.cpp in Sources */,
 			);

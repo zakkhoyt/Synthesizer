@@ -30,7 +30,7 @@ OSStatus RenderTone( void* inRefCon,
 //    static NSMutableDictionary* d = [NSMutableDictionary new];
 //    NSString* value = [NSString stringWithFormat:@"%p", synth];
 //    if([d objectForKey:value] != nil){
-//        NSLog(@"found %d channels", d.count);
+//        VWW_LOG_INFO(@"found %d channels", d.count);
 //    }
 //    else{
 //        [d setObject:value forKey:value];
@@ -41,7 +41,7 @@ OSStatus RenderTone( void* inRefCon,
 //    const NSUInteger counterThreshold = 1;
 //    if(counter++ >= counterThreshold){
 //        int muted = synth.muted ? 1 : 0;
-//        NSLog(@"muted:%d amplitude:%f freq:%f self=%x", muted, synth.amplitude,  synth.frequency, (NSUInteger)synth);
+//        VWW_LOG_INFO(@"muted:%d amplitude:%f freq:%f self=%x", muted, synth.amplitude,  synth.frequency, (NSUInteger)synth);
 //        counter = 0;
 //    }
 

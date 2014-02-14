@@ -101,7 +101,7 @@
 -(void)saveFile{
     NSString* fileString = self.jsonRepresentation;
     if([VWWSynthesizerFileSystem writeFile:fileString] == NO){
-        NSLog(@"Error writing config file");
+        VWW_LOG_INFO(@"Error writing config file");
     }
 }
 
@@ -112,7 +112,7 @@
         return;
     }
 
-    NSLog(@"parsing json...");
+    VWW_LOG_INFO(@"parsing json...");
 
     NSData* data = [contents dataUsingEncoding:NSUTF8StringEncoding];
     NSError* error = nil;
@@ -120,7 +120,7 @@
                                                          options:NSJSONReadingMutableContainers
                                                            error:&error];
     if (!jsonArray || jsonArray.count == 0) {
-        NSLog(@"Error parsing JSON: %@", error);
+        VWW_LOG_INFO(@"Error parsing JSON: %@", error);
         return;
     }
     
@@ -132,7 +132,7 @@
         (self.inputs)[input.description] = input;
     }
 
-    NSLog(@"self json = %@", self.jsonRepresentation);
+    VWW_LOG_INFO(@"self json = %@", self.jsonRepresentation);
 }
 
 @end
