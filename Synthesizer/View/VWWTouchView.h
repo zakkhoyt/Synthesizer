@@ -20,5 +20,8 @@ static NSString *VWWTouchViewYKey = @"y";
 @end
 
 @interface VWWTouchView : UIView
+-(void)setEmitterPositionFromTouch:(UITouch*)t;
+-(void)setIsEmitting:(BOOL)isEmitting;
+
 @property (nonatomic, weak) id <VWWTouchViewDelegate> delegate;
 @end
