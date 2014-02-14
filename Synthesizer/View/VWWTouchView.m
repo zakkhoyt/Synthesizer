@@ -39,10 +39,10 @@
         
         CAEmitterCell* fire = [CAEmitterCell emitterCell];
         fire.birthRate = 0;
-        fire.lifetime = 0.5;
+        fire.lifetime = 1.0;
         fire.lifetimeRange = 0.5;
         fire.color = [[UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:0.4] CGColor];
-        fire.contents = (id)[[UIImage imageNamed:@"fire"] CGImage];
+        fire.contents = (id)[[UIImage imageNamed:@"atom"] CGImage];
         [fire setName:@"fire"];
         
         fire.velocity = 10;
@@ -50,11 +50,13 @@
         fire.emissionRange = M_PI_2;
         
         fire.scaleSpeed = 0.3;
-        fire.spin = 0.5;
+        fire.spin = 1.0;
+        fire.spinRange = M_PI;
         
+        
+        fire.xAcceleration = 0.5;
+        fire.yAcceleration = -0.2;
         self.fireEmitter.renderMode = kCAEmitterLayerAdditive;
-        
-        //add the cell to the layer and we're done
         self.fireEmitter.emitterCells = [NSArray arrayWithObject:fire];
         
     }

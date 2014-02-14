@@ -129,8 +129,6 @@
 		C6A6D240187F73190025105C /* VWWNormalizedSynthesizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWNormalizedSynthesizer.h; sourceTree = "<group>"; };
 		C6A6D241187F73190025105C /* VWWNormalizedSynthesizer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = VWWNormalizedSynthesizer.mm; sourceTree = "<group>"; };
 		C6A6D243187F771B0025105C /* VWWNormalizedSynthesizerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWNormalizedSynthesizerTests.m; sourceTree = "<group>"; };
-		C6CEA2D818AE862800DEBCC4 /* VWWParticleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWParticleView.h; path = View/VWWParticleView.h; sourceTree = "<group>"; };
-		C6CEA2D918AE862800DEBCC4 /* VWWParticleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWParticleView.m; path = View/VWWParticleView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,8 +160,6 @@
 		C61B7545187F888700737E51 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C6CEA2D818AE862800DEBCC4 /* VWWParticleView.h */,
-				C6CEA2D918AE862800DEBCC4 /* VWWParticleView.m */,
 				C61B7542187F888200737E51 /* VWWTouchView.h */,
 				C61B7543187F888200737E51 /* VWWTouchView.m */,
 			);
