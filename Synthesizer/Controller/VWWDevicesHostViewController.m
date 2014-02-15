@@ -62,6 +62,8 @@
         // Publish Service
         [self.service publish];
         
+
+        
     } else {
         VWW_LOG_INFO(@"Unable to create socket. Error %@ with user info %@.", error, [error userInfo]);
     }
@@ -72,18 +74,20 @@
 
 
 #pragma mark AsyncSocketDelegate
-- (void)socket:(AsyncSocket *)socket didAcceptNewSocket:(AsyncSocket *)newSocket {
+- (void)onSocket:(AsyncSocket *)socket didAcceptNewSocket:(AsyncSocket *)newSocket {
     VWW_LOG_INFO(@"Accepted New Socket from %@:%hu", [newSocket connectedHost], [newSocket connectedPort]);
     
     // Socket
     [self setSocket:newSocket];
+//    self.socket = socket;
+    self.socket.delegate = self;
     
     // Read Data from Socket
-    [newSocket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0];
+    [self.socket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0];
 }
 
 
-- (void)socketDidDisconnect:(AsyncSocket *)socket withError:(NSError *)error {
+- (void)onSocketDidDisconnect:(AsyncSocket *)socket withError:(NSError *)error {
     VWW_LOG_INFO(@"%s", __PRETTY_FUNCTION__);
     
     if (self.socket == socket) {
@@ -92,6 +96,22 @@
     }
 }
 
+- (void)onSocket:(AsyncSocket *)sock didReadPartialDataOfLength:(NSUInteger)partialLength tag:(long)tag{
+    VWW_LOG_INFO(@"Partial data read");
+}
+- (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag{
+    
+    NSString *payload = [NSString stringWithUTF8String:[data bytes]];
+    VWW_LOG_INFO(@"Received payload: %@", payload);
+    
+    [[[UIAlertView alloc]initWithTitle:@"Rx" message:payload delegate:Nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil]show];
+    if (tag == 1)
+    {
+        
+    }
+    
+    [self.socket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0];
+}
 
 
 #pragma mark NSNetServiceDelegate

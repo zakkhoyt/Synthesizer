@@ -60,6 +60,7 @@
 		C6D5C9E718AED8D500DDCAD0 /* VWWDevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9E618AED8D500DDCAD0 /* VWWDevicesViewController.m */; };
 		C6D5C9EA18AEDABB00DDCAD0 /* VWWDevicesHostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9E918AEDABB00DDCAD0 /* VWWDevicesHostViewController.m */; };
 		C6D5C9ED18AEDAC700DDCAD0 /* VWWDevicesJoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9EC18AEDAC700DDCAD0 /* VWWDevicesJoinViewController.m */; };
+		C6D5C9F118AEDF4B00DDCAD0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9F018AEDF4B00DDCAD0 /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,8 @@
 		C6D5C9E918AEDABB00DDCAD0 /* VWWDevicesHostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesHostViewController.m; sourceTree = "<group>"; };
 		C6D5C9EB18AEDAC700DDCAD0 /* VWWDevicesJoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesJoinViewController.h; sourceTree = "<group>"; };
 		C6D5C9EC18AEDAC700DDCAD0 /* VWWDevicesJoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesJoinViewController.m; sourceTree = "<group>"; };
+		C6D5C9EF18AEDF4B00DDCAD0 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		C6D5C9F018AEDF4B00DDCAD0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,6 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				C6D5C9DE18AED84D00DDCAD0 /* CocoaAsyncSocket */,
+				C6D5C9EE18AEDF4B00DDCAD0 /* MBProgressHUD */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -415,6 +419,15 @@
 				C6D5C9E218AED84D00DDCAD0 /* AsyncUdpSocket.m */,
 			);
 			path = CocoaAsyncSocket;
+			sourceTree = "<group>";
+		};
+		C6D5C9EE18AEDF4B00DDCAD0 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				C6D5C9EF18AEDF4B00DDCAD0 /* MBProgressHUD.h */,
+				C6D5C9F018AEDF4B00DDCAD0 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -547,6 +560,7 @@
 				C6D5C9EA18AEDABB00DDCAD0 /* VWWDevicesHostViewController.m in Sources */,
 				C60D15B91880A87F00D008F6 /* VWWSynthesizerGroup.m in Sources */,
 				C6A6D235187F5E470025105C /* VWWSynthesizerNotes.m in Sources */,
+				C6D5C9F118AEDF4B00DDCAD0 /* MBProgressHUD.m in Sources */,
 				C6A6D234187F5E470025105C /* VWWSynthesizerEffectNoteKey.m in Sources */,
 				C6D5C9E318AED84D00DDCAD0 /* AsyncSocket.m in Sources */,
 				C6D5C9ED18AEDAC700DDCAD0 /* VWWDevicesJoinViewController.m in Sources */,

@@ -16,14 +16,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7P7-Xa-lKP" customClass="VWWTouchView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7P7-Xa-lKP" customClass="VWWTouchView">
+                                <rect key="frame" x="0.0" y="0.0" width="331" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvJ-PJ-VYf">
-                                        <rect key="frame" x="274" y="538" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvJ-PJ-VYf">
+                                        <rect key="frame" x="0.0" y="518" width="331" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button">
+                                        <state key="normal" title="Settings">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -33,10 +33,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="qvJ-PJ-VYf" secondAttribute="bottom" id="LhN-8D-HVZ"/>
-                                    <constraint firstItem="qvJ-PJ-VYf" firstAttribute="top" secondItem="7P7-Xa-lKP" secondAttribute="top" constant="538" id="XW6-3E-wEf"/>
-                                    <constraint firstAttribute="trailing" secondItem="qvJ-PJ-VYf" secondAttribute="trailing" id="dqY-dc-knf"/>
-                                    <constraint firstItem="qvJ-PJ-VYf" firstAttribute="leading" secondItem="7P7-Xa-lKP" secondAttribute="leading" constant="274" id="jeC-m3-LIN"/>
+                                    <constraint firstAttribute="trailing" secondItem="qvJ-PJ-VYf" secondAttribute="trailing" id="B00-f1-srY"/>
+                                    <constraint firstItem="qvJ-PJ-VYf" firstAttribute="leading" secondItem="7P7-Xa-lKP" secondAttribute="leading" id="Vw8-Lc-6cv"/>
+                                    <constraint firstAttribute="bottom" secondItem="qvJ-PJ-VYf" secondAttribute="bottom" constant="20" id="l3T-yC-n2U"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -69,7 +68,9 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Host" id="5vo-G6-wPl"/>
+                    <navigationItem key="navigationItem" title="Host" id="5vo-G6-wPl">
+                        <barButtonItem key="rightBarButtonItem" title="Test" id="mb2-M3-Bdx"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q15-cC-rhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -118,7 +119,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Join" id="Iro-Jn-8bH"/>
+                    <navigationItem key="navigationItem" title="Join" id="Iro-Jn-8bH">
+                        <barButtonItem key="rightBarButtonItem" title="Test" id="k71-QR-Eqb">
+                            <connections>
+                                <action selector="testButtonTouchUpInside:" destination="BcY-J9-NuJ" id="J6F-0g-NaC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ppB-cu-auX" id="cLY-Rn-K1d"/>
                     </connections>
@@ -145,7 +152,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bounjour" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp9-mm-Ic2">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Devices" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gp9-mm-Ic2">
                                                     <rect key="frame" x="20" y="11" width="234" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -213,7 +220,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PB3-VD-uGf">
-                                <rect key="frame" x="20" y="480" width="280" height="30"/>
+                                <rect key="frame" x="20" y="74" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Host">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

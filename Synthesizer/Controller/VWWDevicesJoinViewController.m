@@ -7,13 +7,14 @@
 //
 
 #import "VWWDevicesJoinViewController.h"
+#import "MBProgressHUD.h"
 
 @interface VWWDevicesJoinViewController () <NSNetServiceDelegate, NSNetServiceBrowserDelegate, AsyncSocketDelegate>
 @property (strong, nonatomic) AsyncSocket *socket;
 @property (strong, nonatomic) NSMutableArray *services;
 @property (strong, nonatomic) NSNetServiceBrowser *serviceBrowser;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic, strong) MBProgressHUD *hud;
 @end
 
 @implementation VWWDevicesJoinViewController
@@ -45,9 +46,30 @@
 
 
 #pragma mark IBActions
+- (IBAction)testButtonTouchUpInside:(id)sender {
+    [self sendString:@"Testing"];
+}
 
 
 #pragma mark Private methods
+
+
+-(void)sendString:(NSString*)payload{
+    
+    VWW_LOG_INFO(@"isConnected: %@", self.socket.isConnected ? @"YES" : @"NO");
+    VWW_LOG_INFO(@"connectedAddress: %@", self.socket.connectedAddress);
+    VWW_LOG_INFO(@"connectedHost: %@", self.socket.connectedHost);
+    VWW_LOG_INFO(@"connectedPort: %ld", (long)self.socket.connectedPort);
+    
+    NSString *terminatedPayload = [NSString stringWithFormat:@"%@\r\n", payload];
+    NSData* data = [terminatedPayload dataUsingEncoding:NSUTF8StringEncoding];
+    self.socket.delegate = self;
+    [self.socket writeData:data withTimeout:50 tag:1];
+    
+    VWW_LOG_INFO(@"Message sent: %@", data.description);
+}
+
+
 
 - (void)cancel:(id)sender {
     VWW_LOG_INFO(@"Cancelling browse");
@@ -112,6 +134,14 @@
 
 
 
+- (void)stopBrowsing {
+    if (self.serviceBrowser) {
+        [self.serviceBrowser stop];
+        [self.serviceBrowser setDelegate:nil];
+        [self setServiceBrowser:nil];
+    }
+}
+
 
 #pragma mark UITableViewDataSource
 
@@ -139,6 +169,11 @@
 
 #pragma mark UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+//    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    self.hud.dimBackground = YES;
+//    self.hud.labelText = @"Connecting...";
+    
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     // Fetch Service
@@ -155,24 +190,40 @@
 
 #pragma mark AsyncSocketDelegate
 
-- (void)socket:(AsyncSocket *)socket didConnectToHost:(NSString *)host port:(UInt16)port {
+- (void)onSocket:(AsyncSocket *)socket didConnectToHost:(NSString *)host port:(UInt16)port {
     VWW_LOG_INFO(@"Socket Did Connect to Host: %@ Port: %hu", host, port);
     
     // Start Reading
     [socket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0];
+    
+    
+//    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
-- (void)socketDidDisconnect:(AsyncSocket *)socket withError:(NSError *)error {
+- (void)onSocketDidDisconnect:(AsyncSocket *)socket withError:(NSError *)error {
     VWW_LOG_INFO(@"Socket Did Disconnect with Error %@ with User Info %@.", error, [error userInfo]);
     
     [socket setDelegate:nil];
     [self setSocket:nil];
+    
+//    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
+- (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag{
+    VWW_LOG_INFO(@"Payload sent");
+//    [self.socket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0];
+}
+
+
+- (void)onSocket:(AsyncSocket *)sock didWritePartialDataOfLength:(NSUInteger)partialLength tag:(long)tag{
+    VWW_LOG_INFO(@"Payload partially sent");
+}
 #pragma mark NSNetServiceDelegate
 
 - (void)netService:(NSNetService *)service didNotResolve:(NSDictionary *)errorDict {
+    VWW_LOG_INFO(@"Did not resolve.");
     [service setDelegate:nil];
+//    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (void)netServiceDidResolveAddress:(NSNetService *)service {
@@ -218,12 +269,5 @@
 }
 
 
-- (void)stopBrowsing {
-    if (self.serviceBrowser) {
-        [self.serviceBrowser stop];
-        [self.serviceBrowser setDelegate:nil];
-        [self setServiceBrowser:nil];
-    }
-}
 
 @end
