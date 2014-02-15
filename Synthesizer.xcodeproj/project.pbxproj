@@ -62,6 +62,7 @@
 		C6D5C9ED18AEDAC700DDCAD0 /* VWWDevicesJoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9EC18AEDAC700DDCAD0 /* VWWDevicesJoinViewController.m */; };
 		C6D5C9F118AEDF4B00DDCAD0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9F018AEDF4B00DDCAD0 /* MBProgressHUD.m */; };
 		C6D5C9F418AEEFF500DDCAD0 /* VWWSynthesizerSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9F318AEEFF500DDCAD0 /* VWWSynthesizerSettingsTableViewController.m */; };
+		C6D5C9F718AEF40C00DDCAD0 /* VWWGeneralSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9F618AEF40C00DDCAD0 /* VWWGeneralSettingsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -157,6 +158,8 @@
 		C6D5C9F018AEDF4B00DDCAD0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		C6D5C9F218AEEFF500DDCAD0 /* VWWSynthesizerSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerSettingsTableViewController.h; sourceTree = "<group>"; };
 		C6D5C9F318AEEFF500DDCAD0 /* VWWSynthesizerSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerSettingsTableViewController.m; sourceTree = "<group>"; };
+		C6D5C9F518AEF40C00DDCAD0 /* VWWGeneralSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeneralSettingsTableViewController.h; sourceTree = "<group>"; };
+		C6D5C9F618AEF40C00DDCAD0 /* VWWGeneralSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeneralSettingsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +214,8 @@
 				C6D5C9EC18AEDAC700DDCAD0 /* VWWDevicesJoinViewController.m */,
 				C6D5C9F218AEEFF500DDCAD0 /* VWWSynthesizerSettingsTableViewController.h */,
 				C6D5C9F318AEEFF500DDCAD0 /* VWWSynthesizerSettingsTableViewController.m */,
+				C6D5C9F518AEF40C00DDCAD0 /* VWWGeneralSettingsTableViewController.h */,
+				C6D5C9F618AEF40C00DDCAD0 /* VWWGeneralSettingsTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -557,6 +562,7 @@
 				C6A6D200187F48B00025105C /* NSTimer+Blocks.m in Sources */,
 				C6D5C9E418AED84D00DDCAD0 /* AsyncUdpSocket.m in Sources */,
 				C6A6D1A4187F441D0025105C /* main.m in Sources */,
+				C6D5C9F718AEF40C00DDCAD0 /* VWWGeneralSettingsTableViewController.m in Sources */,
 				C6A6D22E187F5E470025105C /* CAXException.cpp in Sources */,
 				C61B7549187F88CD00737E51 /* VWWTouchViewController.m in Sources */,
 				C6A6D242187F73190025105C /* VWWNormalizedSynthesizer.mm in Sources */,
