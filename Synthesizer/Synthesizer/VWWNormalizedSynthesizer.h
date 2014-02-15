@@ -23,7 +23,10 @@
  * @param frequencyMax float from 30 - 20000
  * @param frequencyNormalized value from 0.0 - 1.0
  */
--(id)initWithFrequencyMin:(float)frequencyMin frequencyMax:(float)frequencyMax frequencyNormalized:(float)frequencyNormalized;
+-(id)initWithAmplitude:(float)amplitude
+          frequencyMin:(float)frequencyMin
+          frequencyMax:(float)frequencyMax
+   frequencyNormalized:(float)frequencyNormalized;
 
 /**
  * Starts the synthesizer

@@ -26,20 +26,28 @@
     static VWWNormalizedSynthesizer *instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance = [[VWWNormalizedSynthesizer alloc]initWithFrequencyMin:30 frequencyMax:2000 frequencyNormalized:0.3];
+        instance = [[VWWNormalizedSynthesizer alloc]initWithAmplitude:1.0
+                                                         frequencyMin:30
+                                                         frequencyMax:2000
+                                                  frequencyNormalized:0.3];
     });
     return instance;
 }
 
 
--(id)initWithFrequencyMin:(float)frequencyMin frequencyMax:(float)frequencyMax frequencyNormalized:(float)frequencyNormalized{
+-(id)initWithAmplitude:(float)amplitude
+          frequencyMin:(float)frequencyMin
+          frequencyMax:(float)frequencyMax
+   frequencyNormalized:(float)frequencyNormalized{
+
     self = [super init];
     if(self){
         _frequencyMin = frequencyMin;
         _frequencyMax = frequencyMax;
         _frequencyNormalized = frequencyNormalized;
         _frequency = [self calculateFrequencyNormalized];
-        _synthesizer = [[VWWSynthesizerC alloc]initWithAmplitude:1.0 andFrequency:_frequency];
+
+        _synthesizer = [[VWWSynthesizerC alloc]initWithAmplitude:amplitude andFrequency:_frequency];
     }
     return self;
 }
