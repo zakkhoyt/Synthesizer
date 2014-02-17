@@ -54,15 +54,16 @@
 		C6D5C9E318AED84D00DDCAD0 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9E018AED84D00DDCAD0 /* AsyncSocket.m */; };
 		C6D5C9E418AED84D00DDCAD0 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9E218AED84D00DDCAD0 /* AsyncUdpSocket.m */; };
 		C6D5C9F118AEDF4B00DDCAD0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9F018AEDF4B00DDCAD0 /* MBProgressHUD.m */; };
-		CF0F67C018AF135A000158BE /* VWWDevicesHostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67B218AF135A000158BE /* VWWDevicesHostViewController.m */; };
-		CF0F67C118AF135A000158BE /* VWWDevicesJoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67B418AF135A000158BE /* VWWDevicesJoinViewController.m */; };
+		CF0F67C018AF135A000158BE /* VWWDevicesServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67B218AF135A000158BE /* VWWDevicesServerViewController.m */; };
+		CF0F67C118AF135A000158BE /* VWWDevicesClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67B418AF135A000158BE /* VWWDevicesClientViewController.m */; };
 		CF0F67C218AF135A000158BE /* VWWDevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67B618AF135A000158BE /* VWWDevicesViewController.m */; };
 		CF0F67C318AF135A000158BE /* VWWGeneralSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67B818AF135A000158BE /* VWWGeneralSettingsTableViewController.m */; };
 		CF0F67C418AF135A000158BE /* VWWSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67BA18AF135A000158BE /* VWWSettingsTableViewController.m */; };
 		CF0F67C518AF135A000158BE /* VWWSynthesizerSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67BC18AF135A000158BE /* VWWSynthesizerSettingsTableViewController.m */; };
 		CF0F67C618AF135A000158BE /* VWWTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67BE18AF135A000158BE /* VWWTouchViewController.m */; };
-		CF0F67C918AF136C000158BE /* VWWBounjorController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67C818AF136C000158BE /* VWWBounjorController.m */; };
-		CF63F1DB18B2B91700BD1DFC /* VWWGeneralSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CF63F1DA18B2B91700BD1DFC /* VWWGeneralSettings.m */; };
+		CF0F67C918AF136C000158BE /* VWWBonjourServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67C818AF136C000158BE /* VWWBonjourServerController.m */; };
+		CF63F1DE18B2C10C00BD1DFC /* VWWBonjourClientController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF63F1DD18B2C10C00BD1DFC /* VWWBonjourClientController.m */; };
+		CF63F1E218B2C13500BD1DFC /* VWWGeneralSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CF63F1E118B2C13500BD1DFC /* VWWGeneralSettings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,10 +147,10 @@
 		C6D5C9E218AED84D00DDCAD0 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
 		C6D5C9EF18AEDF4B00DDCAD0 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		C6D5C9F018AEDF4B00DDCAD0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		CF0F67B118AF135A000158BE /* VWWDevicesHostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesHostViewController.h; sourceTree = "<group>"; };
-		CF0F67B218AF135A000158BE /* VWWDevicesHostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesHostViewController.m; sourceTree = "<group>"; };
-		CF0F67B318AF135A000158BE /* VWWDevicesJoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesJoinViewController.h; sourceTree = "<group>"; };
-		CF0F67B418AF135A000158BE /* VWWDevicesJoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesJoinViewController.m; sourceTree = "<group>"; };
+		CF0F67B118AF135A000158BE /* VWWDevicesServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesServerViewController.h; sourceTree = "<group>"; };
+		CF0F67B218AF135A000158BE /* VWWDevicesServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesServerViewController.m; sourceTree = "<group>"; };
+		CF0F67B318AF135A000158BE /* VWWDevicesClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesClientViewController.h; sourceTree = "<group>"; };
+		CF0F67B418AF135A000158BE /* VWWDevicesClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesClientViewController.m; sourceTree = "<group>"; };
 		CF0F67B518AF135A000158BE /* VWWDevicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesViewController.h; sourceTree = "<group>"; };
 		CF0F67B618AF135A000158BE /* VWWDevicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesViewController.m; sourceTree = "<group>"; };
 		CF0F67B718AF135A000158BE /* VWWGeneralSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeneralSettingsTableViewController.h; sourceTree = "<group>"; };
@@ -160,10 +161,13 @@
 		CF0F67BC18AF135A000158BE /* VWWSynthesizerSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerSettingsTableViewController.m; sourceTree = "<group>"; };
 		CF0F67BD18AF135A000158BE /* VWWTouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTouchViewController.h; sourceTree = "<group>"; };
 		CF0F67BE18AF135A000158BE /* VWWTouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTouchViewController.m; sourceTree = "<group>"; };
-		CF0F67C718AF136C000158BE /* VWWBounjorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBounjorController.h; sourceTree = "<group>"; };
-		CF0F67C818AF136C000158BE /* VWWBounjorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWBounjorController.m; sourceTree = "<group>"; };
-		CF63F1D918B2B91700BD1DFC /* VWWGeneralSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeneralSettings.h; sourceTree = "<group>"; };
-		CF63F1DA18B2B91700BD1DFC /* VWWGeneralSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeneralSettings.m; sourceTree = "<group>"; };
+		CF0F67C718AF136C000158BE /* VWWBonjourServerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBonjourServerController.h; sourceTree = "<group>"; };
+		CF0F67C818AF136C000158BE /* VWWBonjourServerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWBonjourServerController.m; sourceTree = "<group>"; };
+		CF63F1DC18B2C10C00BD1DFC /* VWWBonjourClientController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBonjourClientController.h; sourceTree = "<group>"; };
+		CF63F1DD18B2C10C00BD1DFC /* VWWBonjourClientController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWBonjourClientController.m; sourceTree = "<group>"; };
+		CF63F1E018B2C13500BD1DFC /* VWWGeneralSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeneralSettings.h; sourceTree = "<group>"; };
+		CF63F1E118B2C13500BD1DFC /* VWWGeneralSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeneralSettings.m; sourceTree = "<group>"; };
+		CF63F1E318B2C22800BD1DFC /* VWWBonjourDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWBonjourDefines.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +258,7 @@
 				C6D5C9D518AED4E900DDCAD0 /* Documents */,
 				C6A6D1B2187F441D0025105C /* Images.xcassets */,
 				C6D5C9D318AED44B00DDCAD0 /* Include */,
+				CF63F1DF18B2C13500BD1DFC /* Model */,
 				C6A6D19E187F441D0025105C /* Supporting Files */,
 				C6A6D1CF187F447A0025105C /* Synthesizer */,
 				C6D5C9DD18AED84D00DDCAD0 /* ThirdParty */,
@@ -444,10 +449,11 @@
 		CF0F67BF18AF135A000158BE /* NonGUI */ = {
 			isa = PBXGroup;
 			children = (
-				CF0F67C718AF136C000158BE /* VWWBounjorController.h */,
-				CF0F67C818AF136C000158BE /* VWWBounjorController.m */,
-				CF63F1D918B2B91700BD1DFC /* VWWGeneralSettings.h */,
-				CF63F1DA18B2B91700BD1DFC /* VWWGeneralSettings.m */,
+				CF63F1E318B2C22800BD1DFC /* VWWBonjourDefines.h */,
+				CF0F67C718AF136C000158BE /* VWWBonjourServerController.h */,
+				CF0F67C818AF136C000158BE /* VWWBonjourServerController.m */,
+				CF63F1DC18B2C10C00BD1DFC /* VWWBonjourClientController.h */,
+				CF63F1DD18B2C10C00BD1DFC /* VWWBonjourClientController.m */,
 			);
 			path = NonGUI;
 			sourceTree = "<group>";
@@ -476,10 +482,10 @@
 		CF63F1D618B2B69600BD1DFC /* Devices */ = {
 			isa = PBXGroup;
 			children = (
-				CF0F67B118AF135A000158BE /* VWWDevicesHostViewController.h */,
-				CF0F67B218AF135A000158BE /* VWWDevicesHostViewController.m */,
-				CF0F67B318AF135A000158BE /* VWWDevicesJoinViewController.h */,
-				CF0F67B418AF135A000158BE /* VWWDevicesJoinViewController.m */,
+				CF0F67B118AF135A000158BE /* VWWDevicesServerViewController.h */,
+				CF0F67B218AF135A000158BE /* VWWDevicesServerViewController.m */,
+				CF0F67B318AF135A000158BE /* VWWDevicesClientViewController.h */,
+				CF0F67B418AF135A000158BE /* VWWDevicesClientViewController.m */,
 				CF0F67B518AF135A000158BE /* VWWDevicesViewController.h */,
 				CF0F67B618AF135A000158BE /* VWWDevicesViewController.m */,
 			);
@@ -502,6 +508,15 @@
 				CF0F67B818AF135A000158BE /* VWWGeneralSettingsTableViewController.m */,
 			);
 			name = General;
+			sourceTree = "<group>";
+		};
+		CF63F1DF18B2C13500BD1DFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CF63F1E018B2C13500BD1DFC /* VWWGeneralSettings.h */,
+				CF63F1E118B2C13500BD1DFC /* VWWGeneralSettings.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -621,13 +636,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF0F67C918AF136C000158BE /* VWWBounjorController.m in Sources */,
+				CF0F67C918AF136C000158BE /* VWWBonjourServerController.m in Sources */,
 				C6A6D204187F49B10025105C /* VWWSynthesizer.mm in Sources */,
-				CF0F67C118AF135A000158BE /* VWWDevicesJoinViewController.m in Sources */,
+				CF63F1E218B2C13500BD1DFC /* VWWGeneralSettings.m in Sources */,
+				CF0F67C118AF135A000158BE /* VWWDevicesClientViewController.m in Sources */,
 				C6A6D233187F5E470025105C /* VWWSynthesizerC.mm in Sources */,
 				C6A6D200187F48B00025105C /* NSTimer+Blocks.m in Sources */,
-				CF63F1DB18B2B91700BD1DFC /* VWWGeneralSettings.m in Sources */,
 				CF0F67C218AF135A000158BE /* VWWDevicesViewController.m in Sources */,
+				CF63F1DE18B2C10C00BD1DFC /* VWWBonjourClientController.m in Sources */,
 				C6D5C9E418AED84D00DDCAD0 /* AsyncUdpSocket.m in Sources */,
 				CF0F67C418AF135A000158BE /* VWWSettingsTableViewController.m in Sources */,
 				C6A6D1A4187F441D0025105C /* main.m in Sources */,
@@ -644,7 +660,7 @@
 				CF0F67C618AF135A000158BE /* VWWTouchViewController.m in Sources */,
 				C6D5C9E318AED84D00DDCAD0 /* AsyncSocket.m in Sources */,
 				C6A6D1A8187F441D0025105C /* VWWAppDelegate.m in Sources */,
-				CF0F67C018AF135A000158BE /* VWWDevicesHostViewController.m in Sources */,
+				CF0F67C018AF135A000158BE /* VWWDevicesServerViewController.m in Sources */,
 				C6A6D22D187F5E470025105C /* CAStreamBasicDescription.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

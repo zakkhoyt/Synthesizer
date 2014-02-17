@@ -1,86 +1,42 @@
 //
-//  VWWDevicesJoinViewController.m
+//  VWWBonjourClientController.m
 //  Synthesizer
 //
-//  Created by Zakk Hoyt on 2/14/14.
+//  Created by Zakk Hoyt on 2/17/14.
 //  Copyright (c) 2014 Zakk Hoyt. All rights reserved.
 //
 
-#import "VWWDevicesJoinViewController.h"
-#import "MBProgressHUD.h"
+#import "VWWBonjourClientController.h"
+#import "VWWBonjourDefines.h"
 
-@interface VWWDevicesJoinViewController () <NSNetServiceDelegate, NSNetServiceBrowserDelegate, AsyncSocketDelegate>
+
+@interface VWWBonjourClientController () <NSNetServiceDelegate, NSNetServiceBrowserDelegate, AsyncSocketDelegate>
 @property (strong, nonatomic) AsyncSocket *socket;
-@property (strong, nonatomic) NSMutableArray *services;
+@property (strong, nonatomic, readwrite) NSMutableArray *services;
 @property (strong, nonatomic) NSNetServiceBrowser *serviceBrowser;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) MBProgressHUD *hud;
+
 @end
 
-@implementation VWWDevicesJoinViewController
+@implementation VWWBonjourClientController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
++(VWWBonjourClientController*)sharedInstance{
+    static VWWBonjourClientController *instance;
+    static dispatch_once_t once;
+    dispatch_once(&once, ^{
+        instance = [[self alloc]init];
+    });
+    return instance;
+}
+
+-(id)init{
+    self = [super init];
+    if(self){
+        
     }
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    
-    // Start Browsing
-    [self startBrowsing];
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
-#pragma mark IBActions
-- (IBAction)testButtonTouchUpInside:(id)sender {
-    [self sendString:@"Testing"];
-}
-
-
-#pragma mark Private methods
-
-
--(void)sendString:(NSString*)payload{
-    
-    VWW_LOG_INFO(@"isConnected: %@", self.socket.isConnected ? @"YES" : @"NO");
-    VWW_LOG_INFO(@"connectedAddress: %@", self.socket.connectedAddress);
-    VWW_LOG_INFO(@"connectedHost: %@", self.socket.connectedHost);
-    VWW_LOG_INFO(@"connectedPort: %ld", (long)self.socket.connectedPort);
-    
-    NSString *terminatedPayload = [NSString stringWithFormat:@"%@\r\n", payload];
-    NSData* data = [terminatedPayload dataUsingEncoding:NSUTF8StringEncoding];
-    self.socket.delegate = self;
-    [self.socket writeData:data withTimeout:50 tag:1];
-    
-    VWW_LOG_INFO(@"Message sent: %@", data.description);
-}
-
-
-
-- (void)cancel:(id)sender {
-    VWW_LOG_INFO(@"Cancelling browse");
-    // Stop Browsing Services
-    [self stopBrowsing];
-    
-    // Dismiss View Controller
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)startBrowsing {
+-(void)startBrowsing{
     VWW_LOG_INFO(@"Browsing for network services");
     if (self.services) {
         [self.services removeAllObjects];
@@ -96,12 +52,60 @@
     [self.serviceBrowser searchForServicesOfType:@"_vww_theremin._tcp." inDomain:@"local."];
 }
 
+-(void)stopBrowsing{
+    if (self.serviceBrowser) {
+        [self.serviceBrowser stop];
+        [self.serviceBrowser setDelegate:nil];
+        [self setServiceBrowser:nil];
+    }
+}
+
+
+
+-(void)sendCommand:(NSString*)command{
+    VWW_LOG_INFO(@"isConnected: %@", self.socket.isConnected ? @"YES" : @"NO");
+    VWW_LOG_INFO(@"connectedAddress: %@", self.socket.connectedAddress);
+    VWW_LOG_INFO(@"connectedHost: %@", self.socket.connectedHost);
+    VWW_LOG_INFO(@"connectedPort: %ld", (long)self.socket.connectedPort);
+    
+    NSString *terminatedPayload = [NSString stringWithFormat:@"%@\r\n", command];
+    NSData* data = [terminatedPayload dataUsingEncoding:NSUTF8StringEncoding];
+    self.socket.delegate = self;
+    [self.socket writeData:data withTimeout:50 tag:1];
+    
+    VWW_LOG_INFO(@"Message sent: %@", data.description);
+}
+
+-(void)connectToServiceAtIndex:(NSInteger)index{
+    NSNetService *service = self.services[index];
+    [self connectToService:service];
+}
+
+
+
+#pragma mark Private methods
+
+
+
+- (void)cancel:(id)sender {
+    VWW_LOG_INFO(@"Cancelling browse");
+    // Stop Browsing Services
+    [self stopBrowsing];
+    
+//    // Dismiss View Controller
+//    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 
 
 
-- (BOOL)connectWithService:(NSNetService *)service {
+
+-(BOOL)connectToService:(NSNetService*)service{
     BOOL _isConnected = NO;
+    
+    
+    [service setDelegate:self];
+    [service resolveWithTimeout:30.0];
     
     // Copy Service Addresses
     NSArray *addresses = [[service addresses] mutableCopy];
@@ -110,7 +114,7 @@
         // Initialize Socket
         self.socket = [[AsyncSocket alloc] initWithDelegate:self];
         
-        VWW_LOG_INFO(@"Attempting to establish connection to %@...", addresses[0]);
+        //VWW_LOG_INFO(@"Attempting to establish connection to %@...", addresses[0]);
         // Connect
         while (!_isConnected && [addresses count]) {
             NSData *address = [addresses objectAtIndex:0];
@@ -134,57 +138,7 @@
 
 
 
-- (void)stopBrowsing {
-    if (self.serviceBrowser) {
-        [self.serviceBrowser stop];
-        [self.serviceBrowser setDelegate:nil];
-        [self setServiceBrowser:nil];
-    }
-}
 
-
-#pragma mark UITableViewDataSource
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.services ? 1 : 0;
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.services count];
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-    
-    // Fetch Service
-    NSNetService *service = [self.services objectAtIndex:[indexPath row]];
-    
-    // Configure Cell
-    [cell.textLabel setText:[service name]];
-    
-    return cell;
-}
-
-#pragma mark UITableViewDelegate
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-//    self.hud = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-//    self.hud.dimBackground = YES;
-//    self.hud.labelText = @"Connecting...";
-    
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-    // Fetch Service
-    NSNetService *service = [self.services objectAtIndex:indexPath.row];
-    
-    // Resolve Service
-    [service setDelegate:self];
-    [service resolveWithTimeout:30.0];
-    
-    VWW_LOG_INFO(@"Connecting to %@", self.services[indexPath.row]);
-}
 
 
 
@@ -197,7 +151,7 @@
     [socket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0];
     
     
-//    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (void)onSocketDidDisconnect:(AsyncSocket *)socket withError:(NSError *)error {
@@ -206,12 +160,12 @@
     [socket setDelegate:nil];
     [self setSocket:nil];
     
-//    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag{
     VWW_LOG_INFO(@"Payload sent");
-//    [self.socket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0];
+    //    [self.socket readDataToLength:sizeof(uint64_t) withTimeout:-1.0 tag:0];
 }
 
 
@@ -223,12 +177,12 @@
 - (void)netService:(NSNetService *)service didNotResolve:(NSDictionary *)errorDict {
     VWW_LOG_INFO(@"Did not resolve.");
     [service setDelegate:nil];
-//    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    //    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 
 - (void)netServiceDidResolveAddress:(NSNetService *)service {
     // Connect With Service
-    if ([self connectWithService:service]) {
+    if ([self connectToService:service]) {
         VWW_LOG_INFO(@"Did Connect with Service: domain(%@) type(%@) name(%@) port(%i)", [service domain], [service type], [service name], (int)[service port]);
     } else {
         VWW_LOG_INFO(@"Unable to Connect with Service: domain(%@) type(%@) name(%@) port(%i)", [service domain], [service type], [service name], (int)[service port]);
@@ -245,8 +199,9 @@
         // Sort Services
         [self.services sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES]]];
         
-        // Update Table View
-        [self.tableView reloadData];
+//        // Update Table View
+//        [self.tableView reloadData];
+        [self.delegate bonjourClientController:self didDiscoverServices:self.services];
     }
 }
 
@@ -255,17 +210,22 @@
     [self.services removeObject:service];
     
     if(!moreComing) {
-        // Update Table View
-        [self.tableView reloadData];
+//        // Update Table View
+//        [self.tableView reloadData];
+        [self.delegate bonjourClientController:self didDiscoverServices:self.services];
     }
 }
 
-- (void)netServiceBrowserDidStopSearch:(NSNetServiceBrowser *)serviceBrowser {
+- (void)netServiceBrowserDidStopSearch:(NSNetServiceBrowser*)serviceBrowser {
     [self stopBrowsing];
+    NSError *error = [NSError errorWithDomain:VWWBonjourDefinesDomain code:-101 userInfo:@{@"todo" : [NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__]}];
+    [self.delegate bonjourClientController:self didStopBrowsingWithError:error];
 }
 
 - (void)netServiceBrowser:(NSNetServiceBrowser *)aBrowser didNotSearch:(NSDictionary *)userInfo {
     [self stopBrowsing];
+    NSError *error = [NSError errorWithDomain:VWWBonjourDefinesDomain code:-102 userInfo:@{@"todo" : [NSString stringWithFormat:@"%s", __PRETTY_FUNCTION__]}];
+    [self.delegate bonjourClientController:self didStopBrowsingWithError:error];
 }
 
 

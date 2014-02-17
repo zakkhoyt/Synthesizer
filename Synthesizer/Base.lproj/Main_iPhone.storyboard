@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="673" y="210"/>
         </scene>
-        <!--Devices Host View Controller - Host-->
+        <!--Devices Server View Controller - Host-->
         <scene sceneID="LaL-h1-vQD">
             <objects>
-                <viewController id="Z0y-kB-rFR" customClass="VWWDevicesHostViewController" sceneMemberID="viewController">
+                <viewController id="Z0y-kB-rFR" customClass="VWWDevicesServerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sti-Rf-zcF"/>
                         <viewControllerLayoutGuide type="bottom" id="EaA-xD-ZE3"/>
@@ -66,20 +66,32 @@
                     <view key="view" contentMode="scaleToFill" id="VEk-nU-uXD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSB-sE-c4m">
+                                <rect key="frame" x="20" y="74" width="280" height="243"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Host" id="5vo-G6-wPl">
                         <barButtonItem key="rightBarButtonItem" title="Test" id="mb2-M3-Bdx"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="infoLabel" destination="FSB-sE-c4m" id="uwq-lT-Jxb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q15-cC-rhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3235" y="686"/>
         </scene>
-        <!--Devices Join View Controller - Join-->
+        <!--Devices Client View Controller - Join-->
         <scene sceneID="bCQ-gN-ZEr">
             <objects>
-                <viewController id="BcY-J9-NuJ" customClass="VWWDevicesJoinViewController" sceneMemberID="viewController">
+                <viewController id="BcY-J9-NuJ" customClass="VWWDevicesClientViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OGf-Bp-9ds"/>
                         <viewControllerLayoutGuide type="bottom" id="YP2-Na-rTz"/>
