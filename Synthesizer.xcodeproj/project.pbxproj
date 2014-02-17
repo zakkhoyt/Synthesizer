@@ -62,6 +62,7 @@
 		CF0F67C518AF135A000158BE /* VWWSynthesizerSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67BC18AF135A000158BE /* VWWSynthesizerSettingsTableViewController.m */; };
 		CF0F67C618AF135A000158BE /* VWWTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67BE18AF135A000158BE /* VWWTouchViewController.m */; };
 		CF0F67C918AF136C000158BE /* VWWBounjorController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67C818AF136C000158BE /* VWWBounjorController.m */; };
+		CF63F1DB18B2B91700BD1DFC /* VWWGeneralSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CF63F1DA18B2B91700BD1DFC /* VWWGeneralSettings.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +162,8 @@
 		CF0F67BE18AF135A000158BE /* VWWTouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTouchViewController.m; sourceTree = "<group>"; };
 		CF0F67C718AF136C000158BE /* VWWBounjorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBounjorController.h; sourceTree = "<group>"; };
 		CF0F67C818AF136C000158BE /* VWWBounjorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWBounjorController.m; sourceTree = "<group>"; };
+		CF63F1D918B2B91700BD1DFC /* VWWGeneralSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeneralSettings.h; sourceTree = "<group>"; };
+		CF63F1DA18B2B91700BD1DFC /* VWWGeneralSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeneralSettings.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -432,20 +435,8 @@
 		CF0F67B018AF135A000158BE /* GUI */ = {
 			isa = PBXGroup;
 			children = (
-				CF0F67B118AF135A000158BE /* VWWDevicesHostViewController.h */,
-				CF0F67B218AF135A000158BE /* VWWDevicesHostViewController.m */,
-				CF0F67B318AF135A000158BE /* VWWDevicesJoinViewController.h */,
-				CF0F67B418AF135A000158BE /* VWWDevicesJoinViewController.m */,
-				CF0F67B518AF135A000158BE /* VWWDevicesViewController.h */,
-				CF0F67B618AF135A000158BE /* VWWDevicesViewController.m */,
-				CF0F67B718AF135A000158BE /* VWWGeneralSettingsTableViewController.h */,
-				CF0F67B818AF135A000158BE /* VWWGeneralSettingsTableViewController.m */,
-				CF0F67B918AF135A000158BE /* VWWSettingsTableViewController.h */,
-				CF0F67BA18AF135A000158BE /* VWWSettingsTableViewController.m */,
-				CF0F67BB18AF135A000158BE /* VWWSynthesizerSettingsTableViewController.h */,
-				CF0F67BC18AF135A000158BE /* VWWSynthesizerSettingsTableViewController.m */,
-				CF0F67BD18AF135A000158BE /* VWWTouchViewController.h */,
-				CF0F67BE18AF135A000158BE /* VWWTouchViewController.m */,
+				CF63F1D418B2B68A00BD1DFC /* Main */,
+				CF63F1D518B2B68E00BD1DFC /* Settings */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -455,8 +446,62 @@
 			children = (
 				CF0F67C718AF136C000158BE /* VWWBounjorController.h */,
 				CF0F67C818AF136C000158BE /* VWWBounjorController.m */,
+				CF63F1D918B2B91700BD1DFC /* VWWGeneralSettings.h */,
+				CF63F1DA18B2B91700BD1DFC /* VWWGeneralSettings.m */,
 			);
 			path = NonGUI;
+			sourceTree = "<group>";
+		};
+		CF63F1D418B2B68A00BD1DFC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F67BD18AF135A000158BE /* VWWTouchViewController.h */,
+				CF0F67BE18AF135A000158BE /* VWWTouchViewController.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		CF63F1D518B2B68E00BD1DFC /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CF63F1D818B2B6B000BD1DFC /* General */,
+				CF0F67B918AF135A000158BE /* VWWSettingsTableViewController.h */,
+				CF0F67BA18AF135A000158BE /* VWWSettingsTableViewController.m */,
+				CF63F1D718B2B69D00BD1DFC /* Synthesizer */,
+				CF63F1D618B2B69600BD1DFC /* Devices */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		CF63F1D618B2B69600BD1DFC /* Devices */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F67B118AF135A000158BE /* VWWDevicesHostViewController.h */,
+				CF0F67B218AF135A000158BE /* VWWDevicesHostViewController.m */,
+				CF0F67B318AF135A000158BE /* VWWDevicesJoinViewController.h */,
+				CF0F67B418AF135A000158BE /* VWWDevicesJoinViewController.m */,
+				CF0F67B518AF135A000158BE /* VWWDevicesViewController.h */,
+				CF0F67B618AF135A000158BE /* VWWDevicesViewController.m */,
+			);
+			name = Devices;
+			sourceTree = "<group>";
+		};
+		CF63F1D718B2B69D00BD1DFC /* Synthesizer */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F67BB18AF135A000158BE /* VWWSynthesizerSettingsTableViewController.h */,
+				CF0F67BC18AF135A000158BE /* VWWSynthesizerSettingsTableViewController.m */,
+			);
+			name = Synthesizer;
+			sourceTree = "<group>";
+		};
+		CF63F1D818B2B6B000BD1DFC /* General */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F67B718AF135A000158BE /* VWWGeneralSettingsTableViewController.h */,
+				CF0F67B818AF135A000158BE /* VWWGeneralSettingsTableViewController.m */,
+			);
+			name = General;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -581,6 +626,7 @@
 				CF0F67C118AF135A000158BE /* VWWDevicesJoinViewController.m in Sources */,
 				C6A6D233187F5E470025105C /* VWWSynthesizerC.mm in Sources */,
 				C6A6D200187F48B00025105C /* NSTimer+Blocks.m in Sources */,
+				CF63F1DB18B2B91700BD1DFC /* VWWGeneralSettings.m in Sources */,
 				CF0F67C218AF135A000158BE /* VWWDevicesViewController.m in Sources */,
 				C6D5C9E418AED84D00DDCAD0 /* AsyncUdpSocket.m in Sources */,
 				CF0F67C418AF135A000158BE /* VWWSettingsTableViewController.m in Sources */,

@@ -14,9 +14,9 @@
 @property (nonatomic, strong) VWWNormalizedSynthesizer *ySynthesizer;
 @property (nonatomic, strong) VWWNormalizedSynthesizer *zSynthesizer;
 
--(id)initWithXFrequencyMin:(float)xFrequencyMin xFrequencyMax:(float)xFrequencyMax xFrequencyNormalized:(float)xFrequencyNormalized
-             yFrequencyMin:(float)yFrequencyMin yFrequencyMax:(float)yFrequencyMax yFrequencyNormalized:(float)yFrequencyNormalized
-             zFrequencyMin:(float)zFrequencyMin zFrequencyMax:(float)zFrequencyMax zFrequencyNormalized:(float)zFrequencyNormalized;
+-(id)initWithAmplitudeX:(float)amplitudeX xFrequencyMin:(float)xFrequencyMin xFrequencyMax:(float)xFrequencyMax xFrequencyNormalized:(float)xFrequencyNormalized
+             amplitudeY:(float)amplitudeY yFrequencyMin:(float)yFrequencyMin yFrequencyMax:(float)yFrequencyMax yFrequencyNormalized:(float)yFrequencyNormalized
+             amplitudeZ:(float)amplitudeZ zFrequencyMin:(float)zFrequencyMin zFrequencyMax:(float)zFrequencyMax zFrequencyNormalized:(float)zFrequencyNormalized;
 
 /**
  * Starts all synthesizers in group

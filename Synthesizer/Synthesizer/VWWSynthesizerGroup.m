@@ -20,14 +20,14 @@
 
 @implementation VWWSynthesizerGroup
 
--(id)initWithXFrequencyMin:(float)xFrequencyMin xFrequencyMax:(float)xFrequencyMax xFrequencyNormalized:(float)xFrequencyNormalized
-             yFrequencyMin:(float)yFrequencyMin yFrequencyMax:(float)yFrequencyMax yFrequencyNormalized:(float)yFrequencyNormalized
-             zFrequencyMin:(float)zFrequencyMin zFrequencyMax:(float)zFrequencyMax zFrequencyNormalized:(float)zFrequencyNormalized{
+-(id)initWithAmplitudeX:(float)amplitudeX xFrequencyMin:(float)xFrequencyMin xFrequencyMax:(float)xFrequencyMax xFrequencyNormalized:(float)xFrequencyNormalized
+             amplitudeY:(float)amplitudeY yFrequencyMin:(float)yFrequencyMin yFrequencyMax:(float)yFrequencyMax yFrequencyNormalized:(float)yFrequencyNormalized
+             amplitudeZ:(float)amplitudeZ zFrequencyMin:(float)zFrequencyMin zFrequencyMax:(float)zFrequencyMax zFrequencyNormalized:(float)zFrequencyNormalized{
     self = [super init];
     if(self){
-        _xSynthesizer = [[VWWNormalizedSynthesizer alloc]initWithAmplitude:1.0 frequencyMin:xFrequencyMin frequencyMax:xFrequencyMax frequencyNormalized:xFrequencyNormalized];
-        _ySynthesizer = [[VWWNormalizedSynthesizer alloc]initWithAmplitude:1.0 frequencyMin:yFrequencyMin frequencyMax:yFrequencyMax frequencyNormalized:yFrequencyNormalized];
-        _zSynthesizer = [[VWWNormalizedSynthesizer alloc]initWithAmplitude:1.0 frequencyMin:zFrequencyMin frequencyMax:zFrequencyMax frequencyNormalized:zFrequencyNormalized];
+        _xSynthesizer = [[VWWNormalizedSynthesizer alloc]initWithAmplitude:amplitudeX frequencyMin:xFrequencyMin frequencyMax:xFrequencyMax frequencyNormalized:xFrequencyNormalized];
+        _ySynthesizer = [[VWWNormalizedSynthesizer alloc]initWithAmplitude:amplitudeY frequencyMin:yFrequencyMin frequencyMax:yFrequencyMax frequencyNormalized:yFrequencyNormalized];
+        _zSynthesizer = [[VWWNormalizedSynthesizer alloc]initWithAmplitude:amplitudeZ frequencyMin:zFrequencyMin frequencyMax:zFrequencyMax frequencyNormalized:zFrequencyNormalized];
     }
     return self;
 }

@@ -8,15 +8,14 @@
 
 #import "VWWTouchViewController.h"
 #import "VWWTouchView.h"
-#import "VWWNormalizedSynthesizer.h"
-
+#import "VWWSynthesizerGroup.h"
+#import "VWWGeneralSettings.h"
 
 static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
 
 @interface VWWTouchViewController () <VWWTouchViewDelegate>
 @property (weak, nonatomic) IBOutlet VWWTouchView *touchView;
-@property (nonatomic, strong) VWWNormalizedSynthesizer *touchSynthX;
-@property (nonatomic, strong) VWWNormalizedSynthesizer *touchSynthY;
+@property (nonatomic, strong) VWWSynthesizerGroup *group;
 @end
 
 @implementation VWWTouchViewController
@@ -34,13 +33,14 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
 {
     [super viewDidLoad];
     
-
-    self.touchSynthX = [[VWWNormalizedSynthesizer alloc]initWithAmplitude:1.0 frequencyMin:30 frequencyMax:500 frequencyNormalized:0.5];
-    self.touchSynthY = [[VWWNormalizedSynthesizer alloc]initWithAmplitude:1.0 frequencyMin:30 frequencyMax:500 frequencyNormalized:0.5];
-    self.touchSynthX.muted = YES;
-    self.touchSynthY.muted = YES;
-    [self.touchSynthX start];
-    [self.touchSynthY start];
+    VWWGeneralSettings *generalSettings = [VWWGeneralSettings sharedInstance];
+    self.group = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
+                                                     amplitudeY:generalSettings.amplitude yFrequencyMin:generalSettings.frequencyMin yFrequencyMax:generalSettings.frequencyMax yFrequencyNormalized:generalSettings.frequencyNormalized
+                                                     amplitudeZ:generalSettings.amplitude zFrequencyMin:generalSettings.frequencyMin zFrequencyMax:generalSettings.frequencyMax zFrequencyNormalized:generalSettings.frequencyNormalized];
+    
+    self.group.muted = YES;
+    [self.group start];
+                  
     self.touchView.delegate = self;
     
     [self addGestureRecognizers];
@@ -106,16 +106,16 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
     for(NSDictionary *dictionary in array){
         NSNumber *x = dictionary[VWWTouchViewXKey];
         NSNumber *y = dictionary[VWWTouchViewYKey];
-        self.touchSynthX.frequencyNormalized = x.floatValue;
-        self.touchSynthY.frequencyNormalized = y.floatValue;
+        self.group.xSynthesizer.frequencyNormalized = x.floatValue;
+        self.group.ySynthesizer.frequencyNormalized = y.floatValue;
     }
 
 }
 
 #pragma mark VWWTouchViewDelegate
 -(void)touchViewDelegate:(VWWTouchView*)sender touchesBeganWithArray:(NSArray*)array{
-    self.touchSynthX.muted = NO;
-    self.touchSynthY.muted = NO;
+    self.group.xSynthesizer.muted = NO;
+    self.group.ySynthesizer.muted = NO;
     [self updateFrequenciesWithArray:array];
 }
 
@@ -125,8 +125,8 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
 
 -(void)touchViewDelegate:(VWWTouchView*)sender touchesEndedWithArray:(NSArray*)array{
     [self updateFrequenciesWithArray:array];
-    self.touchSynthX.muted = YES;
-    self.touchSynthY.muted = YES;
+    self.group.xSynthesizer.muted = YES;
+    self.group.ySynthesizer.muted = YES;
 }
 
 @end

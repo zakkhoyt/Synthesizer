@@ -9,6 +9,14 @@
 #ifndef Synthesizer_VWWSynthesizerKeys_h
 #define Synthesizer_VWWSynthesizerKeys_h
 
+// For VWWGeneralSettings
+static NSString *VWWGeneralSettingsFrequencyMaxKey = @"general_frequency_max";
+static NSString *VWWGeneralSettingsFrequencyMinKey = @"general_frequency_min";
+static NSString *VWWGeneralSettingsFrequencyNormalizedKey = @"general_frequency_normalized";
+static NSString *VWWGeneralSettingsAmplitudeKey = @"general_amplitude";
+
+
+
 // For VWWSynthesizer
 static NSString *VWWSynthesizerIsRunningKey = @"is_running";
 static NSString *VWWSynthesizerAmplitudeKey = @"amplitude";
