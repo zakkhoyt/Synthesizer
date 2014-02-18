@@ -10,14 +10,13 @@
 #import "VWWTouchView.h"
 #import "VWWSynthesizersController.h"
 
-#import "VWWMotionMonitor.h"
+
 
 
 static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
 
-@interface VWWTouchViewController () <VWWTouchViewDelegate, VWWMotionMonitorDelegate>
+@interface VWWTouchViewController () <VWWTouchViewDelegate>
 @property (weak, nonatomic) IBOutlet VWWTouchView *touchView;
-@property (nonatomic, strong) VWWMotionMonitor *motionMonitor;
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (nonatomic, strong) VWWSynthesizersController *synthesizersController;
 @end
@@ -41,7 +40,7 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
     
     [self setupSynthesizers];
     
-    [self setupMotionMonitor];
+
     
     UIFont *font = [UIFont fontWithName:@"PricedownBl-Regular" size:24.0];
     [self.settingsButton.titleLabel setFont:font];
@@ -80,14 +79,7 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
     self.synthesizersController = [VWWSynthesizersController sharedInstance];
 }
 
--(void)setupMotionMonitor{
-    self.motionMonitor = [[VWWMotionMonitor alloc]init];
-    self.motionMonitor.delegate = self;
-//    [self.motionMonitor startAccelerometer];
-//    [self.motionMonitor startGyroscopes];
-//    [self.motionMonitor startMagnetometer];
 
-}
 
 
 -(void)addGestureRecognizers{
@@ -132,13 +124,14 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
         self.synthesizersController.touchscreenGroup.xSynthesizer.frequencyNormalized = x.floatValue;
         self.synthesizersController.touchscreenGroup.ySynthesizer.frequencyNormalized = y.floatValue;
     }
-
 }
 
 #pragma mark VWWTouchViewDelegate
 -(void)touchViewDelegate:(VWWTouchView*)sender touchesBeganWithArray:(NSArray*)array{
+    // Unmute on touch begin
     self.synthesizersController.touchscreenGroup.xSynthesizer.muted = NO;
     self.synthesizersController.touchscreenGroup.ySynthesizer.muted = NO;
+    
     [self updateFrequenciesWithArray:array];
 }
 
@@ -148,65 +141,14 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
 
 -(void)touchViewDelegate:(VWWTouchView*)sender touchesEndedWithArray:(NSArray*)array{
     [self updateFrequenciesWithArray:array];
+    // Mute on touch end
     self.synthesizersController.touchscreenGroup.xSynthesizer.muted = YES;
     self.synthesizersController.touchscreenGroup.ySynthesizer.muted = YES;
 }
 
 
 
-#pragma mark VWWMotionMonitorDelegate
--(void)vwwMotionMonitor:(VWWMotionMonitor*)sender accelerometerUpdated:(MotionDevice)device{
-    self.synthesizersController.accelerometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
-    self.synthesizersController.accelerometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
-    
-    static NSInteger counter = 0;
-    
-    if(counter % 10 == 0){
-        VWW_LOG_INFO(@"\naccelerometer.x: %f"
-                     @"\naccelerometer.y: %f"
-                     @"\naccelerometer.z: %f",
-                     device.x.currentNormalized,
-                     device.y.currentNormalized,
-                     device.z.currentNormalized);
-    }
-    
-    counter++;
-    
-}
--(void)vwwMotionMonitor:(VWWMotionMonitor*)sender magnetometerUpdated:(MotionDevice)device{
-    self.synthesizersController.accelerometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
-    self.synthesizersController.accelerometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
-    
-    static NSInteger counter = 0;
-    
-    if(counter % 10 == 0){
-        VWW_LOG_INFO(@"\nmagnetometer: %f"
-                     @"\nmagnetometer: %f"
-                     @"\nmagnetometer: %f",
-                     device.x.currentNormalized,
-                     device.y.currentNormalized,
-                     device.z.currentNormalized);
-    }
-    
-    counter++;
-}
--(void)vwwMotionMonitor:(VWWMotionMonitor*)sender gyroUpdated:(MotionDevice)device{
-    self.synthesizersController.accelerometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
-    self.synthesizersController.accelerometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
-    
-    static NSInteger counter = 0;
-    
-    if(counter % 10 == 0){
-        VWW_LOG_INFO(@"\ngyroscope: %f"
-                     @"\ngyroscope: %f"
-                     @"\ngyroscope: %f",
-                     device.x.currentNormalized,
-                     device.y.currentNormalized,
-                     device.z.currentNormalized);
-    }
-    
-    counter++;
-}
+
 
 
 

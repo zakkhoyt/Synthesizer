@@ -510,6 +510,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RMs-jK-VeD">
                                                     <rect key="frame" x="218" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="touchscreenXAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="oh6-Az-JAc"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X-Axis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSl-wc-7u3">
                                                     <rect key="frame" x="20" y="11" width="190" height="21"/>
@@ -532,6 +535,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srQ-xQ-LCh">
                                                     <rect key="frame" x="217" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="touchscreenYAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="STR-v1-rcu"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Y-Axis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="605-MA-tHD">
                                                     <rect key="frame" x="20" y="11" width="189" height="21"/>
@@ -565,6 +571,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C2Q-tY-mQf">
                                                     <rect key="frame" x="218" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="accelerometersXAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="tzv-wg-Dvs"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X-Axis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Whw-HV-QLj">
                                                     <rect key="frame" x="20" y="11" width="190" height="21"/>
@@ -587,6 +596,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jrz-ZU-5bi">
                                                     <rect key="frame" x="218" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="accelerometersYAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="dhd-kK-hSJ"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Y-Axis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fru-Zq-cax">
                                                     <rect key="frame" x="20" y="11" width="190" height="21"/>
@@ -609,6 +621,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NaG-QG-LPK">
                                                     <rect key="frame" x="218" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="accelerometersZAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="xPZ-gG-SAd"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Z-Axis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ls7-rZ-DwF">
                                                     <rect key="frame" x="20" y="11" width="190" height="21"/>
@@ -642,6 +657,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BFy-4w-0YO">
                                                     <rect key="frame" x="218" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="gyroscopesXAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="NSq-D7-KLz"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X-Axis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oy3-dc-czZ">
                                                     <rect key="frame" x="20" y="11" width="190" height="21"/>
@@ -664,6 +682,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zxT-cv-Doj">
                                                     <rect key="frame" x="218" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="gyroscopesYAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="Il1-nh-Soh"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Y-Axis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tSa-O2-HYH">
                                                     <rect key="frame" x="20" y="11" width="190" height="21"/>
@@ -686,6 +707,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jUK-oO-fvE">
                                                     <rect key="frame" x="218" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="gyroscopesZAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="byV-uK-qRN"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Z-Axis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzZ-ja-VBZ">
                                                     <rect key="frame" x="20" y="11" width="190" height="21"/>
@@ -712,6 +736,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vUv-WI-yhP">
                                                     <rect key="frame" x="218" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="magnetometersXAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="80V-ts-2HX"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X-Axis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuB-W9-XEJ">
                                                     <rect key="frame" x="20" y="11" width="190" height="21"/>
@@ -734,6 +761,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3mi-hW-ZDH">
                                                     <rect key="frame" x="218" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="magnetometersYAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="SJP-AF-Brv"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Y-Axis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jqS-0g-FjI">
                                                     <rect key="frame" x="20" y="11" width="190" height="21"/>
@@ -756,6 +786,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2qU-cq-T6Z">
                                                     <rect key="frame" x="218" y="6" width="51" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="magnetometersZAxisSwitchValueChanged:" destination="d9e-9r-ljF" eventType="valueChanged" id="NOY-OT-96V"/>
+                                                    </connections>
                                                 </switch>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Z-Axis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huz-VK-avR">
                                                     <rect key="frame" x="20" y="11" width="190" height="21"/>
@@ -779,6 +812,17 @@
                     <navigationItem key="navigationItem" title="Synthesizer" id="3c0-5l-MhB"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="accelerometersXAxisSwitch" destination="C2Q-tY-mQf" id="abs-sN-vnp"/>
+                        <outlet property="accelerometersYAxisSwitch" destination="jrz-ZU-5bi" id="VIk-U3-CvU"/>
+                        <outlet property="accelerometersZAxisSwitch" destination="NaG-QG-LPK" id="OpC-re-LdY"/>
+                        <outlet property="gyroscopesXAxisSwitch" destination="BFy-4w-0YO" id="Xag-cq-4gC"/>
+                        <outlet property="gyroscopesYAxisSwitch" destination="zxT-cv-Doj" id="K97-f8-NCA"/>
+                        <outlet property="gyroscopesZAxisSwitch" destination="jUK-oO-fvE" id="rcW-iH-f5d"/>
+                        <outlet property="magnetometersXAxisSwitch" destination="vUv-WI-yhP" id="u6s-49-xgU"/>
+                        <outlet property="magnetometersYAxisSwitch" destination="3mi-hW-ZDH" id="dyJ-Sg-bdK"/>
+                        <outlet property="magnetometersZAxisSwitch" destination="2qU-cq-T6Z" id="dxD-9l-L9o"/>
+                        <outlet property="touchscreenXAxisSwitch" destination="RMs-jK-VeD" id="xpU-mw-txt"/>
+                        <outlet property="touchscreenYAxisSwitch" destination="srQ-xQ-LCh" id="hWn-U6-Sia"/>
                         <segue destination="Jcu-7A-RZ0" kind="push" identifier="VWWSegueAxesToSynthesizer" id="LR9-mR-FCt"/>
                     </connections>
                 </tableViewController>
