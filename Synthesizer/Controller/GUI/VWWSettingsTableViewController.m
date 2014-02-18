@@ -40,7 +40,13 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = NO;
+    [[UIApplication sharedApplication] setStatusBarHidden:NO];
 }
+
+- (BOOL)prefersStatusBarHidden {
+    return NO	;
+}
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -54,9 +60,9 @@
 //                              self.airPlayTableViewCell.bounds.size.height,
 //                              self.airPlayTableViewCell.bounds.size.height);
     CGRect frame = CGRectMake(12,
-                              12,
+                              12 + 44,
                               self.airPlayTableViewCell.bounds.size.width - 24,
-                              self.airPlayTableViewCell.bounds.size.height);
+                              44);
 
     MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:frame];
     [volumeView setShowsVolumeSlider:YES];

@@ -54,6 +54,15 @@
 		C6D5C9E318AED84D00DDCAD0 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9E018AED84D00DDCAD0 /* AsyncSocket.m */; };
 		C6D5C9E418AED84D00DDCAD0 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9E218AED84D00DDCAD0 /* AsyncUdpSocket.m */; };
 		C6D5C9F118AEDF4B00DDCAD0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5C9F018AEDF4B00DDCAD0 /* MBProgressHUD.m */; };
+		C6D5CA0218B3D9ED00DDCAD0 /* pricedown.otf in Resources */ = {isa = PBXBuildFile; fileRef = C6D5C9FA18B3D9ED00DDCAD0 /* pricedown.otf */; };
+		C6D5CA0318B3D9ED00DDCAD0 /* pricedown.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6D5C9FB18B3D9ED00DDCAD0 /* pricedown.ttf */; };
+		C6D5CA0418B3D9ED00DDCAD0 /* sawtooth_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6D5C9FD18B3D9ED00DDCAD0 /* sawtooth_256x256.png */; };
+		C6D5CA0518B3D9ED00DDCAD0 /* sine_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6D5C9FE18B3D9ED00DDCAD0 /* sine_256x256.png */; };
+		C6D5CA0618B3D9ED00DDCAD0 /* square_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6D5C9FF18B3D9ED00DDCAD0 /* square_256x256.png */; };
+		C6D5CA0718B3D9ED00DDCAD0 /* theremin_1024.psd in Resources */ = {isa = PBXBuildFile; fileRef = C6D5CA0018B3D9ED00DDCAD0 /* theremin_1024.psd */; };
+		C6D5CA0818B3D9ED00DDCAD0 /* triangle_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6D5CA0118B3D9ED00DDCAD0 /* triangle_256x256.png */; };
+		C6D5CA1C18B3E87E00DDCAD0 /* dinas_handwriting.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6D5CA1B18B3E87E00DDCAD0 /* dinas_handwriting.ttf */; };
+		C6D5CA2418B422BF00DDCAD0 /* VWWSynthesizersController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5CA2318B422BF00DDCAD0 /* VWWSynthesizersController.m */; };
 		CF0F67C018AF135A000158BE /* VWWDevicesServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67B218AF135A000158BE /* VWWDevicesServerViewController.m */; };
 		CF0F67C118AF135A000158BE /* VWWDevicesClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67B418AF135A000158BE /* VWWDevicesClientViewController.m */; };
 		CF0F67C218AF135A000158BE /* VWWDevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67B618AF135A000158BE /* VWWDevicesViewController.m */; };
@@ -154,6 +163,16 @@
 		C6D5C9E218AED84D00DDCAD0 /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
 		C6D5C9EF18AEDF4B00DDCAD0 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		C6D5C9F018AEDF4B00DDCAD0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		C6D5C9FA18B3D9ED00DDCAD0 /* pricedown.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pricedown.otf; sourceTree = "<group>"; };
+		C6D5C9FB18B3D9ED00DDCAD0 /* pricedown.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = pricedown.ttf; sourceTree = "<group>"; };
+		C6D5C9FD18B3D9ED00DDCAD0 /* sawtooth_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sawtooth_256x256.png; sourceTree = "<group>"; };
+		C6D5C9FE18B3D9ED00DDCAD0 /* sine_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sine_256x256.png; sourceTree = "<group>"; };
+		C6D5C9FF18B3D9ED00DDCAD0 /* square_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = square_256x256.png; sourceTree = "<group>"; };
+		C6D5CA0018B3D9ED00DDCAD0 /* theremin_1024.psd */ = {isa = PBXFileReference; lastKnownFileType = file; path = theremin_1024.psd; sourceTree = "<group>"; };
+		C6D5CA0118B3D9ED00DDCAD0 /* triangle_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle_256x256.png; sourceTree = "<group>"; };
+		C6D5CA1B18B3E87E00DDCAD0 /* dinas_handwriting.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dinas_handwriting.ttf; sourceTree = "<group>"; };
+		C6D5CA2218B422BF00DDCAD0 /* VWWSynthesizersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizersController.h; sourceTree = "<group>"; };
+		C6D5CA2318B422BF00DDCAD0 /* VWWSynthesizersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizersController.m; sourceTree = "<group>"; };
 		CF0F67B118AF135A000158BE /* VWWDevicesServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesServerViewController.h; sourceTree = "<group>"; };
 		CF0F67B218AF135A000158BE /* VWWDevicesServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesServerViewController.m; sourceTree = "<group>"; };
 		CF0F67B318AF135A000158BE /* VWWDevicesClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesClientViewController.h; sourceTree = "<group>"; };
@@ -280,6 +299,7 @@
 				C6A6D1B2187F441D0025105C /* Images.xcassets */,
 				C6D5C9D318AED44B00DDCAD0 /* Include */,
 				CF63F1DF18B2C13500BD1DFC /* Model */,
+				C6D5C9F818B3D9ED00DDCAD0 /* Resources */,
 				C6A6D19E187F441D0025105C /* Supporting Files */,
 				C6A6D1CF187F447A0025105C /* Synthesizer */,
 				C6D5C9DD18AED84D00DDCAD0 /* ThirdParty */,
@@ -459,6 +479,46 @@
 			path = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		C6D5C9F818B3D9ED00DDCAD0 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C6D5C9F918B3D9ED00DDCAD0 /* Fonts */,
+				C6D5C9FC18B3D9ED00DDCAD0 /* Images */,
+				C6D5C9FD18B3D9ED00DDCAD0 /* sawtooth_256x256.png */,
+				C6D5C9FE18B3D9ED00DDCAD0 /* sine_256x256.png */,
+				C6D5C9FF18B3D9ED00DDCAD0 /* square_256x256.png */,
+				C6D5CA0018B3D9ED00DDCAD0 /* theremin_1024.psd */,
+				C6D5CA0118B3D9ED00DDCAD0 /* triangle_256x256.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C6D5C9F918B3D9ED00DDCAD0 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				C6D5CA1B18B3E87E00DDCAD0 /* dinas_handwriting.ttf */,
+				C6D5C9FA18B3D9ED00DDCAD0 /* pricedown.otf */,
+				C6D5C9FB18B3D9ED00DDCAD0 /* pricedown.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		C6D5C9FC18B3D9ED00DDCAD0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		C6D5CA2118B422A600DDCAD0 /* Synthesizers */ = {
+			isa = PBXGroup;
+			children = (
+				C6D5CA2218B422BF00DDCAD0 /* VWWSynthesizersController.h */,
+				C6D5CA2318B422BF00DDCAD0 /* VWWSynthesizersController.m */,
+			);
+			name = Synthesizers;
+			sourceTree = "<group>";
+		};
 		CF0F67B018AF135A000158BE /* GUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +533,7 @@
 		CF0F67BF18AF135A000158BE /* NonGUI */ = {
 			isa = PBXGroup;
 			children = (
+				C6D5CA2118B422A600DDCAD0 /* Synthesizers */,
 				CFF779A218B2D55A00301A84 /* Bonjour */,
 				CFF779A818B2D55A00301A84 /* Motion */,
 			);
@@ -669,10 +730,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6D5CA0418B3D9ED00DDCAD0 /* sawtooth_256x256.png in Resources */,
+				C6D5CA0518B3D9ED00DDCAD0 /* sine_256x256.png in Resources */,
 				C6A6D1AE187F441D0025105C /* Main_iPad.storyboard in Resources */,
+				C6D5CA0818B3D9ED00DDCAD0 /* triangle_256x256.png in Resources */,
 				C6A6D1B3187F441D0025105C /* Images.xcassets in Resources */,
+				C6D5CA0718B3D9ED00DDCAD0 /* theremin_1024.psd in Resources */,
+				C6D5CA0218B3D9ED00DDCAD0 /* pricedown.otf in Resources */,
 				CF245AB918B2E4100012C642 /* about.html in Resources */,
+				C6D5CA1C18B3E87E00DDCAD0 /* dinas_handwriting.ttf in Resources */,
 				C6A6D1AB187F441D0025105C /* Main_iPhone.storyboard in Resources */,
+				C6D5CA0618B3D9ED00DDCAD0 /* square_256x256.png in Resources */,
+				C6D5CA0318B3D9ED00DDCAD0 /* pricedown.ttf in Resources */,
 				C6A6D1A2187F441D0025105C /* InfoPlist.strings in Resources */,
 				C6A6D238187F61C30025105C /* README.txt in Resources */,
 			);
@@ -734,6 +803,7 @@
 				CFF779AD18B2D55A00301A84 /* VWWMotionMonitor.m in Sources */,
 				C6A6D234187F5E470025105C /* VWWSynthesizerEffectNoteKey.m in Sources */,
 				CF0F67C618AF135A000158BE /* VWWTouchViewController.m in Sources */,
+				C6D5CA2418B422BF00DDCAD0 /* VWWSynthesizersController.m in Sources */,
 				CFF779AC18B2D55A00301A84 /* VWWBonjourServerController.m in Sources */,
 				C6D5C9E318AED84D00DDCAD0 /* AsyncSocket.m in Sources */,
 				C6A6D1A8187F441D0025105C /* VWWAppDelegate.m in Sources */,

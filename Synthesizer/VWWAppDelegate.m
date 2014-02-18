@@ -12,6 +12,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+
     [self setupDefaults];
     [self setupAppearance];
 //    [[UINavigationBar appearance] setTintColor:[UIColor grayColor]];
@@ -53,9 +54,41 @@
 }
 
 -(void)setupAppearance{
+        [self printFonts];
     
+    // PricedownBl-Regular
+//    UIFont *font = [UIFont fontWithName:@"PricedownBl-Regular" size:20.0];
+//    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-UltraLight" size:20.0];
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Light" size:20.0];
+//    UIFont *font = [UIFont fontWithName:@"Dina'sHandwritingRegular" size:17.0];
+//    UIFont *font = [UIFont fontWithName:@"HelveticaNeue-Thin" size:20.0];
+
+    [UIButton.appearance setFont:font];
+//    [UIButton.appearance.titleLabel setFont:font];
+    [UILabel.appearance setFont:font];
+    [UIBarButtonItem.appearance setTitleTextAttributes:@{NSFontAttributeName : font} forState:UIControlStateNormal];
+    [UINavigationBar.appearance setTitleTextAttributes:@{NSFontAttributeName : font}];
+    [[UISegmentedControl appearance] setTitleTextAttributes:@{NSFontAttributeName : font} forState:UIControlStateNormal];
+
+    
+    
+
+    VWW_LOG_INFO(@"");
 }
 
+
+-(void)printFonts{
+    VWW_LOG_DEBUG(@"\nListing fonts installed on this device:\n");
+    for (NSString* family in [UIFont familyNames])
+    {
+        NSLog(@"family:\t%@", family);
+        
+        for (NSString* name in [UIFont fontNamesForFamilyName: family])
+        {
+            NSLog(@"name:\t\t%@", name);
+        }
+    }
+}
 
 
 @end
