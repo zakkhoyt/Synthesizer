@@ -8,6 +8,7 @@
 
 #import "VWWBonjourServerController.h"
 #import "VWWBonjourDefines.h"
+#import "AsyncSocket.h"
 
 @interface VWWBonjourServerController () <AsyncSocketDelegate, NSNetServiceDelegate>
 @property (strong, nonatomic) NSNetService *service;

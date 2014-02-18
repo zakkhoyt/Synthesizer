@@ -409,22 +409,6 @@ const float kMagnetometerZMax = 30.0f;
     self.gyrosRunning = NO;
     NSLog(@"Stopped Gyros");
 }
-//
-//-(NSString*)description:(MotionDevice)device{
-//    return [NSString stringWithFormat:@"(min, current, max):\n"
-//         "X; %f < %f < %f\n"
-//         "Y; %f < %f < %f\n"
-//         "Z; %f < %f < %f\n",
-//         device.x.min,
-//         device.x.current,
-//         device.x.max,
-//         device.y.min,
-//         device.y.current,
-//         device.y.max,
-//         device.z.min,
-//         device.z.current,
-//         device.z.max];
-//}
 
 @end
 

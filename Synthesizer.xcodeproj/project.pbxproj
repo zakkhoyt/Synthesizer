@@ -64,6 +64,9 @@
 		CF245AB618B2E3B70012C642 /* VWWAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF245AB518B2E3B70012C642 /* VWWAboutViewController.m */; };
 		CF245AB918B2E4100012C642 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = CF245AB818B2E4100012C642 /* about.html */; };
 		CF537B0118B2F2A700055739 /* VWWSynthesizerSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF537B0018B2F2A700055739 /* VWWSynthesizerSettingsTableViewController.m */; };
+		CF537B0518B3166300055739 /* VWWUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = CF537B0418B3166300055739 /* VWWUserDefaults.m */; };
+		CF537B0918B3180900055739 /* VWWWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF537B0818B3180900055739 /* VWWWelcomeViewController.m */; };
+		CF537B0B18B3194500055739 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF537B0A18B3194500055739 /* MediaPlayer.framework */; };
 		CF63F1E218B2C13500BD1DFC /* VWWGeneralSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CF63F1E118B2C13500BD1DFC /* VWWGeneralSettings.m */; };
 		CFF779AB18B2D55A00301A84 /* VWWBonjourClientController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF779A418B2D55A00301A84 /* VWWBonjourClientController.m */; };
 		CFF779AC18B2D55A00301A84 /* VWWBonjourServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF779A718B2D55A00301A84 /* VWWBonjourServerController.m */; };
@@ -170,6 +173,11 @@
 		CF245AB818B2E4100012C642 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		CF537AFF18B2F2A700055739 /* VWWSynthesizerSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerSettingsTableViewController.h; sourceTree = "<group>"; };
 		CF537B0018B2F2A700055739 /* VWWSynthesizerSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerSettingsTableViewController.m; sourceTree = "<group>"; };
+		CF537B0318B3166300055739 /* VWWUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWUserDefaults.h; sourceTree = "<group>"; };
+		CF537B0418B3166300055739 /* VWWUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWUserDefaults.m; sourceTree = "<group>"; };
+		CF537B0718B3180900055739 /* VWWWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWelcomeViewController.h; sourceTree = "<group>"; };
+		CF537B0818B3180900055739 /* VWWWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWelcomeViewController.m; sourceTree = "<group>"; };
+		CF537B0A18B3194500055739 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		CF63F1E018B2C13500BD1DFC /* VWWGeneralSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeneralSettings.h; sourceTree = "<group>"; };
 		CF63F1E118B2C13500BD1DFC /* VWWGeneralSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeneralSettings.m; sourceTree = "<group>"; };
 		CFF779A318B2D55A00301A84 /* VWWBonjourClientController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBonjourClientController.h; sourceTree = "<group>"; };
@@ -186,6 +194,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF537B0B18B3194500055739 /* MediaPlayer.framework in Frameworks */,
 				C6D5C9D918AED75100DDCAD0 /* Security.framework in Frameworks */,
 				C6D5C9D718AED74C00DDCAD0 /* CFNetwork.framework in Frameworks */,
 				C6A6D1F5187F44990025105C /* AudioToolbox.framework in Frameworks */,
@@ -249,6 +258,7 @@
 		C6A6D196187F441D0025105C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF537B0A18B3194500055739 /* MediaPlayer.framework */,
 				C6D5C9D818AED75100DDCAD0 /* Security.framework */,
 				C6D5C9D618AED74C00DDCAD0 /* CFNetwork.framework */,
 				C6A6D1F3187F44990025105C /* AudioToolbox.framework */,
@@ -274,6 +284,7 @@
 				C6A6D1CF187F447A0025105C /* Synthesizer */,
 				C6D5C9DD18AED84D00DDCAD0 /* ThirdParty */,
 				C6D5C9D418AED4D700DDCAD0 /* UserInterface */,
+				CF537B0218B3165000055739 /* Utilities */,
 				C61B7545187F888700737E51 /* View */,
 			);
 			path = Synthesizer;
@@ -452,8 +463,9 @@
 			isa = PBXGroup;
 			children = (
 				CF245AB718B2E3BC0012C642 /* About */,
-				CF63F1D418B2B68A00BD1DFC /* Main */,
+				CF63F1D418B2B68A00BD1DFC /* Touch */,
 				CF63F1D518B2B68E00BD1DFC /* Settings */,
+				CF537B0618B317F500055739 /* Welcome */,
 			);
 			path = GUI;
 			sourceTree = "<group>";
@@ -477,13 +489,31 @@
 			name = About;
 			sourceTree = "<group>";
 		};
-		CF63F1D418B2B68A00BD1DFC /* Main */ = {
+		CF537B0218B3165000055739 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CF537B0318B3166300055739 /* VWWUserDefaults.h */,
+				CF537B0418B3166300055739 /* VWWUserDefaults.m */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		CF537B0618B317F500055739 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				CF537B0718B3180900055739 /* VWWWelcomeViewController.h */,
+				CF537B0818B3180900055739 /* VWWWelcomeViewController.m */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
+		CF63F1D418B2B68A00BD1DFC /* Touch */ = {
 			isa = PBXGroup;
 			children = (
 				CF0F67BD18AF135A000158BE /* VWWTouchViewController.h */,
 				CF0F67BE18AF135A000158BE /* VWWTouchViewController.m */,
 			);
-			name = Main;
+			name = Touch;
 			sourceTree = "<group>";
 		};
 		CF63F1D518B2B68E00BD1DFC /* Settings */ = {
@@ -680,11 +710,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6A6D204187F49B10025105C /* VWWSynthesizer.mm in Sources */,
+				CF537B0518B3166300055739 /* VWWUserDefaults.m in Sources */,
 				CF63F1E218B2C13500BD1DFC /* VWWGeneralSettings.m in Sources */,
 				CF0F67C118AF135A000158BE /* VWWDevicesClientViewController.m in Sources */,
 				C6A6D233187F5E470025105C /* VWWSynthesizerC.mm in Sources */,
 				C6A6D200187F48B00025105C /* NSTimer+Blocks.m in Sources */,
 				CF0F67C218AF135A000158BE /* VWWDevicesViewController.m in Sources */,
+				CF537B0918B3180900055739 /* VWWWelcomeViewController.m in Sources */,
 				CF537B0118B2F2A700055739 /* VWWSynthesizerSettingsTableViewController.m in Sources */,
 				C6D5C9E418AED84D00DDCAD0 /* AsyncUdpSocket.m in Sources */,
 				CF0F67C418AF135A000158BE /* VWWSettingsTableViewController.m in Sources */,

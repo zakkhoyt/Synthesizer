@@ -5,16 +5,16 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>7856384C-3C40-4441-8460-CC8B36F09C26</string>
+	<string>4991EAB2-261A-484F-899B-1F98903A333E</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Synthesizer</string>
+	<string>Theremin</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>06CD5791-514A-4461-ABA6-7064DBF6F5AE</key>
 		<string>ssh://github.com/zakkhoyt/Synthesizer.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Synthesizer.xcodeproj/project.xcworkspace</string>
+	<string>Theremin.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>06CD5791-514A-4461-ABA6-7064DBF6F5AE</key>
