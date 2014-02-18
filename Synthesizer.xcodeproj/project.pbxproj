@@ -61,9 +61,10 @@
 		CF0F67C418AF135A000158BE /* VWWSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67BA18AF135A000158BE /* VWWSettingsTableViewController.m */; };
 		CF0F67C518AF135A000158BE /* VWWSynthesizerSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67BC18AF135A000158BE /* VWWSynthesizerSettingsTableViewController.m */; };
 		CF0F67C618AF135A000158BE /* VWWTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67BE18AF135A000158BE /* VWWTouchViewController.m */; };
-		CF0F67C918AF136C000158BE /* VWWBonjourServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67C818AF136C000158BE /* VWWBonjourServerController.m */; };
-		CF63F1DE18B2C10C00BD1DFC /* VWWBonjourClientController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF63F1DD18B2C10C00BD1DFC /* VWWBonjourClientController.m */; };
 		CF63F1E218B2C13500BD1DFC /* VWWGeneralSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CF63F1E118B2C13500BD1DFC /* VWWGeneralSettings.m */; };
+		CFF779AB18B2D55A00301A84 /* VWWBonjourClientController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF779A418B2D55A00301A84 /* VWWBonjourClientController.m */; };
+		CFF779AC18B2D55A00301A84 /* VWWBonjourServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF779A718B2D55A00301A84 /* VWWBonjourServerController.m */; };
+		CFF779AD18B2D55A00301A84 /* VWWMotionMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF779AA18B2D55A00301A84 /* VWWMotionMonitor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,13 +162,15 @@
 		CF0F67BC18AF135A000158BE /* VWWSynthesizerSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerSettingsTableViewController.m; sourceTree = "<group>"; };
 		CF0F67BD18AF135A000158BE /* VWWTouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTouchViewController.h; sourceTree = "<group>"; };
 		CF0F67BE18AF135A000158BE /* VWWTouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTouchViewController.m; sourceTree = "<group>"; };
-		CF0F67C718AF136C000158BE /* VWWBonjourServerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBonjourServerController.h; sourceTree = "<group>"; };
-		CF0F67C818AF136C000158BE /* VWWBonjourServerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWBonjourServerController.m; sourceTree = "<group>"; };
-		CF63F1DC18B2C10C00BD1DFC /* VWWBonjourClientController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBonjourClientController.h; sourceTree = "<group>"; };
-		CF63F1DD18B2C10C00BD1DFC /* VWWBonjourClientController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWBonjourClientController.m; sourceTree = "<group>"; };
 		CF63F1E018B2C13500BD1DFC /* VWWGeneralSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeneralSettings.h; sourceTree = "<group>"; };
 		CF63F1E118B2C13500BD1DFC /* VWWGeneralSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeneralSettings.m; sourceTree = "<group>"; };
-		CF63F1E318B2C22800BD1DFC /* VWWBonjourDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VWWBonjourDefines.h; sourceTree = "<group>"; };
+		CFF779A318B2D55A00301A84 /* VWWBonjourClientController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBonjourClientController.h; sourceTree = "<group>"; };
+		CFF779A418B2D55A00301A84 /* VWWBonjourClientController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWBonjourClientController.m; sourceTree = "<group>"; };
+		CFF779A518B2D55A00301A84 /* VWWBonjourDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBonjourDefines.h; sourceTree = "<group>"; };
+		CFF779A618B2D55A00301A84 /* VWWBonjourServerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBonjourServerController.h; sourceTree = "<group>"; };
+		CFF779A718B2D55A00301A84 /* VWWBonjourServerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWBonjourServerController.m; sourceTree = "<group>"; };
+		CFF779A918B2D55A00301A84 /* VWWMotionMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWMotionMonitor.h; sourceTree = "<group>"; };
+		CFF779AA18B2D55A00301A84 /* VWWMotionMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWMotionMonitor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,11 +452,8 @@
 		CF0F67BF18AF135A000158BE /* NonGUI */ = {
 			isa = PBXGroup;
 			children = (
-				CF63F1E318B2C22800BD1DFC /* VWWBonjourDefines.h */,
-				CF0F67C718AF136C000158BE /* VWWBonjourServerController.h */,
-				CF0F67C818AF136C000158BE /* VWWBonjourServerController.m */,
-				CF63F1DC18B2C10C00BD1DFC /* VWWBonjourClientController.h */,
-				CF63F1DD18B2C10C00BD1DFC /* VWWBonjourClientController.m */,
+				CFF779A218B2D55A00301A84 /* Bonjour */,
+				CFF779A818B2D55A00301A84 /* Motion */,
 			);
 			path = NonGUI;
 			sourceTree = "<group>";
@@ -517,6 +517,27 @@
 				CF63F1E118B2C13500BD1DFC /* VWWGeneralSettings.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CFF779A218B2D55A00301A84 /* Bonjour */ = {
+			isa = PBXGroup;
+			children = (
+				CFF779A318B2D55A00301A84 /* VWWBonjourClientController.h */,
+				CFF779A418B2D55A00301A84 /* VWWBonjourClientController.m */,
+				CFF779A518B2D55A00301A84 /* VWWBonjourDefines.h */,
+				CFF779A618B2D55A00301A84 /* VWWBonjourServerController.h */,
+				CFF779A718B2D55A00301A84 /* VWWBonjourServerController.m */,
+			);
+			path = Bonjour;
+			sourceTree = "<group>";
+		};
+		CFF779A818B2D55A00301A84 /* Motion */ = {
+			isa = PBXGroup;
+			children = (
+				CFF779A918B2D55A00301A84 /* VWWMotionMonitor.h */,
+				CFF779AA18B2D55A00301A84 /* VWWMotionMonitor.m */,
+			);
+			path = Motion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -636,16 +657,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF0F67C918AF136C000158BE /* VWWBonjourServerController.m in Sources */,
 				C6A6D204187F49B10025105C /* VWWSynthesizer.mm in Sources */,
 				CF63F1E218B2C13500BD1DFC /* VWWGeneralSettings.m in Sources */,
 				CF0F67C118AF135A000158BE /* VWWDevicesClientViewController.m in Sources */,
 				C6A6D233187F5E470025105C /* VWWSynthesizerC.mm in Sources */,
 				C6A6D200187F48B00025105C /* NSTimer+Blocks.m in Sources */,
 				CF0F67C218AF135A000158BE /* VWWDevicesViewController.m in Sources */,
-				CF63F1DE18B2C10C00BD1DFC /* VWWBonjourClientController.m in Sources */,
 				C6D5C9E418AED84D00DDCAD0 /* AsyncUdpSocket.m in Sources */,
 				CF0F67C418AF135A000158BE /* VWWSettingsTableViewController.m in Sources */,
+				CFF779AB18B2D55A00301A84 /* VWWBonjourClientController.m in Sources */,
 				C6A6D1A4187F441D0025105C /* main.m in Sources */,
 				C6A6D22E187F5E470025105C /* CAXException.cpp in Sources */,
 				C6A6D242187F73190025105C /* VWWNormalizedSynthesizer.mm in Sources */,
@@ -656,8 +676,10 @@
 				C6A6D235187F5E470025105C /* VWWSynthesizerNotes.m in Sources */,
 				C6D5C9F118AEDF4B00DDCAD0 /* MBProgressHUD.m in Sources */,
 				CF0F67C518AF135A000158BE /* VWWSynthesizerSettingsTableViewController.m in Sources */,
+				CFF779AD18B2D55A00301A84 /* VWWMotionMonitor.m in Sources */,
 				C6A6D234187F5E470025105C /* VWWSynthesizerEffectNoteKey.m in Sources */,
 				CF0F67C618AF135A000158BE /* VWWTouchViewController.m in Sources */,
+				CFF779AC18B2D55A00301A84 /* VWWBonjourServerController.m in Sources */,
 				C6D5C9E318AED84D00DDCAD0 /* AsyncSocket.m in Sources */,
 				C6A6D1A8187F441D0025105C /* VWWAppDelegate.m in Sources */,
 				CF0F67C018AF135A000158BE /* VWWDevicesServerViewController.m in Sources */,
