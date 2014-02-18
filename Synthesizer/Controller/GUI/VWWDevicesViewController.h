@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface VWWDevicesViewController : UIViewController
+@interface VWWDevicesViewController : UITableViewController
 
 @end

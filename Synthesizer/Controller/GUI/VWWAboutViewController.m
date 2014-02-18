@@ -7,6 +7,7 @@
 //
 
 #import "VWWAboutViewController.h"
+#import "MBProgressHUD.h"
 
 @interface VWWAboutViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -18,6 +19,8 @@
 
 -(void)viewDidLoad{
     [super viewDidLoad];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
     NSString *htmlString = @"<html>"
     @"<body bgcolor=\"#000000\" text=\"#FFFFFF\" link=\"#00FF00\">"
     @"<h3>Motion Sensor Theremin:</h3>"
@@ -41,5 +44,12 @@
     @"</body>"
     @"</html>";
     [self.webView loadHTMLString:htmlString baseURL:nil];
+
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
 }
 @end
