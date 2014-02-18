@@ -61,6 +61,8 @@
 		CF0F67C418AF135A000158BE /* VWWSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67BA18AF135A000158BE /* VWWSettingsTableViewController.m */; };
 		CF0F67C518AF135A000158BE /* VWWSynthesizerSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67BC18AF135A000158BE /* VWWSynthesizerSettingsTableViewController.m */; };
 		CF0F67C618AF135A000158BE /* VWWTouchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67BE18AF135A000158BE /* VWWTouchViewController.m */; };
+		CF245AB618B2E3B70012C642 /* VWWAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF245AB518B2E3B70012C642 /* VWWAboutViewController.m */; };
+		CF245AB918B2E4100012C642 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = CF245AB818B2E4100012C642 /* about.html */; };
 		CF63F1E218B2C13500BD1DFC /* VWWGeneralSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CF63F1E118B2C13500BD1DFC /* VWWGeneralSettings.m */; };
 		CFF779AB18B2D55A00301A84 /* VWWBonjourClientController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF779A418B2D55A00301A84 /* VWWBonjourClientController.m */; };
 		CFF779AC18B2D55A00301A84 /* VWWBonjourServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF779A718B2D55A00301A84 /* VWWBonjourServerController.m */; };
@@ -162,6 +164,9 @@
 		CF0F67BC18AF135A000158BE /* VWWSynthesizerSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerSettingsTableViewController.m; sourceTree = "<group>"; };
 		CF0F67BD18AF135A000158BE /* VWWTouchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWTouchViewController.h; sourceTree = "<group>"; };
 		CF0F67BE18AF135A000158BE /* VWWTouchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWTouchViewController.m; sourceTree = "<group>"; };
+		CF245AB418B2E3B70012C642 /* VWWAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAboutViewController.h; sourceTree = "<group>"; };
+		CF245AB518B2E3B70012C642 /* VWWAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAboutViewController.m; sourceTree = "<group>"; };
+		CF245AB818B2E4100012C642 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = about.html; sourceTree = "<group>"; };
 		CF63F1E018B2C13500BD1DFC /* VWWGeneralSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeneralSettings.h; sourceTree = "<group>"; };
 		CF63F1E118B2C13500BD1DFC /* VWWGeneralSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeneralSettings.m; sourceTree = "<group>"; };
 		CFF779A318B2D55A00301A84 /* VWWBonjourClientController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBonjourClientController.h; sourceTree = "<group>"; };
@@ -443,6 +448,7 @@
 		CF0F67B018AF135A000158BE /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				CF245AB718B2E3BC0012C642 /* About */,
 				CF63F1D418B2B68A00BD1DFC /* Main */,
 				CF63F1D518B2B68E00BD1DFC /* Settings */,
 			);
@@ -456,6 +462,16 @@
 				CFF779A818B2D55A00301A84 /* Motion */,
 			);
 			path = NonGUI;
+			sourceTree = "<group>";
+		};
+		CF245AB718B2E3BC0012C642 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				CF245AB418B2E3B70012C642 /* VWWAboutViewController.h */,
+				CF245AB518B2E3B70012C642 /* VWWAboutViewController.m */,
+				CF245AB818B2E4100012C642 /* about.html */,
+			);
+			name = About;
 			sourceTree = "<group>";
 		};
 		CF63F1D418B2B68A00BD1DFC /* Main */ = {
@@ -620,6 +636,7 @@
 			files = (
 				C6A6D1AE187F441D0025105C /* Main_iPad.storyboard in Resources */,
 				C6A6D1B3187F441D0025105C /* Images.xcassets in Resources */,
+				CF245AB918B2E4100012C642 /* about.html in Resources */,
 				C6A6D1AB187F441D0025105C /* Main_iPhone.storyboard in Resources */,
 				C6A6D1A2187F441D0025105C /* InfoPlist.strings in Resources */,
 				C6A6D238187F61C30025105C /* README.txt in Resources */,
@@ -682,6 +699,7 @@
 				CFF779AC18B2D55A00301A84 /* VWWBonjourServerController.m in Sources */,
 				C6D5C9E318AED84D00DDCAD0 /* AsyncSocket.m in Sources */,
 				C6A6D1A8187F441D0025105C /* VWWAppDelegate.m in Sources */,
+				CF245AB618B2E3B70012C642 /* VWWAboutViewController.m in Sources */,
 				CF0F67C018AF135A000158BE /* VWWDevicesServerViewController.m in Sources */,
 				C6A6D22D187F5E470025105C /* CAStreamBasicDescription.cpp in Sources */,
 			);
