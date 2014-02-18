@@ -428,10 +428,10 @@
             </objects>
             <point key="canvasLocation" x="2111" y="-644"/>
         </scene>
-        <!--Synthesizer Settings Table View Controller - Synthesizer-->
+        <!--Synthesizer Axes Settings Table View Controller - Synthesizer-->
         <scene sceneID="2xe-Lf-nAY">
             <objects>
-                <tableViewController id="d9e-9r-ljF" customClass="VWWSynthesizerSettingsTableViewController" sceneMemberID="viewController">
+                <tableViewController id="d9e-9r-ljF" customClass="VWWSynthesizerAxesSettingsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="6Xv-ss-uHz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -716,10 +716,42 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Synthesizer" id="3c0-5l-MhB"/>
+                    <connections>
+                        <segue destination="Jcu-7A-RZ0" kind="push" identifier="VWWSegueAxesToSynthesizer" id="LR9-mR-FCt"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLT-SE-qbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2111" y="230"/>
+        </scene>
+        <!--Synthesizer Settings Table View Controller-->
+        <scene sceneID="Dz6-QO-nXM">
+            <objects>
+                <tableViewController id="Jcu-7A-RZ0" customClass="VWWSynthesizerSettingsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="U15-la-Ymg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="UMS-Mg-bkT">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="UMS-Mg-bkT" id="XhD-h6-JcY">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Jcu-7A-RZ0" id="Elf-9T-Vhp"/>
+                            <outlet property="delegate" destination="Jcu-7A-RZ0" id="2ik-HE-vyi"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="T2Y-J9-ooX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y9M-CC-LFI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2582" y="232"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fUP-Xb-BB7">

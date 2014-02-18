@@ -16,10 +16,10 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
 
 @interface VWWTouchViewController () <VWWTouchViewDelegate, VWWMotionMonitorDelegate>
 @property (weak, nonatomic) IBOutlet VWWTouchView *touchView;
-@property (nonatomic, strong) VWWSynthesizerGroup *touchGroup;
-@property (nonatomic, strong) VWWSynthesizerGroup *accelerometerGroup;
-@property (nonatomic, strong) VWWSynthesizerGroup *gyroscopeGroup;
-@property (nonatomic, strong) VWWSynthesizerGroup *magnetometerGroup;
+@property (nonatomic, strong) VWWSynthesizerGroup *touchscreenGroup;
+@property (nonatomic, strong) VWWSynthesizerGroup *accelerometersGroup;
+@property (nonatomic, strong) VWWSynthesizerGroup *gyroscopesGroup;
+@property (nonatomic, strong) VWWSynthesizerGroup *magnetometersGroup;
 @property (nonatomic, strong) VWWMotionMonitor *motionMonitor;
 @end
 
@@ -54,8 +54,7 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
 }
 
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
@@ -72,43 +71,43 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
 -(void)setupSynthesizers{
     // Touchscreeen
     VWWGeneralSettings *generalSettings = [VWWGeneralSettings sharedInstance];
-    self.touchGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
+    self.touchscreenGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
                                                           amplitudeY:generalSettings.amplitude yFrequencyMin:generalSettings.frequencyMin yFrequencyMax:generalSettings.frequencyMax yFrequencyNormalized:generalSettings.frequencyNormalized
                                                           amplitudeZ:generalSettings.amplitude zFrequencyMin:generalSettings.frequencyMin zFrequencyMax:generalSettings.frequencyMax zFrequencyNormalized:generalSettings.frequencyNormalized];
-    self.touchGroup.muted = YES;
-    [self.touchGroup start];
+    self.touchscreenGroup.muted = YES;
+    [self.touchscreenGroup start];
     self.touchView.delegate = self;
     
     
     
     
     // Accelerometer
-    self.accelerometerGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
+    self.accelerometersGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
                                                                   amplitudeY:generalSettings.amplitude yFrequencyMin:generalSettings.frequencyMin yFrequencyMax:generalSettings.frequencyMax yFrequencyNormalized:generalSettings.frequencyNormalized
                                                                   amplitudeZ:generalSettings.amplitude zFrequencyMin:generalSettings.frequencyMin zFrequencyMax:generalSettings.frequencyMax zFrequencyNormalized:generalSettings.frequencyNormalized];
-    self.accelerometerGroup.xSynthesizer.muted = YES;
-    self.accelerometerGroup.zSynthesizer.muted = YES;
-    self.accelerometerGroup.ySynthesizer.muted = YES;
-    [self.accelerometerGroup start];
+    self.accelerometersGroup.xSynthesizer.muted = YES;
+    self.accelerometersGroup.zSynthesizer.muted = YES;
+    self.accelerometersGroup.ySynthesizer.muted = YES;
+    [self.accelerometersGroup start];
     
     // Gyroscope
-    self.gyroscopeGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
+    self.gyroscopesGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
                                                               amplitudeY:generalSettings.amplitude yFrequencyMin:generalSettings.frequencyMin yFrequencyMax:generalSettings.frequencyMax yFrequencyNormalized:generalSettings.frequencyNormalized
                                                               amplitudeZ:generalSettings.amplitude zFrequencyMin:generalSettings.frequencyMin zFrequencyMax:generalSettings.frequencyMax zFrequencyNormalized:generalSettings.frequencyNormalized];
-    self.gyroscopeGroup.xSynthesizer.muted = YES;
-    self.gyroscopeGroup.zSynthesizer.muted = YES;
-    self.gyroscopeGroup.ySynthesizer.muted = YES;
-    [self.gyroscopeGroup start];
+    self.gyroscopesGroup.xSynthesizer.muted = YES;
+    self.gyroscopesGroup.zSynthesizer.muted = YES;
+    self.gyroscopesGroup.ySynthesizer.muted = YES;
+    [self.gyroscopesGroup start];
 
     
     // Magnetometer
-    self.magnetometerGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
+    self.magnetometersGroup = [[VWWSynthesizerGroup alloc]initWithAmplitudeX:generalSettings.amplitude xFrequencyMin:generalSettings.frequencyMin xFrequencyMax:generalSettings.frequencyMax xFrequencyNormalized:generalSettings.frequencyNormalized
                                                                  amplitudeY:generalSettings.amplitude yFrequencyMin:generalSettings.frequencyMin yFrequencyMax:generalSettings.frequencyMax yFrequencyNormalized:generalSettings.frequencyNormalized
                                                                  amplitudeZ:generalSettings.amplitude zFrequencyMin:generalSettings.frequencyMin zFrequencyMax:generalSettings.frequencyMax zFrequencyNormalized:generalSettings.frequencyNormalized];
-    self.magnetometerGroup.xSynthesizer.muted = YES;
-    self.magnetometerGroup.zSynthesizer.muted = YES;
-    self.magnetometerGroup.ySynthesizer.muted = YES;
-    [self.magnetometerGroup start];
+    self.magnetometersGroup.xSynthesizer.muted = YES;
+    self.magnetometersGroup.zSynthesizer.muted = YES;
+    self.magnetometersGroup.ySynthesizer.muted = YES;
+    [self.magnetometersGroup start];
     
 }
 
@@ -161,16 +160,16 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
     for(NSDictionary *dictionary in array){
         NSNumber *x = dictionary[VWWTouchViewXKey];
         NSNumber *y = dictionary[VWWTouchViewYKey];
-        self.touchGroup.xSynthesizer.frequencyNormalized = x.floatValue;
-        self.touchGroup.ySynthesizer.frequencyNormalized = y.floatValue;
+        self.touchscreenGroup.xSynthesizer.frequencyNormalized = x.floatValue;
+        self.touchscreenGroup.ySynthesizer.frequencyNormalized = y.floatValue;
     }
 
 }
 
 #pragma mark VWWTouchViewDelegate
 -(void)touchViewDelegate:(VWWTouchView*)sender touchesBeganWithArray:(NSArray*)array{
-    self.touchGroup.xSynthesizer.muted = NO;
-    self.touchGroup.ySynthesizer.muted = NO;
+    self.touchscreenGroup.xSynthesizer.muted = NO;
+    self.touchscreenGroup.ySynthesizer.muted = NO;
     [self updateFrequenciesWithArray:array];
 }
 
@@ -180,16 +179,16 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
 
 -(void)touchViewDelegate:(VWWTouchView*)sender touchesEndedWithArray:(NSArray*)array{
     [self updateFrequenciesWithArray:array];
-    self.touchGroup.xSynthesizer.muted = YES;
-    self.touchGroup.ySynthesizer.muted = YES;
+    self.touchscreenGroup.xSynthesizer.muted = YES;
+    self.touchscreenGroup.ySynthesizer.muted = YES;
 }
 
 
 
 #pragma mark VWWMotionMonitorDelegate
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender accelerometerUpdated:(MotionDevice)device{
-    self.accelerometerGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
-    self.accelerometerGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
+    self.accelerometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
+    self.accelerometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
     
     static NSInteger counter = 0;
     
@@ -206,8 +205,8 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
     
 }
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender magnetometerUpdated:(MotionDevice)device{
-    self.accelerometerGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
-    self.accelerometerGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
+    self.accelerometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
+    self.accelerometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
     
     static NSInteger counter = 0;
     
@@ -223,8 +222,8 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
     counter++;
 }
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender gyroUpdated:(MotionDevice)device{
-    self.accelerometerGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
-    self.accelerometerGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
+    self.accelerometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
+    self.accelerometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
     
     static NSInteger counter = 0;
     
