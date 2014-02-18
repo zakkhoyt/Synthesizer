@@ -11,7 +11,7 @@
 #import "VWWSynthesizerGroup.h"
 #import "VWWGeneralSettings.h"
 #import "VWWMotionMonitor.h"
-#import <MediaPlayer/MediaPlayer.h>
+
 
 static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
 
@@ -53,10 +53,7 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
     [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
     
-    CGRect frame = CGRectMake(0, self.view.bounds.size.height - 100,  self.view.bounds.size.width, 100);
-    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:frame];
-    [volumeView setShowsVolumeSlider:NO];
-    [self.view addSubview:volumeView];
+
 }
 
 

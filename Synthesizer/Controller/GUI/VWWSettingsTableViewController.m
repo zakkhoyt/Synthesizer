@@ -7,8 +7,10 @@
 //
 
 #import "VWWSettingsTableViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface VWWSettingsTableViewController ()
+@property (weak, nonatomic) IBOutlet UITableViewCell *airPlayTableViewCell;
 
 @end
 
@@ -32,6 +34,8 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self addAirPlayVolumeControl];
 }
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -44,6 +48,20 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)addAirPlayVolumeControl{
+//    CGRect frame = CGRectMake(self.airPlayTableViewCell.bounds.size.width - self.airPlayTableViewCell.bounds.size.height,
+//                              self.airPlayTableViewCell.bounds.size.height,
+//                              self.airPlayTableViewCell.bounds.size.height,
+//                              self.airPlayTableViewCell.bounds.size.height);
+    CGRect frame = CGRectMake(12,
+                              12,
+                              self.airPlayTableViewCell.bounds.size.width - 24,
+                              self.airPlayTableViewCell.bounds.size.height);
+
+    MPVolumeView *volumeView = [[MPVolumeView alloc] initWithFrame:frame];
+    [volumeView setShowsVolumeSlider:YES];
+    [self.airPlayTableViewCell addSubview:volumeView];
+}
 
 
 #pragma mark IBActions
