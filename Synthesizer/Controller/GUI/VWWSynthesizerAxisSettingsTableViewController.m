@@ -10,6 +10,7 @@
 #import "VWWFrequencyParametersTableViewController.h"
 #import "VWWWaveformParametersTableViewController.h"
 #import "VWWAmplitudeParametersTableViewController.h"
+#import "VWWEffectParametersTableViewController.h"
 
 const NSInteger VWWSynthesizerAxisFrequencyRow = 0;
 const NSInteger VWWSynthesizerAxisWaveformRow = 1;
@@ -67,7 +68,8 @@ static NSString *VWWSegueAxisToSensitivity = @"VWWSegueAxisToSensitivity";
         VWWAmplitudeParametersTableViewController *vc = segue.destinationViewController;
         vc.synthesizerGroup = self.synthesizerGroup;
     } else if([segue.identifier isEqualToString:VWWSegueAxisToEffect]){
-        
+        VWWEffectParametersTableViewController *vc = segue.destinationViewController;
+        vc.synthesizerGroup = self.synthesizerGroup;
     } else if([segue.identifier isEqualToString:VWWSegueAxisToSensitivity]){
         
     }

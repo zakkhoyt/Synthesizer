@@ -25,7 +25,7 @@
 }
 
 
--(void)setWavetype:(int)wavetype{
+-(void)setWavetype:(VWWWaveType)wavetype{
     _wavetype = wavetype;
     
     
