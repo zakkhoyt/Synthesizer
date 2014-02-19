@@ -7,18 +7,20 @@
 //
 
 #import "VWWSynthesizerAxesSettingsTableViewController.h"
-#import "VWWSynthesizerSettingsTableViewController.h"
+//#import "VWWSynthesizerSettingsTableViewController.h"
+#import "VWWSynthesizerAxisSettingsTableViewController.h"
 #import "VWWSynthesizersController.h"
 
 
-static NSString *VWWSegueAxesToSynthesizer = @"VWWSegueAxesToSynthesizer";
+static NSString *VWWSegueAxesToGroupConfig = @"VWWSegueAxesToGroupConfig";
 const NSInteger VWWSynthesizerTouchScreenSection = 0;
 const NSInteger VWWSynthesizerAccelerometerSection = 1;
 const NSInteger VWWSynthesizerGyroscopeSection = 2;
 const NSInteger VWWSynthesizerMagnetometerSection = 3;
-const NSInteger VWWSynthesizerXAxisRow = 0;
-const NSInteger VWWSynthesizerYAxisRow = 1;
-const NSInteger VWWSynthesizerZAxisRow = 2;
+const NSInteger VWWSynthesizerConfigureRow = 0;
+const NSInteger VWWSynthesizerXAxisRow = 1;
+const NSInteger VWWSynthesizerYAxisRow = 2;
+const NSInteger VWWSynthesizerZAxisRow = 3;
 
 @interface VWWSynthesizerAxesSettingsTableViewController ()
 @property (nonatomic, strong) VWWSynthesizersController *synthesizersController;
@@ -81,9 +83,9 @@ const NSInteger VWWSynthesizerZAxisRow = 2;
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    if([segue.identifier isEqualToString:VWWSegueAxesToSynthesizer]){
-        VWWSynthesizerSettingsTableViewController *vc = segue.destinationViewController;
-        vc.normalizedSynthesizer = sender;
+    if([segue.identifier isEqualToString:VWWSegueAxesToGroupConfig]){
+        VWWSynthesizerAxisSettingsTableViewController *vc = segue.destinationViewController;
+        vc.synthesizerGroup = sender;
     }
 }
 
@@ -172,30 +174,37 @@ const NSInteger VWWSynthesizerZAxisRow = 2;
 
 #pragma mark UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    VWWNormalizedSynthesizer *normalizedSynthesizer;
+
+    VWWSynthesizerGroup *synthesizerGroup;
     if(indexPath.section == VWWSynthesizerTouchScreenSection){
-        if(indexPath.row == VWWSynthesizerXAxisRow){
-        } else if(indexPath.row == VWWSynthesizerYAxisRow){
-        } else if(indexPath.row == VWWSynthesizerZAxisRow){
-        }
+        synthesizerGroup = self.synthesizersController.touchscreenGroup;
+//        if(indexPath.row == VWWSynthesizerXAxisRow){
+//        } else if(indexPath.row == VWWSynthesizerYAxisRow){
+//        } else if(indexPath.row == VWWSynthesizerZAxisRow){
+//        }
     } else if(indexPath.section == VWWSynthesizerAccelerometerSection){
-        if(indexPath.row == VWWSynthesizerXAxisRow){
-        } else if(indexPath.row == VWWSynthesizerYAxisRow){
-        } else if(indexPath.row == VWWSynthesizerZAxisRow){
-        }
+        synthesizerGroup = self.synthesizersController.accelerometersGroup;
+//        if(indexPath.row == VWWSynthesizerXAxisRow){
+//        } else if(indexPath.row == VWWSynthesizerYAxisRow){
+//        } else if(indexPath.row == VWWSynthesizerZAxisRow){
+//        }
     } else if(indexPath.section == VWWSynthesizerGyroscopeSection){
-        if(indexPath.row == VWWSynthesizerXAxisRow){
-        } else if(indexPath.row == VWWSynthesizerYAxisRow){
-        } else if(indexPath.row == VWWSynthesizerZAxisRow){
-        }
+        synthesizerGroup = self.synthesizersController.gyroscopesGroup;
+//        if(indexPath.row == VWWSynthesizerXAxisRow){
+//        } else if(indexPath.row == VWWSynthesizerYAxisRow){
+//        } else if(indexPath.row == VWWSynthesizerZAxisRow){
+//        }
     } else if(indexPath.section == VWWSynthesizerMagnetometerSection){
-        if(indexPath.row == VWWSynthesizerXAxisRow){
-        } else if(indexPath.row == VWWSynthesizerYAxisRow){
-        } else if(indexPath.row == VWWSynthesizerZAxisRow){
-        }
+        synthesizerGroup = self.synthesizersController.magnetometersGroup;
+//        if(indexPath.row == VWWSynthesizerXAxisRow){
+//        } else if(indexPath.row == VWWSynthesizerYAxisRow){
+//        } else if(indexPath.row == VWWSynthesizerZAxisRow){
+//        }
     }
     
-    [self performSegueWithIdentifier:VWWSegueAxesToSynthesizer sender:normalizedSynthesizer];
+    if(indexPath.row == VWWSynthesizerConfigureRow){
+        [self performSegueWithIdentifier:VWWSegueAxesToGroupConfig sender:synthesizerGroup];
+    }
 }
 
 

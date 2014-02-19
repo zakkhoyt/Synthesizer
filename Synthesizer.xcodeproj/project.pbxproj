@@ -63,6 +63,7 @@
 		C6D5CA0818B3D9ED00DDCAD0 /* triangle_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = C6D5CA0118B3D9ED00DDCAD0 /* triangle_256x256.png */; };
 		C6D5CA1C18B3E87E00DDCAD0 /* dinas_handwriting.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6D5CA1B18B3E87E00DDCAD0 /* dinas_handwriting.ttf */; };
 		C6D5CA2418B422BF00DDCAD0 /* VWWSynthesizersController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5CA2318B422BF00DDCAD0 /* VWWSynthesizersController.m */; };
+		C6EAD64118B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6EAD64018B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.m */; };
 		CF0F67C018AF135A000158BE /* VWWDevicesServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67B218AF135A000158BE /* VWWDevicesServerViewController.m */; };
 		CF0F67C118AF135A000158BE /* VWWDevicesClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67B418AF135A000158BE /* VWWDevicesClientViewController.m */; };
 		CF0F67C218AF135A000158BE /* VWWDevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67B618AF135A000158BE /* VWWDevicesViewController.m */; };
@@ -173,6 +174,8 @@
 		C6D5CA1B18B3E87E00DDCAD0 /* dinas_handwriting.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = dinas_handwriting.ttf; sourceTree = "<group>"; };
 		C6D5CA2218B422BF00DDCAD0 /* VWWSynthesizersController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizersController.h; sourceTree = "<group>"; };
 		C6D5CA2318B422BF00DDCAD0 /* VWWSynthesizersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizersController.m; sourceTree = "<group>"; };
+		C6EAD63F18B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerAxisSettingsTableViewController.h; sourceTree = "<group>"; };
+		C6EAD64018B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerAxisSettingsTableViewController.m; sourceTree = "<group>"; };
 		CF0F67B118AF135A000158BE /* VWWDevicesServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesServerViewController.h; sourceTree = "<group>"; };
 		CF0F67B218AF135A000158BE /* VWWDevicesServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesServerViewController.m; sourceTree = "<group>"; };
 		CF0F67B318AF135A000158BE /* VWWDevicesClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesClientViewController.h; sourceTree = "<group>"; };
@@ -607,6 +610,8 @@
 			children = (
 				CF0F67BB18AF135A000158BE /* VWWSynthesizerAxesSettingsTableViewController.h */,
 				CF0F67BC18AF135A000158BE /* VWWSynthesizerAxesSettingsTableViewController.m */,
+				C6EAD63F18B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.h */,
+				C6EAD64018B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.m */,
 				CF537AFF18B2F2A700055739 /* VWWSynthesizerSettingsTableViewController.h */,
 				CF537B0018B2F2A700055739 /* VWWSynthesizerSettingsTableViewController.m */,
 			);
@@ -787,6 +792,7 @@
 				CF0F67C218AF135A000158BE /* VWWDevicesViewController.m in Sources */,
 				CF537B0918B3180900055739 /* VWWWelcomeViewController.m in Sources */,
 				CF537B0118B2F2A700055739 /* VWWSynthesizerSettingsTableViewController.m in Sources */,
+				C6EAD64118B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.m in Sources */,
 				C6D5C9E418AED84D00DDCAD0 /* AsyncUdpSocket.m in Sources */,
 				CF0F67C418AF135A000158BE /* VWWSettingsTableViewController.m in Sources */,
 				CFF779AB18B2D55A00301A84 /* VWWBonjourClientController.m in Sources */,
