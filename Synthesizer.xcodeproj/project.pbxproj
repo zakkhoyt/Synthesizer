@@ -26,6 +26,7 @@
 		C61B7544187F888200737E51 /* VWWTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61B7543187F888200737E51 /* VWWTouchView.m */; };
 		C66818E418B52B4300E2E5DD /* VWWWaveformParametersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C66818E318B52B4300E2E5DD /* VWWWaveformParametersTableViewController.m */; };
 		C66818E918B5311F00E2E5DD /* VWWWaveformTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C66818E818B5311F00E2E5DD /* VWWWaveformTableViewCell.m */; };
+		C66818EE18B5369200E2E5DD /* VWWAmplitudeParametersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C66818ED18B5369200E2E5DD /* VWWAmplitudeParametersTableViewController.m */; };
 		C6A6D198187F441D0025105C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D197187F441D0025105C /* Foundation.framework */; };
 		C6A6D19A187F441D0025105C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D199187F441D0025105C /* CoreGraphics.framework */; };
 		C6A6D19C187F441D0025105C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D19B187F441D0025105C /* UIKit.framework */; };
@@ -106,6 +107,8 @@
 		C66818E318B52B4300E2E5DD /* VWWWaveformParametersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWaveformParametersTableViewController.m; sourceTree = "<group>"; };
 		C66818E718B5311F00E2E5DD /* VWWWaveformTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWaveformTableViewCell.h; sourceTree = "<group>"; };
 		C66818E818B5311F00E2E5DD /* VWWWaveformTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWaveformTableViewCell.m; sourceTree = "<group>"; };
+		C66818EC18B5369200E2E5DD /* VWWAmplitudeParametersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAmplitudeParametersTableViewController.h; sourceTree = "<group>"; };
+		C66818ED18B5369200E2E5DD /* VWWAmplitudeParametersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAmplitudeParametersTableViewController.m; sourceTree = "<group>"; };
 		C6A6D194187F441D0025105C /* Synthesizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synthesizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A6D197187F441D0025105C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C6A6D199187F441D0025105C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -284,6 +287,24 @@
 				C66818E818B5311F00E2E5DD /* VWWWaveformTableViewCell.m */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		C66818EA18B5366F00E2E5DD /* Frequency */ = {
+			isa = PBXGroup;
+			children = (
+				C6F4DBC118B51C8F00415831 /* VWWFrequencyParametersTableViewController.h */,
+				C6F4DBC218B51C8F00415831 /* VWWFrequencyParametersTableViewController.m */,
+			);
+			name = Frequency;
+			sourceTree = "<group>";
+		};
+		C66818EB18B5367800E2E5DD /* Amplitude */ = {
+			isa = PBXGroup;
+			children = (
+				C66818EC18B5369200E2E5DD /* VWWAmplitudeParametersTableViewController.h */,
+				C66818ED18B5369200E2E5DD /* VWWAmplitudeParametersTableViewController.m */,
+			);
+			name = Amplitude;
 			sourceTree = "<group>";
 		};
 		C6A6D18B187F441D0025105C = {
@@ -553,9 +574,9 @@
 		C6F4DBC018B51C6D00415831 /* Parameters */ = {
 			isa = PBXGroup;
 			children = (
+				C66818EB18B5367800E2E5DD /* Amplitude */,
+				C66818EA18B5366F00E2E5DD /* Frequency */,
 				C66818E518B530FD00E2E5DD /* Waveform */,
-				C6F4DBC118B51C8F00415831 /* VWWFrequencyParametersTableViewController.h */,
-				C6F4DBC218B51C8F00415831 /* VWWFrequencyParametersTableViewController.m */,
 			);
 			name = Parameters;
 			sourceTree = "<group>";
@@ -838,6 +859,7 @@
 				C6D5C9E418AED84D00DDCAD0 /* AsyncUdpSocket.m in Sources */,
 				CF0F67C418AF135A000158BE /* VWWSettingsTableViewController.m in Sources */,
 				CFF779AB18B2D55A00301A84 /* VWWBonjourClientController.m in Sources */,
+				C66818EE18B5369200E2E5DD /* VWWAmplitudeParametersTableViewController.m in Sources */,
 				C6A6D1A4187F441D0025105C /* main.m in Sources */,
 				C6A6D22E187F5E470025105C /* CAXException.cpp in Sources */,
 				C6A6D242187F73190025105C /* VWWNormalizedSynthesizer.mm in Sources */,
