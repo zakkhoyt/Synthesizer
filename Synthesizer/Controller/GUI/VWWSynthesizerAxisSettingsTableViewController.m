@@ -7,7 +7,7 @@
 //
 
 #import "VWWSynthesizerAxisSettingsTableViewController.h"
-
+#import "VWWFrequencyParametersTableViewController.h"
 
 const NSInteger VWWSynthesizerAxisFrequencyRow = 0;
 const NSInteger VWWSynthesizerAxisWaveformRow = 1;
@@ -56,7 +56,8 @@ static NSString *VWWSegueAxisToSensitivity = @"VWWSegueAxisToSensitivity";
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if([segue.identifier isEqualToString:VWWSegueAxisToFrequency]){
-        
+        VWWFrequencyParametersTableViewController *vc = segue.destinationViewController;
+        vc.synthesizerGroup = self.synthesizerGroup;
     } else if([segue.identifier isEqualToString:VWWSegueAxisToWaveform]){
         
     } else if([segue.identifier isEqualToString:VWWSegueAxisToAmplitude]){
