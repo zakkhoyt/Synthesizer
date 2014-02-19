@@ -24,6 +24,8 @@
 		C60D15B91880A87F00D008F6 /* VWWSynthesizerGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C60D15B81880A87F00D008F6 /* VWWSynthesizerGroup.m */; };
 		C60D15BB1880ABD400D008F6 /* VWWSynthesizerGroupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C60D15BA1880ABD400D008F6 /* VWWSynthesizerGroupTests.m */; };
 		C61B7544187F888200737E51 /* VWWTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61B7543187F888200737E51 /* VWWTouchView.m */; };
+		C66818E418B52B4300E2E5DD /* VWWWaveformParametersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C66818E318B52B4300E2E5DD /* VWWWaveformParametersTableViewController.m */; };
+		C66818E918B5311F00E2E5DD /* VWWWaveformTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C66818E818B5311F00E2E5DD /* VWWWaveformTableViewCell.m */; };
 		C6A6D198187F441D0025105C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D197187F441D0025105C /* Foundation.framework */; };
 		C6A6D19A187F441D0025105C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D199187F441D0025105C /* CoreGraphics.framework */; };
 		C6A6D19C187F441D0025105C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D19B187F441D0025105C /* UIKit.framework */; };
@@ -100,6 +102,10 @@
 		C60D15BA1880ABD400D008F6 /* VWWSynthesizerGroupTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerGroupTests.m; sourceTree = "<group>"; };
 		C61B7542187F888200737E51 /* VWWTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWTouchView.h; path = View/VWWTouchView.h; sourceTree = "<group>"; };
 		C61B7543187F888200737E51 /* VWWTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWTouchView.m; path = View/VWWTouchView.m; sourceTree = "<group>"; };
+		C66818E218B52B4300E2E5DD /* VWWWaveformParametersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWaveformParametersTableViewController.h; sourceTree = "<group>"; };
+		C66818E318B52B4300E2E5DD /* VWWWaveformParametersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWaveformParametersTableViewController.m; sourceTree = "<group>"; };
+		C66818E718B5311F00E2E5DD /* VWWWaveformTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWaveformTableViewCell.h; sourceTree = "<group>"; };
+		C66818E818B5311F00E2E5DD /* VWWWaveformTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWaveformTableViewCell.m; sourceTree = "<group>"; };
 		C6A6D194187F441D0025105C /* Synthesizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synthesizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A6D197187F441D0025105C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C6A6D199187F441D0025105C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -259,6 +265,25 @@
 				CF0F67BF18AF135A000158BE /* NonGUI */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		C66818E518B530FD00E2E5DD /* Waveform */ = {
+			isa = PBXGroup;
+			children = (
+				C66818E618B5310700E2E5DD /* Cell */,
+				C66818E218B52B4300E2E5DD /* VWWWaveformParametersTableViewController.h */,
+				C66818E318B52B4300E2E5DD /* VWWWaveformParametersTableViewController.m */,
+			);
+			name = Waveform;
+			sourceTree = "<group>";
+		};
+		C66818E618B5310700E2E5DD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C66818E718B5311F00E2E5DD /* VWWWaveformTableViewCell.h */,
+				C66818E818B5311F00E2E5DD /* VWWWaveformTableViewCell.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		C6A6D18B187F441D0025105C = {
@@ -528,6 +553,7 @@
 		C6F4DBC018B51C6D00415831 /* Parameters */ = {
 			isa = PBXGroup;
 			children = (
+				C66818E518B530FD00E2E5DD /* Waveform */,
 				C6F4DBC118B51C8F00415831 /* VWWFrequencyParametersTableViewController.h */,
 				C6F4DBC218B51C8F00415831 /* VWWFrequencyParametersTableViewController.m */,
 			);
@@ -806,6 +832,8 @@
 				CF0F67C218AF135A000158BE /* VWWDevicesViewController.m in Sources */,
 				CF537B0918B3180900055739 /* VWWWelcomeViewController.m in Sources */,
 				CF537B0118B2F2A700055739 /* VWWSynthesizerSettingsTableViewController.m in Sources */,
+				C66818E418B52B4300E2E5DD /* VWWWaveformParametersTableViewController.m in Sources */,
+				C66818E918B5311F00E2E5DD /* VWWWaveformTableViewCell.m in Sources */,
 				C6EAD64118B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.m in Sources */,
 				C6D5C9E418AED84D00DDCAD0 /* AsyncUdpSocket.m in Sources */,
 				CF0F67C418AF135A000158BE /* VWWSettingsTableViewController.m in Sources */,

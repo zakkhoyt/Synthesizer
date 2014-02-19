@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "VWWNormalizedSynthesizer.h"
 
+
+
 @interface VWWSynthesizerGroup : NSObject
 @property (nonatomic, strong) VWWNormalizedSynthesizer *xSynthesizer;
 @property (nonatomic, strong) VWWNormalizedSynthesizer *ySynthesizer;

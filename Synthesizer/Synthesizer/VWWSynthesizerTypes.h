@@ -9,12 +9,21 @@
 #ifndef Theremin_VWWSynthesizerTypes_h
 #define Theremin_VWWSynthesizerTypes_h
 
+
+
+
 typedef enum{
-    VWWWaveTypeNone = 0,
-    VWWWaveTypeSine,
-    VWWWaveTypeSquare,
-    VWWWaveTypeTriangle,
-    VWWWaveTypeSawtooth,
+    VWWAxisTypeX = 0,
+    VWWAxisTypeY = 1,
+    VWWAxisTypeZ = 2,
+} VWWAxisType;
+
+
+typedef enum{
+    VWWWaveTypeSine = 0,
+    VWWWaveTypeSquare = 1,
+    VWWWaveTypeTriangle = 2,
+    VWWWaveTypeSawtooth = 3,
 } VWWWaveType;
 
 typedef enum{

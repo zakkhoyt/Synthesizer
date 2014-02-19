@@ -10,10 +10,11 @@
 #import "VWWGeneralSettings.h"
 #import "VWWSynthesizerGroup.h" 
 
+const NSInteger VWWFrequencyParametersTableViewControllerXAxisSection = 0;
+const NSInteger VWWFrequencyParametersTableViewControllerYAxisSection = 1;
+const NSInteger VWWFrequencyParametersTableViewControllerZAxisSection = 2;
 
-const NSInteger VWWXAxisSection = 0;
-const NSInteger VWWYAxisSection = 1;
-const NSInteger VWWZAxisSection = 2;
+
 
 @interface VWWFrequencyParametersTableViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *xFrequencyMinTextField;
@@ -168,11 +169,11 @@ const NSInteger VWWZAxisSection = 2;
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     switch (section) {
-        case VWWXAxisSection:
+        case VWWFrequencyParametersTableViewControllerXAxisSection:
             return @"X-Axis";
-        case VWWYAxisSection:
+        case VWWFrequencyParametersTableViewControllerYAxisSection:
             return @"Y-Axis";
-        case VWWZAxisSection:
+        case VWWFrequencyParametersTableViewControllerZAxisSection:
             return @"Z-Axis";
         default:
             break;
