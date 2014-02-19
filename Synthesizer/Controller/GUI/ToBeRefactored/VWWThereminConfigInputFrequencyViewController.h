@@ -13,13 +13,13 @@
 @class VWWThereminConfigInputFrequencyViewController;
 
 @protocol VWWThereminConfigInputFrequencyViewControllerDelegate <NSObject>
--(void)VWWThereminConfigInputFrequencyViewControllerUserIsDone:(VWWThereminConfigInputFrequencyViewController *)sender;
+//-(void)VWWThereminConfigInputFrequencyViewControllerUserIsDone:(VWWThereminConfigInputFrequencyViewController *)sender;
 @end
 
 @interface VWWThereminConfigInputFrequencyViewController : UIViewController
-@property (nonatomic) InputType inputType;
-@property (nonatomic, strong) VWWLine* axisFrequenciesX;
-@property (nonatomic, strong) VWWLine* axisFrequenciesY;
-@property (nonatomic, strong) VWWLine* axisFrequenciesZ;
-@property (nonatomic, weak) id <VWWThereminConfigInputFrequencyViewControllerDelegate> delegate;
+//@property (nonatomic) InputType inputType;
+//@property (nonatomic, strong) VWWLine* axisFrequenciesX;
+//@property (nonatomic, strong) VWWLine* axisFrequenciesY;
+//@property (nonatomic, strong) VWWLine* axisFrequenciesZ;
+//@property (nonatomic, weak) id <VWWThereminConfigInputFrequencyViewControllerDelegate> delegate;
 @end

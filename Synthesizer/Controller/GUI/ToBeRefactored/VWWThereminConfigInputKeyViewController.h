@@ -10,10 +10,10 @@
 @class VWWThereminConfigInputKeyViewController;
 
 @protocol VWWThereminConfigInputKeyViewControllerDelegate <NSObject>
--(void)vwwThereminConfigInputKeyViewControllerUserIsDone:(VWWThereminConfigInputKeyViewController*)sender;
+//-(void)vwwThereminConfigInputKeyViewControllerUserIsDone:(VWWThereminConfigInputKeyViewController*)sender;
 @end
 
 @interface VWWThereminConfigInputKeyViewController : UIViewController
-@property (nonatomic, weak) id <VWWThereminConfigInputKeyViewControllerDelegate> delegate;
-@property (nonatomic) InputType inputType;
+//@property (nonatomic, weak) id <VWWThereminConfigInputKeyViewControllerDelegate> delegate;
+//@property (nonatomic) InputType inputType;
 @end

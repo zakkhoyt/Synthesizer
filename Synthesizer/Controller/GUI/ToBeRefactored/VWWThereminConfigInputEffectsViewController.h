@@ -12,10 +12,10 @@
 @class VWWThereminConfigInputEffectsViewController;
 
 @protocol VWWThereminConfigInputEffectsViewControllerDelegate <NSObject>
--(void)vwwThereminConfigInputEffectsViewControllerUserIsDone:(VWWThereminConfigInputEffectsViewController*)sender;
+//-(void)vwwThereminConfigInputEffectsViewControllerUserIsDone:(VWWThereminConfigInputEffectsViewController*)sender;
 @end
 
 @interface VWWThereminConfigInputEffectsViewController : UIViewController
-@property (nonatomic, weak) id <VWWThereminConfigInputEffectsViewControllerDelegate> delegate;
-@property (nonatomic) InputType inputType;
+//@property (nonatomic, weak) id <VWWThereminConfigInputEffectsViewControllerDelegate> delegate;
+//@property (nonatomic) InputType inputType;
 @end

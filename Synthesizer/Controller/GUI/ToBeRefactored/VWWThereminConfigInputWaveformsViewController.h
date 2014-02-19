@@ -12,10 +12,10 @@
 @class VWWThereminConfigInputWaveformsViewController;
 
 @protocol VWWThereminConfigInputWaveformsViewControllerDelegate <NSObject>
--(void)vwwThereminConfigInputWaveformsViewControllerUserIsDone:(VWWThereminConfigInputWaveformsViewController*)sender;
+//-(void)vwwThereminConfigInputWaveformsViewControllerUserIsDone:(VWWThereminConfigInputWaveformsViewController*)sender;
 @end
 
 @interface VWWThereminConfigInputWaveformsViewController : UIViewController
-@property (nonatomic, weak) id <VWWThereminConfigInputWaveformsViewControllerDelegate> delegate;
-@property (nonatomic) InputType inputType;
+//@property (nonatomic, weak) id <VWWThereminConfigInputWaveformsViewControllerDelegate> delegate;
+//@property (nonatomic) InputType inputType;
 @end

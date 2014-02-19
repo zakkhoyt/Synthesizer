@@ -7,7 +7,7 @@
 //
 
 #import "VWWThereminConfigInputKeyViewController.h"
-#import "VWWThereminInputs.h"
+//#import "VWWThereminInputs.h"
 #import "VWWConfigInputKeyView.h"
 
 typedef enum{

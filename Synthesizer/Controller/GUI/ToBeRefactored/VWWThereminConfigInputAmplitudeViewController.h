@@ -12,13 +12,13 @@
 @class VWWThereminConfigInputAmplitudeViewController;
 
 @protocol VWWThereminConfigInputAmplitudeViewControllerDelegate <NSObject>
--(void)vwwThereminConfigInputAmplitudeViewControllerUserIsDone:(VWWThereminConfigInputAmplitudeViewController*)sender;
+//-(void)vwwThereminConfigInputAmplitudeViewControllerUserIsDone:(VWWThereminConfigInputAmplitudeViewController*)sender;
 @end
 
 @interface VWWThereminConfigInputAmplitudeViewController : UIViewController
-@property (nonatomic) InputType inputType;
-@property (nonatomic, strong) VWWLine* axisFrequenciesX;
-@property (nonatomic, strong) VWWLine* axisFrequenciesY;
-@property (nonatomic, strong) VWWLine* axisFrequenciesZ;
+//@property (nonatomic) InputType inputType;
+//@property (nonatomic, strong) VWWLine* axisFrequenciesX;
+//@property (nonatomic, strong) VWWLine* axisFrequenciesY;
+//@property (nonatomic, strong) VWWLine* axisFrequenciesZ;
 @property (nonatomic, weak) id <VWWThereminConfigInputAmplitudeViewControllerDelegate> delegate;
 @end

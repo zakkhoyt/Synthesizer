@@ -12,10 +12,10 @@
 @class VWWThereminConfigInputSensitivityViewController;
 
 @protocol VWWThereminConfigInputSensitivityViewControllerDelegate <NSObject>
--(void)vwwThereminConfigInputSensitivityViewControllerUserIsDone:(VWWThereminConfigInputSensitivityViewController*)sender;
+//-(void)vwwThereminConfigInputSensitivityViewControllerUserIsDone:(VWWThereminConfigInputSensitivityViewController*)sender;
 @end
 
 @interface VWWThereminConfigInputSensitivityViewController : UIViewController
-@property (nonatomic, weak) id <VWWThereminConfigInputSensitivityViewControllerDelegate> delegate;
-@property (nonatomic) InputType inputType;
+//@property (nonatomic, weak) id <VWWThereminConfigInputSensitivityViewControllerDelegate> delegate;
+//@property (nonatomic) InputType inputType;
 @end
