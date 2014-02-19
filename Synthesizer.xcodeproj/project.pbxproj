@@ -64,6 +64,14 @@
 		C6D5CA1C18B3E87E00DDCAD0 /* dinas_handwriting.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6D5CA1B18B3E87E00DDCAD0 /* dinas_handwriting.ttf */; };
 		C6D5CA2418B422BF00DDCAD0 /* VWWSynthesizersController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6D5CA2318B422BF00DDCAD0 /* VWWSynthesizersController.m */; };
 		C6EAD64118B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C6EAD64018B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.m */; };
+		C6EAD65318B43C5700443FB3 /* VWWConfigInputAmplitudeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C6EAD64418B43C5700443FB3 /* VWWConfigInputAmplitudeView.m */; };
+		C6EAD65418B43C5700443FB3 /* VWWLine.m in Sources */ = {isa = PBXBuildFile; fileRef = C6EAD64618B43C5700443FB3 /* VWWLine.m */; };
+		C6EAD65518B43C5700443FB3 /* VWWThereminConfigInputAmplitudeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6EAD64818B43C5700443FB3 /* VWWThereminConfigInputAmplitudeViewController.mm */; };
+		C6EAD65618B43C5700443FB3 /* VWWThereminConfigInputEffectsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6EAD64A18B43C5700443FB3 /* VWWThereminConfigInputEffectsViewController.mm */; };
+		C6EAD65718B43C5700443FB3 /* VWWThereminConfigInputFrequencyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6EAD64C18B43C5700443FB3 /* VWWThereminConfigInputFrequencyViewController.mm */; };
+		C6EAD65818B43C5700443FB3 /* VWWThereminConfigInputKeyViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6EAD64E18B43C5700443FB3 /* VWWThereminConfigInputKeyViewController.mm */; };
+		C6EAD65918B43C5700443FB3 /* VWWThereminConfigInputSensitivityViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6EAD65018B43C5700443FB3 /* VWWThereminConfigInputSensitivityViewController.mm */; };
+		C6EAD65A18B43C5700443FB3 /* VWWThereminConfigInputWaveformsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = C6EAD65218B43C5700443FB3 /* VWWThereminConfigInputWaveformsViewController.mm */; };
 		CF0F67C018AF135A000158BE /* VWWDevicesServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67B218AF135A000158BE /* VWWDevicesServerViewController.m */; };
 		CF0F67C118AF135A000158BE /* VWWDevicesClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67B418AF135A000158BE /* VWWDevicesClientViewController.m */; };
 		CF0F67C218AF135A000158BE /* VWWDevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF0F67B618AF135A000158BE /* VWWDevicesViewController.m */; };
@@ -176,6 +184,22 @@
 		C6D5CA2318B422BF00DDCAD0 /* VWWSynthesizersController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizersController.m; sourceTree = "<group>"; };
 		C6EAD63F18B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSynthesizerAxisSettingsTableViewController.h; sourceTree = "<group>"; };
 		C6EAD64018B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerAxisSettingsTableViewController.m; sourceTree = "<group>"; };
+		C6EAD64318B43C5700443FB3 /* VWWConfigInputAmplitudeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWConfigInputAmplitudeView.h; path = ToBeRefactored/VWWConfigInputAmplitudeView.h; sourceTree = "<group>"; };
+		C6EAD64418B43C5700443FB3 /* VWWConfigInputAmplitudeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWConfigInputAmplitudeView.m; path = ToBeRefactored/VWWConfigInputAmplitudeView.m; sourceTree = "<group>"; };
+		C6EAD64518B43C5700443FB3 /* VWWLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWLine.h; path = ToBeRefactored/VWWLine.h; sourceTree = "<group>"; };
+		C6EAD64618B43C5700443FB3 /* VWWLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWLine.m; path = ToBeRefactored/VWWLine.m; sourceTree = "<group>"; };
+		C6EAD64718B43C5700443FB3 /* VWWThereminConfigInputAmplitudeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWThereminConfigInputAmplitudeViewController.h; path = ToBeRefactored/VWWThereminConfigInputAmplitudeViewController.h; sourceTree = "<group>"; };
+		C6EAD64818B43C5700443FB3 /* VWWThereminConfigInputAmplitudeViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = VWWThereminConfigInputAmplitudeViewController.mm; path = ToBeRefactored/VWWThereminConfigInputAmplitudeViewController.mm; sourceTree = "<group>"; };
+		C6EAD64918B43C5700443FB3 /* VWWThereminConfigInputEffectsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWThereminConfigInputEffectsViewController.h; path = ToBeRefactored/VWWThereminConfigInputEffectsViewController.h; sourceTree = "<group>"; };
+		C6EAD64A18B43C5700443FB3 /* VWWThereminConfigInputEffectsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = VWWThereminConfigInputEffectsViewController.mm; path = ToBeRefactored/VWWThereminConfigInputEffectsViewController.mm; sourceTree = "<group>"; };
+		C6EAD64B18B43C5700443FB3 /* VWWThereminConfigInputFrequencyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWThereminConfigInputFrequencyViewController.h; path = ToBeRefactored/VWWThereminConfigInputFrequencyViewController.h; sourceTree = "<group>"; };
+		C6EAD64C18B43C5700443FB3 /* VWWThereminConfigInputFrequencyViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = VWWThereminConfigInputFrequencyViewController.mm; path = ToBeRefactored/VWWThereminConfigInputFrequencyViewController.mm; sourceTree = "<group>"; };
+		C6EAD64D18B43C5700443FB3 /* VWWThereminConfigInputKeyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWThereminConfigInputKeyViewController.h; path = ToBeRefactored/VWWThereminConfigInputKeyViewController.h; sourceTree = "<group>"; };
+		C6EAD64E18B43C5700443FB3 /* VWWThereminConfigInputKeyViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = VWWThereminConfigInputKeyViewController.mm; path = ToBeRefactored/VWWThereminConfigInputKeyViewController.mm; sourceTree = "<group>"; };
+		C6EAD64F18B43C5700443FB3 /* VWWThereminConfigInputSensitivityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWThereminConfigInputSensitivityViewController.h; path = ToBeRefactored/VWWThereminConfigInputSensitivityViewController.h; sourceTree = "<group>"; };
+		C6EAD65018B43C5700443FB3 /* VWWThereminConfigInputSensitivityViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = VWWThereminConfigInputSensitivityViewController.mm; path = ToBeRefactored/VWWThereminConfigInputSensitivityViewController.mm; sourceTree = "<group>"; };
+		C6EAD65118B43C5700443FB3 /* VWWThereminConfigInputWaveformsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWThereminConfigInputWaveformsViewController.h; path = ToBeRefactored/VWWThereminConfigInputWaveformsViewController.h; sourceTree = "<group>"; };
+		C6EAD65218B43C5700443FB3 /* VWWThereminConfigInputWaveformsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = VWWThereminConfigInputWaveformsViewController.mm; path = ToBeRefactored/VWWThereminConfigInputWaveformsViewController.mm; sourceTree = "<group>"; };
 		CF0F67B118AF135A000158BE /* VWWDevicesServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesServerViewController.h; sourceTree = "<group>"; };
 		CF0F67B218AF135A000158BE /* VWWDevicesServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWDevicesServerViewController.m; sourceTree = "<group>"; };
 		CF0F67B318AF135A000158BE /* VWWDevicesClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWDevicesClientViewController.h; sourceTree = "<group>"; };
@@ -522,6 +546,29 @@
 			name = Synthesizers;
 			sourceTree = "<group>";
 		};
+		C6EAD64218B43C4100443FB3 /* Parameters */ = {
+			isa = PBXGroup;
+			children = (
+				C6EAD64318B43C5700443FB3 /* VWWConfigInputAmplitudeView.h */,
+				C6EAD64418B43C5700443FB3 /* VWWConfigInputAmplitudeView.m */,
+				C6EAD64518B43C5700443FB3 /* VWWLine.h */,
+				C6EAD64618B43C5700443FB3 /* VWWLine.m */,
+				C6EAD64718B43C5700443FB3 /* VWWThereminConfigInputAmplitudeViewController.h */,
+				C6EAD64818B43C5700443FB3 /* VWWThereminConfigInputAmplitudeViewController.mm */,
+				C6EAD64918B43C5700443FB3 /* VWWThereminConfigInputEffectsViewController.h */,
+				C6EAD64A18B43C5700443FB3 /* VWWThereminConfigInputEffectsViewController.mm */,
+				C6EAD64B18B43C5700443FB3 /* VWWThereminConfigInputFrequencyViewController.h */,
+				C6EAD64C18B43C5700443FB3 /* VWWThereminConfigInputFrequencyViewController.mm */,
+				C6EAD64D18B43C5700443FB3 /* VWWThereminConfigInputKeyViewController.h */,
+				C6EAD64E18B43C5700443FB3 /* VWWThereminConfigInputKeyViewController.mm */,
+				C6EAD64F18B43C5700443FB3 /* VWWThereminConfigInputSensitivityViewController.h */,
+				C6EAD65018B43C5700443FB3 /* VWWThereminConfigInputSensitivityViewController.mm */,
+				C6EAD65118B43C5700443FB3 /* VWWThereminConfigInputWaveformsViewController.h */,
+				C6EAD65218B43C5700443FB3 /* VWWThereminConfigInputWaveformsViewController.mm */,
+			);
+			name = Parameters;
+			sourceTree = "<group>";
+		};
 		CF0F67B018AF135A000158BE /* GUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -608,6 +655,7 @@
 		CF63F1D718B2B69D00BD1DFC /* Synthesizer */ = {
 			isa = PBXGroup;
 			children = (
+				C6EAD64218B43C4100443FB3 /* Parameters */,
 				CF0F67BB18AF135A000158BE /* VWWSynthesizerAxesSettingsTableViewController.h */,
 				CF0F67BC18AF135A000158BE /* VWWSynthesizerAxesSettingsTableViewController.m */,
 				C6EAD63F18B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.h */,
@@ -783,31 +831,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6EAD65418B43C5700443FB3 /* VWWLine.m in Sources */,
+				C6EAD65A18B43C5700443FB3 /* VWWThereminConfigInputWaveformsViewController.mm in Sources */,
 				C6A6D204187F49B10025105C /* VWWSynthesizer.mm in Sources */,
 				CF537B0518B3166300055739 /* VWWUserDefaults.m in Sources */,
 				CF63F1E218B2C13500BD1DFC /* VWWGeneralSettings.m in Sources */,
 				CF0F67C118AF135A000158BE /* VWWDevicesClientViewController.m in Sources */,
 				C6A6D233187F5E470025105C /* VWWSynthesizerC.mm in Sources */,
+				C6EAD65518B43C5700443FB3 /* VWWThereminConfigInputAmplitudeViewController.mm in Sources */,
 				C6A6D200187F48B00025105C /* NSTimer+Blocks.m in Sources */,
 				CF0F67C218AF135A000158BE /* VWWDevicesViewController.m in Sources */,
 				CF537B0918B3180900055739 /* VWWWelcomeViewController.m in Sources */,
 				CF537B0118B2F2A700055739 /* VWWSynthesizerSettingsTableViewController.m in Sources */,
 				C6EAD64118B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.m in Sources */,
 				C6D5C9E418AED84D00DDCAD0 /* AsyncUdpSocket.m in Sources */,
+				C6EAD65818B43C5700443FB3 /* VWWThereminConfigInputKeyViewController.mm in Sources */,
 				CF0F67C418AF135A000158BE /* VWWSettingsTableViewController.m in Sources */,
 				CFF779AB18B2D55A00301A84 /* VWWBonjourClientController.m in Sources */,
 				C6A6D1A4187F441D0025105C /* main.m in Sources */,
+				C6EAD65318B43C5700443FB3 /* VWWConfigInputAmplitudeView.m in Sources */,
+				C6EAD65918B43C5700443FB3 /* VWWThereminConfigInputSensitivityViewController.mm in Sources */,
 				C6A6D22E187F5E470025105C /* CAXException.cpp in Sources */,
 				C6A6D242187F73190025105C /* VWWNormalizedSynthesizer.mm in Sources */,
 				C61B7544187F888200737E51 /* VWWTouchView.m in Sources */,
 				C6A6D22C187F5E470025105C /* CADebugMacros.cpp in Sources */,
 				C60D15B91880A87F00D008F6 /* VWWSynthesizerGroup.m in Sources */,
+				C6EAD65618B43C5700443FB3 /* VWWThereminConfigInputEffectsViewController.mm in Sources */,
 				CF0F67C318AF135A000158BE /* VWWGeneralSettingsTableViewController.m in Sources */,
 				C6A6D235187F5E470025105C /* VWWSynthesizerNotes.m in Sources */,
 				C6D5C9F118AEDF4B00DDCAD0 /* MBProgressHUD.m in Sources */,
 				CF0F67C518AF135A000158BE /* VWWSynthesizerAxesSettingsTableViewController.m in Sources */,
 				CFF779AD18B2D55A00301A84 /* VWWMotionMonitor.m in Sources */,
 				C6A6D234187F5E470025105C /* VWWSynthesizerEffectNoteKey.m in Sources */,
+				C6EAD65718B43C5700443FB3 /* VWWThereminConfigInputFrequencyViewController.mm in Sources */,
 				CF0F67C618AF135A000158BE /* VWWTouchViewController.m in Sources */,
 				C6D5CA2418B422BF00DDCAD0 /* VWWSynthesizersController.m in Sources */,
 				CFF779AC18B2D55A00301A84 /* VWWBonjourServerController.m in Sources */,
