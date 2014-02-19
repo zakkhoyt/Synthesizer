@@ -395,18 +395,79 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ejw-85-cE6">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vww_320" translatesAutoresizingMaskIntoConstraints="NO" id="jhU-2c-vRJ">
+                                <rect key="frame" x="96" y="71" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="wWx-Bz-Kwd"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motion Sensor Theremin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6R-AT-qkc">
+                                <rect key="frame" x="20" y="207" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="CV8-in-NxY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By VaporWareWolf Software" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xyz-b2-BYi">
+                                <rect key="frame" x="20" y="236" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="o8E-2h-Srm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfb-wP-H86">
+                                <rect key="frame" x="0.0" y="265" width="320" height="303"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
+                                <mutableString key="text">About:
+The theremin (originally known as the ætherphone/etherphone or termenvox/thereminvox) is an early electronic musical instrument controlled without physical contact by the thereminist (performer). It is named after the westernized name of its Russian inventor, Léon Theremin, who patented the device in 1928.
+
+The instrument's controlling section usually consists of two metal antennas which sense the relative position of the thereminist's hands and control oscillators for frequency with one hand, and amplitude (volume) with the other. The electric signals from the theremin are amplified and sent to a loudspeaker.
+
+The Motion Sensor Theremin iOS App uses the device's motion sensors and touchscreen (instead of capacitance and antennaes) to modify the frequency of the output waveform. Inputs include touchscreen (x,y), accelerometers (x,y,z), gyroscopes (x,y,z), and the magnetometers (x,y,z). For each individual axis you can adjust max/min frequency, sensitivity, waveform, and effects.
+
+The synthesizer itself is very basic and is based off of the mathematical sine function. The synthisizer is available as an open source stand-alone Objective-C library for use in any project you can think of. It is included as a subdirectory in the source code for this project.
+
+Software by: Zakk Hoyt (VaporWareWolf Software)
+Homepage: http://vaporwarewolf.com/WP_Test/
+Email: vaporwarewolf@gmail.com
+Source Code: https://github.com/zakkhoyt/Synthesizer
+iTunes Page: https://itunes.apple.com/us/app/motion-sensor-theremin-free/id570320684?mt=8
+
+Art Work by: Benjamin Minter
+Homepage: http://minterart.tumblr.com</mutableString>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES" address="YES"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tfb-wP-H86" firstAttribute="centerX" secondItem="S6R-AT-qkc" secondAttribute="centerX" id="0Hy-dX-lqH"/>
+                            <constraint firstItem="tfb-wP-H86" firstAttribute="top" secondItem="Xyz-b2-BYi" secondAttribute="bottom" constant="8" symbolic="YES" id="1Sz-P0-H15"/>
+                            <constraint firstItem="Xyz-b2-BYi" firstAttribute="top" secondItem="S6R-AT-qkc" secondAttribute="bottom" constant="8" symbolic="YES" id="36R-GR-bCy"/>
+                            <constraint firstItem="tfb-wP-H86" firstAttribute="leading" secondItem="vbB-Ee-CQ6" secondAttribute="leading" id="8NM-Wj-q1c"/>
+                            <constraint firstItem="S6R-AT-qkc" firstAttribute="leading" secondItem="vbB-Ee-CQ6" secondAttribute="leading" constant="20" symbolic="YES" id="Bfv-VD-o3W"/>
+                            <constraint firstItem="jhU-2c-vRJ" firstAttribute="top" secondItem="Mtm-yU-ZYQ" secondAttribute="bottom" constant="7" id="FeZ-wf-Zaf"/>
+                            <constraint firstItem="Xyz-b2-BYi" firstAttribute="leading" secondItem="S6R-AT-qkc" secondAttribute="leading" id="PyV-gO-dLU"/>
+                            <constraint firstItem="jhU-2c-vRJ" firstAttribute="leading" secondItem="vbB-Ee-CQ6" secondAttribute="leading" constant="96" id="RmW-6R-pa9"/>
+                            <constraint firstItem="tfb-wP-H86" firstAttribute="centerX" secondItem="jhU-2c-vRJ" secondAttribute="centerX" id="gUh-eP-uu0"/>
+                            <constraint firstItem="tfb-wP-H86" firstAttribute="centerX" secondItem="Xyz-b2-BYi" secondAttribute="centerX" id="hjN-hb-czi"/>
+                            <constraint firstAttribute="bottom" secondItem="tfb-wP-H86" secondAttribute="bottom" id="nbC-3i-hf9"/>
+                            <constraint firstItem="S6R-AT-qkc" firstAttribute="top" secondItem="jhU-2c-vRJ" secondAttribute="bottom" constant="8" symbolic="YES" id="pCu-9O-deY"/>
+                            <constraint firstItem="jhU-2c-vRJ" firstAttribute="centerX" secondItem="vbB-Ee-CQ6" secondAttribute="centerX" id="pUf-aq-kTp"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Ku4-8I-F4I"/>
-                    <connections>
-                        <outlet property="webView" destination="Ejw-85-cE6" id="Wit-OG-ryj"/>
-                    </connections>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgV-Nb-VEW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1743,6 +1804,7 @@
     </scenes>
     <resources>
         <image name="sine_256x256.png" width="256" height="256"/>
+        <image name="vww_320" width="320" height="320"/>
     </resources>
     <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

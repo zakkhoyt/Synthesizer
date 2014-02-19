@@ -103,6 +103,11 @@
 
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event {
     [self setIsEmitting:NO];
+    
+    [self touches:touches withEvent:event];
+    NSArray *array = [self touches:touches withEvent:event];
+    [self.delegate touchViewDelegate:self touchesEndedWithArray:array];
+
 }
 
 

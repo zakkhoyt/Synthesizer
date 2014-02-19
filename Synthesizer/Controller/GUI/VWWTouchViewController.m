@@ -45,7 +45,7 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
     UIFont *font = [UIFont fontWithName:@"PricedownBl-Regular" size:24.0];
     [self.settingsButton.titleLabel setFont:font];
     
-    [self addGestureRecognizers];
+//    [self addGestureRecognizers];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
