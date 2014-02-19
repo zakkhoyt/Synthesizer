@@ -102,9 +102,9 @@ const NSInteger VWWFrequencyParametersTableViewControllerZAxisSection = 2;
     self.xFrequencyMinSlider.value = self.synthesizerGroup.xSynthesizer.frequencyMin;
     self.xFrequencyMaxSlider.value = self.synthesizerGroup.xSynthesizer.frequencyMax;
     self.yFrequencyMinSlider.value = self.synthesizerGroup.ySynthesizer.frequencyMin;
-    self.yFrequencyMinSlider.value = self.synthesizerGroup.ySynthesizer.frequencyMax;
-    self.yFrequencyMinSlider.value = self.synthesizerGroup.zSynthesizer.frequencyMin;
-    self.yFrequencyMinSlider.value = self.synthesizerGroup.zSynthesizer.frequencyMax;
+    self.yFrequencyMaxSlider.value = self.synthesizerGroup.ySynthesizer.frequencyMax;
+    self.zFrequencyMinSlider.value = self.synthesizerGroup.zSynthesizer.frequencyMin;
+    self.zFrequencyMaxSlider.value = self.synthesizerGroup.zSynthesizer.frequencyMax;
     
     // Text boxes
     self.xFrequencyMinTextField.text = [NSString stringWithFormat:@"%.0f", self.synthesizerGroup.xSynthesizer.frequencyMin];

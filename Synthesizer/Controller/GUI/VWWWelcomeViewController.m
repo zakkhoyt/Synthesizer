@@ -33,10 +33,10 @@ static NSString *VWWSegueWelcomeToTouch = @"VWWSegueWelcomeToTouch";
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    self.navigationController.navigationBarHidden = YES;
     
     if([VWWUserDefaults hasShownWelcomeScreen]){
         [self performSegueWithIdentifier:VWWSegueWelcomeToTouch sender:self];
-        
     }
 }
 

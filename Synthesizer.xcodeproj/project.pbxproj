@@ -29,6 +29,8 @@
 		C66818EE18B5369200E2E5DD /* VWWAmplitudeParametersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C66818ED18B5369200E2E5DD /* VWWAmplitudeParametersTableViewController.m */; };
 		C66818F218B539C600E2E5DD /* VWWEffectParametersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C66818F118B539C600E2E5DD /* VWWEffectParametersTableViewController.m */; };
 		C66818F618B53A7100E2E5DD /* VWWEffectTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C66818F518B53A7100E2E5DD /* VWWEffectTableViewCell.m */; };
+		C66818FA18B53DA500E2E5DD /* VWWSensitivityParameterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C66818F918B53DA500E2E5DD /* VWWSensitivityParameterTableViewController.m */; };
+		C668190018B5534500E2E5DD /* VWWAxisTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C66818FF18B5534500E2E5DD /* VWWAxisTableViewCell.m */; };
 		C6A6D198187F441D0025105C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D197187F441D0025105C /* Foundation.framework */; };
 		C6A6D19A187F441D0025105C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D199187F441D0025105C /* CoreGraphics.framework */; };
 		C6A6D19C187F441D0025105C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A6D19B187F441D0025105C /* UIKit.framework */; };
@@ -115,6 +117,10 @@
 		C66818F118B539C600E2E5DD /* VWWEffectParametersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWEffectParametersTableViewController.m; sourceTree = "<group>"; };
 		C66818F418B53A7100E2E5DD /* VWWEffectTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWEffectTableViewCell.h; sourceTree = "<group>"; };
 		C66818F518B53A7100E2E5DD /* VWWEffectTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWEffectTableViewCell.m; sourceTree = "<group>"; };
+		C66818F818B53DA500E2E5DD /* VWWSensitivityParameterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWSensitivityParameterTableViewController.h; sourceTree = "<group>"; };
+		C66818F918B53DA500E2E5DD /* VWWSensitivityParameterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSensitivityParameterTableViewController.m; sourceTree = "<group>"; };
+		C66818FE18B5534500E2E5DD /* VWWAxisTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWAxisTableViewCell.h; sourceTree = "<group>"; };
+		C66818FF18B5534500E2E5DD /* VWWAxisTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWAxisTableViewCell.m; sourceTree = "<group>"; };
 		C6A6D194187F441D0025105C /* Synthesizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Synthesizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6A6D197187F441D0025105C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C6A6D199187F441D0025105C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -328,6 +334,43 @@
 			children = (
 				C66818F418B53A7100E2E5DD /* VWWEffectTableViewCell.h */,
 				C66818F518B53A7100E2E5DD /* VWWEffectTableViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		C66818F718B53D7000E2E5DD /* Sensitivity */ = {
+			isa = PBXGroup;
+			children = (
+				C66818F818B53DA500E2E5DD /* VWWSensitivityParameterTableViewController.h */,
+				C66818F918B53DA500E2E5DD /* VWWSensitivityParameterTableViewController.m */,
+			);
+			name = Sensitivity;
+			sourceTree = "<group>";
+		};
+		C66818FB18B552EB00E2E5DD /* Axis */ = {
+			isa = PBXGroup;
+			children = (
+				C66818FD18B5530C00E2E5DD /* Cell */,
+				C6EAD63F18B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.h */,
+				C6EAD64018B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.m */,
+			);
+			name = Axis;
+			sourceTree = "<group>";
+		};
+		C66818FC18B552F400E2E5DD /* Axes */ = {
+			isa = PBXGroup;
+			children = (
+				CF0F67BB18AF135A000158BE /* VWWSynthesizerAxesSettingsTableViewController.h */,
+				CF0F67BC18AF135A000158BE /* VWWSynthesizerAxesSettingsTableViewController.m */,
+			);
+			name = Axes;
+			sourceTree = "<group>";
+		};
+		C66818FD18B5530C00E2E5DD /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				C66818FE18B5534500E2E5DD /* VWWAxisTableViewCell.h */,
+				C66818FF18B5534500E2E5DD /* VWWAxisTableViewCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -599,6 +642,7 @@
 		C6F4DBC018B51C6D00415831 /* Parameters */ = {
 			isa = PBXGroup;
 			children = (
+				C66818F718B53D7000E2E5DD /* Sensitivity */,
 				C66818EF18B539AC00E2E5DD /* Effect */,
 				C66818EB18B5367800E2E5DD /* Amplitude */,
 				C66818EA18B5366F00E2E5DD /* Frequency */,
@@ -668,6 +712,8 @@
 		CF63F1D518B2B68E00BD1DFC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				C66818FC18B552F400E2E5DD /* Axes */,
+				C66818FB18B552EB00E2E5DD /* Axis */,
 				CF63F1D818B2B6B000BD1DFC /* General */,
 				CF0F67B918AF135A000158BE /* VWWSettingsTableViewController.h */,
 				CF0F67BA18AF135A000158BE /* VWWSettingsTableViewController.m */,
@@ -694,10 +740,6 @@
 			isa = PBXGroup;
 			children = (
 				C6F4DBC018B51C6D00415831 /* Parameters */,
-				CF0F67BB18AF135A000158BE /* VWWSynthesizerAxesSettingsTableViewController.h */,
-				CF0F67BC18AF135A000158BE /* VWWSynthesizerAxesSettingsTableViewController.m */,
-				C6EAD63F18B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.h */,
-				C6EAD64018B432DA00443FB3 /* VWWSynthesizerAxisSettingsTableViewController.m */,
 				CF537AFF18B2F2A700055739 /* VWWSynthesizerSettingsTableViewController.h */,
 				CF537B0018B2F2A700055739 /* VWWSynthesizerSettingsTableViewController.m */,
 			);
@@ -891,6 +933,7 @@
 				C6A6D22E187F5E470025105C /* CAXException.cpp in Sources */,
 				C6A6D242187F73190025105C /* VWWNormalizedSynthesizer.mm in Sources */,
 				C61B7544187F888200737E51 /* VWWTouchView.m in Sources */,
+				C66818FA18B53DA500E2E5DD /* VWWSensitivityParameterTableViewController.m in Sources */,
 				C6A6D22C187F5E470025105C /* CADebugMacros.cpp in Sources */,
 				C60D15B91880A87F00D008F6 /* VWWSynthesizerGroup.m in Sources */,
 				CF0F67C318AF135A000158BE /* VWWGeneralSettingsTableViewController.m in Sources */,
@@ -903,6 +946,7 @@
 				C6D5CA2418B422BF00DDCAD0 /* VWWSynthesizersController.m in Sources */,
 				CFF779AC18B2D55A00301A84 /* VWWBonjourServerController.m in Sources */,
 				C6D5C9E318AED84D00DDCAD0 /* AsyncSocket.m in Sources */,
+				C668190018B5534500E2E5DD /* VWWAxisTableViewCell.m in Sources */,
 				C66818F218B539C600E2E5DD /* VWWEffectParametersTableViewController.m in Sources */,
 				C6A6D1A8187F441D0025105C /* VWWAppDelegate.m in Sources */,
 				CF245AB618B2E3B70012C642 /* VWWAboutViewController.m in Sources */,
