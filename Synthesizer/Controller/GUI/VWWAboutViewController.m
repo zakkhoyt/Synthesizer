@@ -11,6 +11,7 @@
 
 @interface VWWAboutViewController ()
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 
 @end
@@ -51,5 +52,6 @@
     [super viewWillAppear:animated];
     
 //    [MBProgressHUD hideHUDForView:self.view animated:YES];
+//    self.backgroundImageView.image = [UIImage imageNamed:@"LaunchImage"];
 }
 @end

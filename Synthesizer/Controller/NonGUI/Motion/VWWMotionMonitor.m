@@ -5,11 +5,30 @@
 //  Created by Zakk Hoyt on 7/31/12.
 //  Copyright (c) 2012 Zakk Hoyt. All rights reserved.
 //
+// iPod Touch:
+// Accel -8 .. 8
+// Gyros -25 .. 25
+// Magnet nil
+
+// iPhone 5s:
+// Accel -8 .. 8
+// Gyros -35 .. 35
+// Magnet
+//    0 .. 250
+//    0 .. 250
+//  -425 .. 0
+
+// iPad Mini Retina
+// Accel -8 .. 8
+// Gyros -25 .. 25
+// Magnet
+//    -70 .. 8
+//    -30 .. 60
+//    -90 .. 5
+
+
 #import <CoreMotion/CoreMotion.h>
 #import "VWWMotionMonitor.h"
-//#import "VWWThereminInputs.h"
-
-const float kSensitivityOffset = 2.0;
 
 const float kAccelerometerXMax = 2.0;
 const float kAccelerometerYMax = 2.0;
@@ -19,9 +38,6 @@ const float kGyroXMax = 20.0;
 const float kGyroYMax = 20.0;
 const float kGyroZMax = 20.0;
 
-//const float kMagnetometerXMax = 80.0f;
-//const float kMagnetometerYMax = 30.0f;
-//const float kMagnetometerZMax = 30.0f;
 
 const float kMagnetometerXMax = 300.0f;
 const float kMagnetometerYMax = 300.0f;
@@ -29,9 +45,18 @@ const float kMagnetometerZMax = 300.0f;
 
 
 
+static NSString *xMin = @"xMin";
+static NSString *xMax = @"xMax";
+static NSString *yMin = @"yMin";
+static NSString *yMax = @"yMax";
+static NSString *zMin = @"zMin";
+static NSString *zMax = @"zMax";
+
+
+
+
 @interface VWWMotionMonitor ()
 @property (nonatomic, strong) CMMotionManager* motion;
-//@property Devices devices;
 @property MotionDevice accelerometers;
 @property MotionDevice gyroroscopes;
 @property MotionDevice magnetometers;
@@ -57,6 +82,18 @@ const float kMagnetometerZMax = 300.0f;
         
     }
     return self;
+}
+
+
+-(NSDictionary*)minMaxDictionaryFromDevice:(MotionDevice)device{
+    NSDictionary *dictionary = @{xMin : @(device.x.min),
+                                 xMax : @(device.x.max),
+                                 yMin : @(device.y.min),
+                                 yMax : @(device.y.max),
+                                 zMin : @(device.z.min),
+                                 zMax : @(device.z.max)};
+    
+    return dictionary;
 }
 
 -(void)startAccelerometer{
@@ -103,25 +140,39 @@ const float kMagnetometerZMax = 300.0f;
         
         
         
+        
         // Set device min and max values
+        BOOL changed = NO;
         if(accelerometerData.acceleration.x < _accelerometers.x.min){
             _accelerometers.x.min = accelerometerData.acceleration.x;
+            changed = YES;
         }
         if(accelerometerData.acceleration.x > _accelerometers.x.max){
             _accelerometers.x.max = accelerometerData.acceleration.x;
+            changed = YES;
         }
         if(accelerometerData.acceleration.y < _accelerometers.y.min){
             _accelerometers.y.min = accelerometerData.acceleration.y;
+            changed = YES;
         }
         if(accelerometerData.acceleration.y > _accelerometers.y.max){
             _accelerometers.y.max = accelerometerData.acceleration.y;
+            changed = YES;
         }
         if(accelerometerData.acceleration.z < _accelerometers.z.min){
             _accelerometers.z.min = accelerometerData.acceleration.z;
+            changed = YES;
         }
         if(accelerometerData.acceleration.z > _accelerometers.z.max){
             _accelerometers.z.max = accelerometerData.acceleration.z;
+            changed = YES;
         }
+        
+        if(changed){
+            NSDictionary *dictionary = [self minMaxDictionaryFromDevice:_accelerometers];
+            [VWWUserDefaults setAccelerometersMinMaxValues:dictionary];
+        }
+        
         
         // Update UI
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -134,6 +185,7 @@ const float kMagnetometerZMax = 300.0f;
     
 
 -(void)stopAccelerometer{
+    VWW_LOG_TODO_TASK(@"store min/max values as they are changed and then base currentNormalized off of that");
     if(self.accelerometerRunning == NO) return;
     [self.motion stopAccelerometerUpdates];
     memset(&_accelerometers, 0, sizeof(MotionDevice));
@@ -143,7 +195,7 @@ const float kMagnetometerZMax = 300.0f;
 
 -(void)startGyroscopes{
     if(self.gyrosRunning == YES) return;
-    self.motion.gyroUpdateInterval = 1/30.0f;
+    self.motion.gyroUpdateInterval = 1/300.0f;
     NSOperationQueue* gyroQueue = [[NSOperationQueue alloc] init];
     [self.motion startGyroUpdatesToQueue:gyroQueue withHandler:^(CMGyroData *gyroData, NSError *error) {
         
@@ -186,24 +238,37 @@ const float kMagnetometerZMax = 300.0f;
         
         
         // Set device min and max values
+        BOOL changed = NO;
         if(gyroData.rotationRate.x < _gyroroscopes.x.min){
             _gyroroscopes.x.min = gyroData.rotationRate.x;
+            changed = YES;
         }
         if(gyroData.rotationRate.x > _gyroroscopes.x.max){
             _gyroroscopes.x.max = gyroData.rotationRate.x;
+            changed = YES;
         }
         if(gyroData.rotationRate.y < _gyroroscopes.y.min){
             _gyroroscopes.y.min = gyroData.rotationRate.y;
+            changed = YES;
         }
         if(gyroData.rotationRate.y > _gyroroscopes.y.max){
             _gyroroscopes.y.max = gyroData.rotationRate.y;
+            changed = YES;
         }
         if(gyroData.rotationRate.z < _gyroroscopes.z.min){
             _gyroroscopes.z.min = gyroData.rotationRate.z;
+            changed = YES;
         }
         if(gyroData.rotationRate.z > _gyroroscopes.z.max){
             _gyroroscopes.z.max = gyroData.rotationRate.z;
+            changed = YES;
         }
+        
+        if(changed){
+            NSDictionary *dictionary = [self minMaxDictionaryFromDevice:_gyroroscopes];
+            [VWWUserDefaults setGyroscopesMinMaxValues:dictionary];
+        }
+
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.delegate vwwMotionMonitor:self gyroUpdated:_gyroroscopes];
@@ -224,7 +289,7 @@ const float kMagnetometerZMax = 300.0f;
 
 -(void)startMagnetometer{
     if(self.magnetometerRunning == YES) return;
-    self.motion.magnetometerUpdateInterval = 1/30.0f;
+    self.motion.magnetometerUpdateInterval = 1/300.0f;
     NSOperationQueue* magnetometerQueue = [[NSOperationQueue alloc] init];
     [self.motion startMagnetometerUpdatesToQueue:magnetometerQueue withHandler:^(CMMagnetometerData *magnetometerData, NSError *error) {
         
@@ -269,24 +334,38 @@ const float kMagnetometerZMax = 300.0f;
         
         
         // Set device min and max values
+        BOOL changed = NO;
         if(magnetometerData.magneticField.x < _magnetometers.x.min){
             _magnetometers.x.min = magnetometerData.magneticField.x;
+            changed = YES;
         }
         if(magnetometerData.magneticField.x > _magnetometers.x.max){
             _magnetometers.x.max = magnetometerData.magneticField.x;
+            changed = YES;
         }
         if(magnetometerData.magneticField.y < _magnetometers.y.min){
             _magnetometers.y.min = magnetometerData.magneticField.y;
+            changed = YES;
         }
         if(magnetometerData.magneticField.y > _magnetometers.y.max){
             _magnetometers.y.max = magnetometerData.magneticField.y;
+            changed = YES;
         }
         if(magnetometerData.magneticField.z < _magnetometers.z.min){
             _magnetometers.z.min = magnetometerData.magneticField.z;
+            changed = YES;
         }
         if(magnetometerData.magneticField.z > _magnetometers.z.max){
             _magnetometers.z.max = magnetometerData.magneticField.z;
+            changed = YES;
         }
+        
+        if(changed){
+            NSDictionary *dictionary = [self minMaxDictionaryFromDevice:_magnetometers];
+            [VWWUserDefaults setMagnetometersMinMaxValues:dictionary];
+        }
+
+        
 
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.delegate vwwMotionMonitor:self magnetometerUpdated:_magnetometers];

@@ -13,4 +13,9 @@
 +(BOOL)hasShownWelcomeScreen;
 +(void)setHasShownWelcomeScreen:(BOOL)hasShownWelcomeScreen;
 
++(void)setAccelerometersMinMaxValues:(NSDictionary*)minMaxValues;
++(void)setGyroscopesMinMaxValues:(NSDictionary*)minMaxValues;
++(void)setMagnetometersMinMaxValues:(NSDictionary*)minMaxValues;
+
+
 @end

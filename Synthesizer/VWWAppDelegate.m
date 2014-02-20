@@ -74,6 +74,11 @@
 //    
 //
 //    VWW_LOG_INFO(@"");
+    
+//    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor darkGrayColor]];
+
+    
 }
 
 

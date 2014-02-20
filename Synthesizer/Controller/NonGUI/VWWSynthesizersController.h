@@ -10,6 +10,10 @@
 #import "VWWSynthesizerGroup.h"
 
 
+static NSString *VWWSynthesizersControllerAccelerometersStatisticsString = @"accelerometersStatisticsString";
+static NSString *VWWSynthesizersControllerGyroscopesStatisticsString = @"gyroscopesStatisticsString";
+static NSString *VWWSynthesizersControllerMagnetoometersStatisticsString = @"magnetometersStatisticsString";
+
 @interface VWWSynthesizersController : NSObject
 
 +(VWWSynthesizersController*)sharedInstance;
