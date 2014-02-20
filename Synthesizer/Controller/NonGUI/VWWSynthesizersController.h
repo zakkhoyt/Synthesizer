@@ -18,5 +18,7 @@
 @property (nonatomic, strong) VWWSynthesizerGroup *accelerometersGroup;
 @property (nonatomic, strong) VWWSynthesizerGroup *gyroscopesGroup;
 @property (nonatomic, strong) VWWSynthesizerGroup *magnetometersGroup;
-
+@property (nonatomic, strong, readonly) NSString *accelerometersStatisticsString;
+@property (nonatomic, strong, readonly) NSString *gyroscopesStatisticsString;
+@property (nonatomic, strong, readonly) NSString *magnetometersStatisticsString;
 @end

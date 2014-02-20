@@ -10,7 +10,7 @@
 #import "VWWTouchView.h"
 #import "VWWSynthesizersController.h"
 
-
+#import "NSTimer+Blocks.h"
 
 
 static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
@@ -19,6 +19,9 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
 @property (weak, nonatomic) IBOutlet VWWTouchView *touchView;
 @property (weak, nonatomic) IBOutlet UIButton *settingsButton;
 @property (nonatomic, strong) VWWSynthesizersController *synthesizersController;
+
+@property (weak, nonatomic) IBOutlet UILabel *infoLabel;
+@property (nonatomic) BOOL hasLoaded;
 @end
 
 @implementation VWWTouchViewController
@@ -42,8 +45,8 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
     
 
     
-    UIFont *font = [UIFont fontWithName:@"PricedownBl-Regular" size:24.0];
-    [self.settingsButton.titleLabel setFont:font];
+//    UIFont *font = [UIFont fontWithName:@"PricedownBl-Regular" size:24.0];
+//    [self.settingsButton.titleLabel setFont:font];
     
 //    [self addGestureRecognizers];
 }
@@ -53,6 +56,28 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
     [[UIApplication sharedApplication] setStatusBarHidden:YES];
     self.navigationController.navigationBarHidden = YES;
     
+
+}
+
+
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if(self.hasLoaded == NO){
+        self.hasLoaded = YES;
+        CGFloat x = self.infoLabel.frame.origin.x;
+        CGFloat y = -(self.infoLabel.frame.size.height);
+        CGFloat w = self.infoLabel.frame.size.width;
+        CGFloat h = self.infoLabel.frame.size.height;
+        CGRect aboveScreenRect = CGRectMake(x, y, w, h);
+        [UIView animateWithDuration:1.0 delay:5.0 usingSpringWithDamping:0.5 initialSpringVelocity:1.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+            self.infoLabel.alpha = 0.0;
+            self.infoLabel.frame = aboveScreenRect;
+        } completion:^(BOOL finished) {
+            
+            self.infoLabel.hidden = YES;
+        }];
+        
+    }
 
 }
 

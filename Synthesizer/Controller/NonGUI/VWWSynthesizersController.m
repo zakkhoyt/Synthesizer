@@ -13,6 +13,10 @@
 
 @interface VWWSynthesizersController () <VWWMotionMonitorDelegate>
 @property (nonatomic, strong) VWWMotionMonitor *motionMonitor;
+@property (nonatomic, strong, readwrite) NSString *accelerometersStatisticsString;
+@property (nonatomic, strong, readwrite) NSString *gyroscopesStatisticsString;
+@property (nonatomic, strong, readwrite) NSString *magnetometersStatisticsString;
+
 @end
 
 
@@ -91,13 +95,13 @@
 
 
 #pragma mark VWWMotionMonitorDelegate
--(void)printMotionStatsForDevice:(MotionDevice)device{
-    VWW_LOG_INFO(@"\nx: min:%.4f x:%.4f max:%.4f"
+-(NSString*)stringForMotionStatsWithDevice:(MotionDevice)device{
+    return [NSString stringWithFormat:@"x: min:%.4f x:%.4f max:%.4f"
                  @"\ny: min:%.4f x:%.4f max:%.4f"
                  @"\nz: min:%.4f x:%.4f max:%.4f",
                  device.x.min, device.x.currentNormalized, device.x.max,
                  device.y.min, device.y.currentNormalized, device.y.max,
-                 device.z.min, device.z.currentNormalized, device.z.max);
+                 device.z.min, device.z.currentNormalized, device.z.max];
 
 }
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender accelerometerUpdated:(MotionDevice)device{
@@ -106,9 +110,9 @@
     self.accelerometersGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
     static NSInteger counter = 0;
     
+    self.accelerometersStatisticsString = [self stringForMotionStatsWithDevice:device];
     if(counter % 50 == 0){
-        VWW_LOG_INFO(@"Accelerometers");
-        [self printMotionStatsForDevice:device];
+        VWW_LOG_INFO(@"\nAccelerometers:\n%@", self.accelerometersStatisticsString);
     }
     
     counter++;
@@ -121,9 +125,10 @@
     self.gyroscopesGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
     static NSInteger counter = 0;
     
+    self.gyroscopesStatisticsString = [self stringForMotionStatsWithDevice:device];
     if(counter % 50 == 0){
-        VWW_LOG_INFO(@"Gyroscopes");
-        [self printMotionStatsForDevice:device];
+        
+        VWW_LOG_INFO(@"\nGyroscopes:\n%@", self.gyroscopesStatisticsString);
     }
     
     counter++;
@@ -135,10 +140,10 @@
     self.magnetometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
     self.magnetometersGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
     static NSInteger counter = 0;
+    self.magnetometersStatisticsString = [self stringForMotionStatsWithDevice:device];
     
     if(counter % 50 == 0){
-        VWW_LOG_INFO(@"Magnetometers");
-        [self printMotionStatsForDevice:device];
+        VWW_LOG_INFO(@"\nMagnetometers:\n%@", self.magnetometersStatisticsString);
     }
     
     counter++;

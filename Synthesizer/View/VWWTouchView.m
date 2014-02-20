@@ -34,13 +34,13 @@
         //set ref to the layer
         self.fireEmitter = (CAEmitterLayer*)self.layer; //2
         //configure the emitter layer
-        self.fireEmitter.emitterPosition = CGPointMake(50, 50);
+        self.fireEmitter.emitterPosition = CGPointMake(-50, -50);
         self.fireEmitter.emitterSize = CGSizeMake(10, 10);
         
         CAEmitterCell* fire = [CAEmitterCell emitterCell];
-        fire.birthRate = 0;
+        fire.birthRate = 5.0;
         fire.lifetime = 1.0;
-        fire.lifetimeRange = 0.5;
+        fire.lifetimeRange = 0;
         fire.color = [[UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:0.4] CGColor];
         fire.contents = (id)[[UIImage imageNamed:@"atom"] CGImage];
         [fire setName:@"fire"];

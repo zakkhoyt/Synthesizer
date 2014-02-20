@@ -280,11 +280,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Synthesizer/Controller/NonGUI/VWWSynthesizersController.m"
-            timestampString = "414553320.824861"
+            timestampString = "414557484.21018"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "-vwwMotionMonitor:magnetometerUpdated:"
             landmarkType = "5">
          </BreakpointContent>

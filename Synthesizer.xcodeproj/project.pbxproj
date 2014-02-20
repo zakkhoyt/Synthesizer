@@ -86,6 +86,7 @@
 		CF537B0918B3180900055739 /* VWWWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF537B0818B3180900055739 /* VWWWelcomeViewController.m */; };
 		CF537B0B18B3194500055739 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF537B0A18B3194500055739 /* MediaPlayer.framework */; };
 		CF63F1E218B2C13500BD1DFC /* VWWGeneralSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CF63F1E118B2C13500BD1DFC /* VWWGeneralSettings.m */; };
+		CF997C0418B5A2F100BB0945 /* VWWStatisticsMotionSensorsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF997C0318B5A2F100BB0945 /* VWWStatisticsMotionSensorsTableViewController.m */; };
 		CFF779AB18B2D55A00301A84 /* VWWBonjourClientController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF779A418B2D55A00301A84 /* VWWBonjourClientController.m */; };
 		CFF779AC18B2D55A00301A84 /* VWWBonjourServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF779A718B2D55A00301A84 /* VWWBonjourServerController.m */; };
 		CFF779AD18B2D55A00301A84 /* VWWMotionMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF779AA18B2D55A00301A84 /* VWWMotionMonitor.m */; };
@@ -226,6 +227,8 @@
 		CF537B0A18B3194500055739 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		CF63F1E018B2C13500BD1DFC /* VWWGeneralSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWGeneralSettings.h; sourceTree = "<group>"; };
 		CF63F1E118B2C13500BD1DFC /* VWWGeneralSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWGeneralSettings.m; sourceTree = "<group>"; };
+		CF997C0218B5A2F100BB0945 /* VWWStatisticsMotionSensorsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWStatisticsMotionSensorsTableViewController.h; sourceTree = "<group>"; };
+		CF997C0318B5A2F100BB0945 /* VWWStatisticsMotionSensorsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWStatisticsMotionSensorsTableViewController.m; sourceTree = "<group>"; };
 		CFF779A318B2D55A00301A84 /* VWWBonjourClientController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBonjourClientController.h; sourceTree = "<group>"; };
 		CFF779A418B2D55A00301A84 /* VWWBonjourClientController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWBonjourClientController.m; sourceTree = "<group>"; };
 		CFF779A518B2D55A00301A84 /* VWWBonjourDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWBonjourDefines.h; sourceTree = "<group>"; };
@@ -712,6 +715,7 @@
 		CF63F1D518B2B68E00BD1DFC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				CF997C0118B5A2D700BB0945 /* Statistics */,
 				C66818FC18B552F400E2E5DD /* Axes */,
 				C66818FB18B552EB00E2E5DD /* Axis */,
 				CF63F1D818B2B6B000BD1DFC /* General */,
@@ -762,6 +766,15 @@
 				CF63F1E118B2C13500BD1DFC /* VWWGeneralSettings.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		CF997C0118B5A2D700BB0945 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				CF997C0218B5A2F100BB0945 /* VWWStatisticsMotionSensorsTableViewController.h */,
+				CF997C0318B5A2F100BB0945 /* VWWStatisticsMotionSensorsTableViewController.m */,
+			);
+			name = Statistics;
 			sourceTree = "<group>";
 		};
 		CFF779A218B2D55A00301A84 /* Bonjour */ = {
@@ -950,6 +963,7 @@
 				C66818F218B539C600E2E5DD /* VWWEffectParametersTableViewController.m in Sources */,
 				C6A6D1A8187F441D0025105C /* VWWAppDelegate.m in Sources */,
 				CF245AB618B2E3B70012C642 /* VWWAboutViewController.m in Sources */,
+				CF997C0418B5A2F100BB0945 /* VWWStatisticsMotionSensorsTableViewController.m in Sources */,
 				CF0F67C018AF135A000158BE /* VWWDevicesServerViewController.m in Sources */,
 				C6A6D22D187F5E470025105C /* CAStreamBasicDescription.cpp in Sources */,
 			);
