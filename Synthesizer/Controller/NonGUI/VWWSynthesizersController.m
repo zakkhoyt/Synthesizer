@@ -84,63 +84,64 @@
     self.motionMonitor = [[VWWMotionMonitor alloc]init];
     self.motionMonitor.delegate = self;
     [self.motionMonitor startAccelerometer];
-    //    [self.motionMonitor startGyroscopes];
-    //    [self.motionMonitor startMagnetometer];
+    [self.motionMonitor startGyroscopes];
+    [self.motionMonitor startMagnetometer];
     
 }
 
 
 #pragma mark VWWMotionMonitorDelegate
+-(void)printMotionStatsForDevice:(MotionDevice)device{
+    VWW_LOG_INFO(@"\nx: min:%.4f x:%.4f max:%.4f"
+                 @"\ny: min:%.4f x:%.4f max:%.4f"
+                 @"\nz: min:%.4f x:%.4f max:%.4f",
+                 device.x.min, device.x.currentNormalized, device.x.max,
+                 device.y.min, device.y.currentNormalized, device.y.max,
+                 device.z.min, device.z.currentNormalized, device.z.max);
+
+}
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender accelerometerUpdated:(MotionDevice)device{
     self.accelerometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
     self.accelerometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
-    
+    self.accelerometersGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
     static NSInteger counter = 0;
     
-    if(counter % 10 == 0){
-        VWW_LOG_INFO(@"\naccelerometer.x: %f"
-                     @"\naccelerometer.y: %f"
-                     @"\naccelerometer.z: %f",
-                     device.x.currentNormalized,
-                     device.y.currentNormalized,
-                     device.z.currentNormalized);
+    if(counter % 50 == 0){
+        VWW_LOG_INFO(@"Accelerometers");
+        [self printMotionStatsForDevice:device];
     }
     
     counter++;
     
 }
--(void)vwwMotionMonitor:(VWWMotionMonitor*)sender magnetometerUpdated:(MotionDevice)device{
-    self.accelerometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
-    self.accelerometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
-    
-    static NSInteger counter = 0;
-    
-    if(counter % 10 == 0){
-        VWW_LOG_INFO(@"\nmagnetometer: %f"
-                     @"\nmagnetometer: %f"
-                     @"\nmagnetometer: %f",
-                     device.x.currentNormalized,
-                     device.y.currentNormalized,
-                     device.z.currentNormalized);
-    }
-    
-    counter++;
-}
+
 -(void)vwwMotionMonitor:(VWWMotionMonitor*)sender gyroUpdated:(MotionDevice)device{
-    self.accelerometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
-    self.accelerometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
-    
+    self.gyroscopesGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
+    self.gyroscopesGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
+    self.gyroscopesGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
     static NSInteger counter = 0;
     
-    if(counter % 10 == 0){
-        VWW_LOG_INFO(@"\ngyroscope: %f"
-                     @"\ngyroscope: %f"
-                     @"\ngyroscope: %f",
-                     device.x.currentNormalized,
-                     device.y.currentNormalized,
-                     device.z.currentNormalized);
+    if(counter % 50 == 0){
+        VWW_LOG_INFO(@"Gyroscopes");
+        [self printMotionStatsForDevice:device];
     }
     
     counter++;
 }
+
+
+-(void)vwwMotionMonitor:(VWWMotionMonitor*)sender magnetometerUpdated:(MotionDevice)device{
+    self.magnetometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
+    self.magnetometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
+    self.magnetometersGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
+    static NSInteger counter = 0;
+    
+    if(counter % 50 == 0){
+        VWW_LOG_INFO(@"Magnetometers");
+        [self printMotionStatsForDevice:device];
+    }
+    
+    counter++;
+}
+
 @end
