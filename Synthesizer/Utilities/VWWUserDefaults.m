@@ -9,7 +9,9 @@
 #import "VWWUserDefaults.h"
 
 static NSString *VWWUserDefaultsHasShownWelcomeScreenKey = @"has_shown_welcome_screen";
-
+static NSString *VWWUserDefaultsAccelerometersMinMaxValuesKey = @"accelerometer_min_max_values";
+static NSString *VWWUserDefaultsGyroscopesMinMaxValuesKey = @"gyroscopes_min_max_values";
+static NSString *VWWUserDefaultsMagnetometersMinMaxValuesKey = @"magnetometers_min_max_values";
 @implementation VWWUserDefaults
 
 
@@ -19,6 +21,17 @@ static NSString *VWWUserDefaultsHasShownWelcomeScreenKey = @"has_shown_welcome_s
 +(void)setHasShownWelcomeScreen:(BOOL)hasShownWelcomeScreen{
     [[NSUserDefaults standardUserDefaults] setBool:hasShownWelcomeScreen forKey:VWWUserDefaultsHasShownWelcomeScreenKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+
++(void)setAccelerometersMinMaxValues:(NSDictionary*)minMaxValues{
+    
+}
++(void)setGyroscopesMinMaxValues:(NSDictionary*)minMaxValues{
+    
+}
++(void)setMagnetometersMinMaxValues:(NSDictionary*)minMaxValues{
+    
 }
 
 @end

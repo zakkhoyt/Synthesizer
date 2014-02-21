@@ -164,6 +164,25 @@ const NSInteger VWWFrequencyParametersTableViewControllerZAxisSection = 2;
 }
 
 
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    /* for backspace */
+    if([string length]==0){
+        return YES;
+    }
+    
+    /*  limit to only numeric characters  */
+    NSCharacterSet *myCharSet = [NSCharacterSet characterSetWithCharactersInString:@"0123456789"];
+    for (int i = 0; i < [string length]; i++) {
+        unichar c = [string characterAtIndex:i];
+        if ([myCharSet characterIsMember:c]) {
+            return YES;
+        }
+    }
+    
+    return NO;
+}
+
+
 
 #pragma mark UITableViewDataSource
 
