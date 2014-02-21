@@ -29,7 +29,7 @@
 
 #import <CoreMotion/CoreMotion.h>
 #import "VWWMotionMonitor.h"
-
+#import "VWWMotionAxes.h"
 const float kAccelerometerXMax = 2.0;
 const float kAccelerometerYMax = 2.0;
 const float kAccelerometerZMax = 2.0;
@@ -57,9 +57,9 @@ static NSString *zMax = @"zMax";
 
 @interface VWWMotionMonitor ()
 @property (nonatomic, strong) CMMotionManager* motion;
-@property MotionDevice accelerometers;
-@property MotionDevice gyroroscopes;
-@property MotionDevice magnetometers;
+@property (nonatomic, strong) VWWMotionAxes *accelerometers;
+@property (nonatomic, strong) VWWMotionAxes *gyroroscopes;
+@property (nonatomic, strong) VWWMotionAxes *magnetometers;
 
 @property (nonatomic) bool accelerometerRunning;
 @property (nonatomic) bool magnetometerRunning;
@@ -75,9 +75,9 @@ static NSString *zMax = @"zMax";
         _magnetometerRunning = NO;
         _gyrosRunning = NO;
 
-        memset(&_accelerometers, 0, sizeof(MotionDevice));
-        memset(&_gyroroscopes, 0, sizeof(MotionDevice));
-        memset(&_magnetometers, 0, sizeof(MotionDevice));
+        _accelerometers = [[VWWMotionAxes alloc]init];
+        _gyroroscopes = [[VWWMotionAxes alloc]init];
+        _magnetometers = [[VWWMotionAxes alloc]init];
         self.motion = [[CMMotionManager alloc]init];
         
     }
@@ -85,7 +85,7 @@ static NSString *zMax = @"zMax";
 }
 
 
--(NSDictionary*)minMaxDictionaryFromDevice:(MotionDevice)device{
+-(NSDictionary*)minMaxDictionaryFromDevice:(VWWMotionAxes*)device{
     NSDictionary *dictionary = @{xMin : @(device.x.min),
                                  xMax : @(device.x.max),
                                  yMin : @(device.y.min),
@@ -188,7 +188,6 @@ static NSString *zMax = @"zMax";
     VWW_LOG_TODO_TASK(@"store min/max values as they are changed and then base currentNormalized off of that");
     if(self.accelerometerRunning == NO) return;
     [self.motion stopAccelerometerUpdates];
-    memset(&_accelerometers, 0, sizeof(MotionDevice));
     self.accelerometerRunning = NO;
     NSLog(@"Stopped Accelerometer");
 }
@@ -280,9 +279,7 @@ static NSString *zMax = @"zMax";
 }
 -(void)stopGyroscopes{
     if(self.gyrosRunning == NO) return;
-    
     [self.motion stopGyroUpdates];
-    memset(&_gyroroscopes, 0, sizeof(MotionDevice));
     self.gyrosRunning = NO;
     NSLog(@"Stopped Gyros");
 }
@@ -377,9 +374,7 @@ static NSString *zMax = @"zMax";
 }
 -(void)stopMagnetometer{
     if(self.magnetometerRunning == NO) return;
-    
     [self.motion stopMagnetometerUpdates];
-    memset(&_magnetometers, 0, sizeof(MotionDevice));
     self.magnetometerRunning = NO;
     NSLog(@"Stopped Magnetometer");
 }

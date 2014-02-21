@@ -13,9 +13,26 @@
 +(BOOL)hasShownWelcomeScreen;
 +(void)setHasShownWelcomeScreen:(BOOL)hasShownWelcomeScreen;
 
-+(void)setAccelerometersMinMaxValues:(NSDictionary*)minMaxValues;
-+(void)setGyroscopesMinMaxValues:(NSDictionary*)minMaxValues;
-+(void)setMagnetometersMinMaxValues:(NSDictionary*)minMaxValues;
++(void)setTouchscreenSettings:(NSDictionary*)dictionary;
++(NSDictionary*)touchscreenSettings;
 
++(void)setAccelerometersSettings:(NSDictionary*)dictionary;
++(NSDictionary*)accelerometersSettings;
+
++(void)setGyroscopesSettings:(NSDictionary*)dictionary;
++(NSDictionary*)gyroscopesSettings;
+
++(void)setMagnetometersSettings:(NSDictionary*)dictionary;
++(NSDictionary*)magnetometersSettings;
+
+
++(void)setAccelerometersMinMaxValues:(NSDictionary*)minMaxValues;
++(NSDictionary*)accelerometersMinMaxValues;
+
++(void)setGyroscopesMinMaxValues:(NSDictionary*)minMaxValues;
++(NSDictionary*)gyroscopesMinMaxValues;
+
++(void)setMagnetometersMinMaxValues:(NSDictionary*)minMaxValues;
++(NSDictionary*)magnetometersMinMaxValues;
 
 @end

@@ -9,11 +9,9 @@
 #import "VWWTouchViewController.h"
 #import "VWWTouchView.h"
 #import "VWWSynthesizersController.h"
-
 #import "NSTimer+Blocks.h"
 
 
-static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
 
 @interface VWWTouchViewController () <VWWTouchViewDelegate>
 @property (weak, nonatomic) IBOutlet VWWTouchView *touchView;
@@ -107,39 +105,39 @@ static NSString *VWWSegueTouchToSettings = @"VWWSegueTouchToSettings";
 
 
 
--(void)addGestureRecognizers{
-    // Gesture recognizer
-    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureHandler:)];
-    [singleTapGestureRecognizer setNumberOfTapsRequired:1];
-    [self.view addGestureRecognizer:singleTapGestureRecognizer];
-    
-    UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapGestureHandler:)];
-    [doubleTapGestureRecognizer setNumberOfTapsRequired:2];
-    [self.view addGestureRecognizer:doubleTapGestureRecognizer];
-    
-    UITapGestureRecognizer *twoFingerTripleTapGestureHandler = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerTripleTapGestureHandler:)];
-    twoFingerTripleTapGestureHandler.numberOfTapsRequired = 3;
-    twoFingerTripleTapGestureHandler.numberOfTouchesRequired = 2;
-    [self.view addGestureRecognizer:twoFingerTripleTapGestureHandler];
-    
-    [singleTapGestureRecognizer requireGestureRecognizerToFail:doubleTapGestureRecognizer];
-}
-
-
-
--(void)singleTapGestureHandler:(UIGestureRecognizer*)gestureRecognizer{
-    VWW_LOG_INFO(@"Single Tap");
-
-}
-
--(void)doubleTapGestureHandler:(UIGestureRecognizer*)gestureRecognizer{
-    VWW_LOG_INFO(@"Double Tap");
-}
-
-- (void)twoFingerTripleTapGestureHandler:(UITapGestureRecognizer*)recognizer {
-    VWW_LOG_INFO(@"Settings tap");
-    [self performSegueWithIdentifier:VWWSegueTouchToSettings sender:self];
-}
+//-(void)addGestureRecognizers{
+//    // Gesture recognizer
+//    UITapGestureRecognizer *singleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureHandler:)];
+//    [singleTapGestureRecognizer setNumberOfTapsRequired:1];
+//    [self.view addGestureRecognizer:singleTapGestureRecognizer];
+//    
+//    UITapGestureRecognizer *doubleTapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapGestureHandler:)];
+//    [doubleTapGestureRecognizer setNumberOfTapsRequired:2];
+//    [self.view addGestureRecognizer:doubleTapGestureRecognizer];
+//    
+//    UITapGestureRecognizer *twoFingerTripleTapGestureHandler = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(twoFingerTripleTapGestureHandler:)];
+//    twoFingerTripleTapGestureHandler.numberOfTapsRequired = 3;
+//    twoFingerTripleTapGestureHandler.numberOfTouchesRequired = 2;
+//    [self.view addGestureRecognizer:twoFingerTripleTapGestureHandler];
+//    
+//    [singleTapGestureRecognizer requireGestureRecognizerToFail:doubleTapGestureRecognizer];
+//}
+//
+//
+//
+//-(void)singleTapGestureHandler:(UIGestureRecognizer*)gestureRecognizer{
+//    VWW_LOG_INFO(@"Single Tap");
+//
+//}
+//
+//-(void)doubleTapGestureHandler:(UIGestureRecognizer*)gestureRecognizer{
+//    VWW_LOG_INFO(@"Double Tap");
+//}
+//
+//- (void)twoFingerTripleTapGestureHandler:(UITapGestureRecognizer*)recognizer {
+//    VWW_LOG_INFO(@"Settings tap");
+//    [self performSegueWithIdentifier:VWWSegueTouchToSettings sender:self];
+//}
 
 
 -(void)updateFrequenciesWithArray:(NSArray*)array{

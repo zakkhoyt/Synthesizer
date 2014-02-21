@@ -15,8 +15,6 @@
 
     [self setupDefaults];
     [self setupAppearance];
-//    [[UINavigationBar appearance] setTintColor:[UIColor grayColor]];
-    [[UINavigationBar appearance] setBackgroundColor:[UIColor blackColor]];
     
     return YES;
 }
@@ -76,7 +74,10 @@
 //    VWW_LOG_INFO(@"");
     
 //    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor darkGrayColor]];
+    
+    //    [[UINavigationBar appearance] setTintColor:[UIColor grayColor]];
+//    [[UINavigationBar appearance] setBarTintColor:[UIColor darkGrayColor]];
+//    [[UINavigationBar appearance] setBackgroundColor:[UIColor blackColor]];
 
     
 }

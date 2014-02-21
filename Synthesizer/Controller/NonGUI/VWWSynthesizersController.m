@@ -9,7 +9,7 @@
 #import "VWWSynthesizersController.h"
 #import "VWWGeneralSettings.h"
 #import "VWWMotionMonitor.h"
-
+#import "VWWMotionAxes.h"
 
 @interface VWWSynthesizersController () <VWWMotionMonitorDelegate>
 @property (nonatomic, strong) VWWMotionMonitor *motionMonitor;
@@ -42,6 +42,9 @@
 
 
 #pragma mark Private methods
+
+
+
 
 -(void)setupSynthesizers{
     // We will create 11 synthesizers here:
@@ -81,6 +84,7 @@
                                                                   amplitudeZ:generalSettings.amplitude zFrequencyMin:generalSettings.frequencyMin zFrequencyMax:generalSettings.frequencyMax zFrequencyNormalized:generalSettings.frequencyNormalized];
     self.magnetometersGroup.muted = YES;
     [self.magnetometersGroup start];
+    
 }
 
 
@@ -95,7 +99,7 @@
 
 
 #pragma mark VWWMotionMonitorDelegate
--(NSString*)stringForMotionStatsWithDevice:(MotionDevice)device{
+-(NSString*)stringForMotionStatsWithDevice:(VWWMotionAxes*)device{
 //    return [NSString stringWithFormat:@"x: min:%.4f x:%.4f max:%.4f"
 //                 @"\ny: min:%.4f x:%.4f max:%.4f"
 //                 @"\nz: min:%.4f x:%.4f max:%.4f",
@@ -111,7 +115,7 @@
 
 
 }
--(void)vwwMotionMonitor:(VWWMotionMonitor*)sender accelerometerUpdated:(MotionDevice)device{
+-(void)vwwMotionMonitor:(VWWMotionMonitor*)sender accelerometerUpdated:(VWWMotionAxes*)device{
     self.accelerometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
     self.accelerometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
     self.accelerometersGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
@@ -126,7 +130,7 @@
     
 }
 
--(void)vwwMotionMonitor:(VWWMotionMonitor*)sender gyroUpdated:(MotionDevice)device{
+-(void)vwwMotionMonitor:(VWWMotionMonitor*)sender gyroUpdated:(VWWMotionAxes*)device{
     self.gyroscopesGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
     self.gyroscopesGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
     self.gyroscopesGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;
@@ -140,7 +144,7 @@
 }
 
 
--(void)vwwMotionMonitor:(VWWMotionMonitor*)sender magnetometerUpdated:(MotionDevice)device{
+-(void)vwwMotionMonitor:(VWWMotionMonitor*)sender magnetometerUpdated:(VWWMotionAxes*)device{
     self.magnetometersGroup.xSynthesizer.frequencyNormalized = device.x.currentNormalized;
     self.magnetometersGroup.ySynthesizer.frequencyNormalized = device.y.currentNormalized;
     self.magnetometersGroup.zSynthesizer.frequencyNormalized = device.z.currentNormalized;

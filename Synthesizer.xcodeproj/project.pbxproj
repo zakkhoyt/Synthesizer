@@ -24,6 +24,8 @@
 		C60D15B91880A87F00D008F6 /* VWWSynthesizerGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = C60D15B81880A87F00D008F6 /* VWWSynthesizerGroup.m */; };
 		C60D15BB1880ABD400D008F6 /* VWWSynthesizerGroupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C60D15BA1880ABD400D008F6 /* VWWSynthesizerGroupTests.m */; };
 		C61B7544187F888200737E51 /* VWWTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = C61B7543187F888200737E51 /* VWWTouchView.m */; };
+		C65F6D9B18B7C4E80067564C /* VWWMotionAxis.m in Sources */ = {isa = PBXBuildFile; fileRef = C65F6D9A18B7C4E80067564C /* VWWMotionAxis.m */; };
+		C65F6D9E18B7C4F50067564C /* VWWMotionAxes.m in Sources */ = {isa = PBXBuildFile; fileRef = C65F6D9D18B7C4F50067564C /* VWWMotionAxes.m */; };
 		C66818E418B52B4300E2E5DD /* VWWWaveformParametersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C66818E318B52B4300E2E5DD /* VWWWaveformParametersTableViewController.m */; };
 		C66818E918B5311F00E2E5DD /* VWWWaveformTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C66818E818B5311F00E2E5DD /* VWWWaveformTableViewCell.m */; };
 		C66818EE18B5369200E2E5DD /* VWWAmplitudeParametersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C66818ED18B5369200E2E5DD /* VWWAmplitudeParametersTableViewController.m */; };
@@ -108,6 +110,10 @@
 		C60D15BA1880ABD400D008F6 /* VWWSynthesizerGroupTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWSynthesizerGroupTests.m; sourceTree = "<group>"; };
 		C61B7542187F888200737E51 /* VWWTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VWWTouchView.h; path = View/VWWTouchView.h; sourceTree = "<group>"; };
 		C61B7543187F888200737E51 /* VWWTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VWWTouchView.m; path = View/VWWTouchView.m; sourceTree = "<group>"; };
+		C65F6D9918B7C4E80067564C /* VWWMotionAxis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWMotionAxis.h; sourceTree = "<group>"; };
+		C65F6D9A18B7C4E80067564C /* VWWMotionAxis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWMotionAxis.m; sourceTree = "<group>"; };
+		C65F6D9C18B7C4F50067564C /* VWWMotionAxes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWMotionAxes.h; sourceTree = "<group>"; };
+		C65F6D9D18B7C4F50067564C /* VWWMotionAxes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWMotionAxes.m; sourceTree = "<group>"; };
 		C66818E218B52B4300E2E5DD /* VWWWaveformParametersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWaveformParametersTableViewController.h; sourceTree = "<group>"; };
 		C66818E318B52B4300E2E5DD /* VWWWaveformParametersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VWWWaveformParametersTableViewController.m; sourceTree = "<group>"; };
 		C66818E718B5311F00E2E5DD /* VWWWaveformTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VWWWaveformTableViewCell.h; sourceTree = "<group>"; };
@@ -764,6 +770,10 @@
 			children = (
 				CF63F1E018B2C13500BD1DFC /* VWWGeneralSettings.h */,
 				CF63F1E118B2C13500BD1DFC /* VWWGeneralSettings.m */,
+				C65F6D9918B7C4E80067564C /* VWWMotionAxis.h */,
+				C65F6D9A18B7C4E80067564C /* VWWMotionAxis.m */,
+				C65F6D9C18B7C4F50067564C /* VWWMotionAxes.h */,
+				C65F6D9D18B7C4F50067564C /* VWWMotionAxes.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -957,6 +967,7 @@
 				C6A6D234187F5E470025105C /* VWWSynthesizerEffectNoteKey.m in Sources */,
 				CF0F67C618AF135A000158BE /* VWWTouchViewController.m in Sources */,
 				C6D5CA2418B422BF00DDCAD0 /* VWWSynthesizersController.m in Sources */,
+				C65F6D9E18B7C4F50067564C /* VWWMotionAxes.m in Sources */,
 				CFF779AC18B2D55A00301A84 /* VWWBonjourServerController.m in Sources */,
 				C6D5C9E318AED84D00DDCAD0 /* AsyncSocket.m in Sources */,
 				C668190018B5534500E2E5DD /* VWWAxisTableViewCell.m in Sources */,
@@ -965,6 +976,7 @@
 				CF245AB618B2E3B70012C642 /* VWWAboutViewController.m in Sources */,
 				CF997C0418B5A2F100BB0945 /* VWWStatisticsMotionSensorsTableViewController.m in Sources */,
 				CF0F67C018AF135A000158BE /* VWWDevicesServerViewController.m in Sources */,
+				C65F6D9B18B7C4E80067564C /* VWWMotionAxis.m in Sources */,
 				C6A6D22D187F5E470025105C /* CAStreamBasicDescription.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

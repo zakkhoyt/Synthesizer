@@ -8,26 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-typedef struct{
-    float min;
-    float current;
-    float currentNormalized;
-    float max;
-    
-} Values;
 
-typedef struct{
-    Values x;
-    Values y;
-    Values z;
-} MotionDevice;
-
+@class VWWMotionAxis;
+@class VWWMotionAxes;
 @class VWWMotionMonitor;
 
 @protocol VWWMotionMonitorDelegate <NSObject>
--(void)vwwMotionMonitor:(VWWMotionMonitor*)sender accelerometerUpdated:(MotionDevice)device;
--(void)vwwMotionMonitor:(VWWMotionMonitor*)sender magnetometerUpdated:(MotionDevice)device;
--(void)vwwMotionMonitor:(VWWMotionMonitor*)sender gyroUpdated:(MotionDevice)device;
+-(void)vwwMotionMonitor:(VWWMotionMonitor*)sender accelerometerUpdated:(VWWMotionAxes*)device;
+-(void)vwwMotionMonitor:(VWWMotionMonitor*)sender magnetometerUpdated:(VWWMotionAxes*)device;
+-(void)vwwMotionMonitor:(VWWMotionMonitor*)sender gyroUpdated:(VWWMotionAxes*)device;
 @end
 
 @interface VWWMotionMonitor : NSObject
